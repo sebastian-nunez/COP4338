@@ -1,8 +1,0 @@
-{
-  "files.associations": {
-    "*.html": "html",
-    "*.js": "javascript",
-    "*.py": "python",
-    "string.h": "c"
-  }
-}
