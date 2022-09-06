@@ -1,6 +1,6 @@
 # Chapter 6: Functions
 
-- [Chapter 6: Functions](#chapter-6-functions)
+- [**Chapter 6: Functions**](#chapter-6-functions)
   - [Basics](#basics)
   - [Parameters](#parameters)
   - [Print Functions (void)](#print-functions-void)
