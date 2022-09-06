@@ -2,6 +2,17 @@
 
 ## Table of Contents
 
+- [**Chapter 1: Basics, Command Line Arguments, and Makefile**](#chapter-1-basics-command-line-arguments-and-makefile)
+
+  - [Command Line Arguments (argc, argv)](#command-line-arguments-argc-argv)
+  - [Command Line Arguments (Validation)](#command-line-arguments-validation)
+  - [Command Line Arguments and Files](#command-line-arguments-and-files)
+  - [Macros (#define directive)](#macros-define-directive)
+  - [Single Step Compilation](#single-step-compilation)
+  - [Modular Compilation](#modular-compilation)
+  - [Makefiles](#makefiles)
+  - [Makefile (Sample)](#makefile-sample)
+
 - [**Chapter 2: Variables, Data Types, and Random Numbers**](#chapter-2-variables-data-types-and-random-numbers)
 
   - [Variables](#variables)
@@ -86,6 +97,42 @@
   - [Type Checking and Conversion \<ctype.h\>](#type-checking-and-conversion-ctypeh)
   - [Arrays and Strings (Example)](#arrays-and-strings-example)
   - [Annual Salary (Example)](#annual-salary-example)
+
+## Chapter 1: Basics, Command Line Arguments, and Makefile
+
+### Command Line Arguments (argc, argv)
+
+![Command Line Arguments (argc, argv)](./images/1.13%20Command%20Line%20Arguments.png)
+
+### Command Line Arguments (Validation)
+
+![Command Line Arguments (Validation)](<./images/1.13%20Validation%20(argc%20and%20argv).png>)
+
+### Command Line Arguments and Files
+
+![Command Line Arguments and Files](./images/1.14%20Command%20Line%20Args%20and%20Files.png)
+
+### Macros (#define directive)
+
+![Macros (#define directive)](<./images/1.15%20%23define%20Directive%20(macro).png>)
+
+### Single Step Compilation
+
+![Single Step Compilation](./images/1.16%20Single%20Step%20Compilation.png)
+
+### Modular Compilation
+
+![Modular Compilation](./images/1.16%20Modular%20Compilation.png)
+
+### Makefiles
+
+![Makefiles](./images/1.17%20Makefiles.png)
+
+### Makefile (Sample)
+
+![Makefiles (Sample)](./images/1.17%20Sample%20Makefile.png)
+
+[Back to top](#table-of-contents)
 
 ## Chapter 2: Variables, Data Types, and Random Numbers
 
