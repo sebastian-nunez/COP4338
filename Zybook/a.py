@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 
 class Person(ABC):
     def __init__(self, name, age):
+        super.__init__()
         self.name = name
         self.age = age
 
@@ -12,6 +13,7 @@ class Person(ABC):
             return i + 2
 
     def __str__(self):
+        self.get_age()
         return ""
 
     @abstractmethod
@@ -22,6 +24,8 @@ class Person(ABC):
 def main():
     x = math.ceil(5.3)
     a = Person("Sebastian", x)
+    if True:
+        pass
 
     print(a.get_age())
 
