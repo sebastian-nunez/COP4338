@@ -18,12 +18,11 @@ int main(void) {
     while (phoneChar != '\n') {
         if (((phoneChar >= '0') && (phoneChar <= '9')) || (phoneChar == '-')) {
             printf("%c", phoneChar);  // Print element as is
+            // FIXME: Add remaining else-if branches
         } else if (((phoneChar >= 'a') && (phoneChar <= 'c')) ||
                    ((phoneChar >= 'A') && (phoneChar <= 'C'))) {
             printf("2");
-        }
-        // FIXME: Add remaining else-if branches
-        else {
+        } else {
             printf("?");
         }
 
