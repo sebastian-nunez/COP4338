@@ -10,7 +10,7 @@ class Person(ABC):
 
     def get_age(self):
         for i in range(self.age):
-            return i + 2
+            return i + 2 * 2
 
     def __str__(self):
         self.get_age()
