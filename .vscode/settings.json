@@ -4,5 +4,11 @@
     "editor.minimap.enabled": "undefined",
     "editor.scrollbar.verticalScrollbarSize": "undefined",
     "window.zoomLevel": "undefined"
+  },
+  "files.associations": {
+    "*.html": "html",
+    "*.js": "javascript",
+    "*.py": "python",
+    "stdio.h": "c"
   }
 }
