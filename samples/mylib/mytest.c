@@ -1,5 +1,6 @@
-#include "mylib.h"
 #include <stdio.h>
+
+#include "mylib.h"
 
 int main() {
     int x = myatoi("10");

@@ -9,8 +9,7 @@ int check_circuit(int id, int z) {
     int v[16]; /* Each element is a bit of z */
     int i;
 
-    for (i = 0; i < 16; i++)
-        v[i] = EXTRACT_BIT(z, i);
+    for (i = 0; i < 16; i++) v[i] = EXTRACT_BIT(z, i);
     if ((v[0] || v[1]) && (!v[1] || !v[3]) && (v[2] || v[3]) && (!v[3] || !v[4]) && (v[4] || !v[5]) &&
         (v[5] || !v[6]) && (v[5] || v[6]) && (v[6] || !v[15]) && (v[7] || !v[8]) && (!v[7] || !v[13]) &&
         (v[8] || v[9]) && (v[8] || !v[9]) && (!v[9] || !v[10]) && (v[9] || v[11]) && (v[10] || v[11]) &&
@@ -46,8 +45,7 @@ int main(int argc, char* argv[]) {
     elapsed_time = -MPI_Wtime();
 
     count = 0;
-    for (i = id; i < 65536; i += p)
-        count += check_circuit(id, i);
+    for (i = id; i < 65536; i += p) count += check_circuit(id, i);
 
     MPI_Reduce(&count, &global_count, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 
@@ -59,7 +57,6 @@ int main(int argc, char* argv[]) {
         fflush(stdout);
     }
     MPI_Finalize();
-    if (!id)
-        printf("There are %d different solutions\n", global_count);
+    if (!id) printf("There are %d different solutions\n", global_count);
     return 0;
 }

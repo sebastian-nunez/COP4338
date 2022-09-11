@@ -8,8 +8,7 @@
 void MakeSentenceExcited(char* sentenceText) {
     /* Your solution goes here  */
     for (int i = 0; i < strlen(sentenceText); i++) {
-        if (sentenceText[i] == '.')
-            sentenceText[i] = '!';
+        if (sentenceText[i] == '.') sentenceText[i] = '!';
     }
 }
 

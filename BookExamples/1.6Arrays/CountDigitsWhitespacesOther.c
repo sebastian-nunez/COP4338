@@ -9,8 +9,7 @@ int main() {
     int ndigit[10];
 
     nwhite = nother = 0;
-    for (i = 0; i < 10; i++)
-        ndigit[i] = 0;
+    for (i = 0; i < 10; i++) ndigit[i] = 0;
 
     c = getchar();
     while (c != EOF) {
@@ -25,8 +24,7 @@ int main() {
     }
 
     printf("digits =");
-    for (i = 0; i < 10; i++)
-        printf(" %d", ndigit[i]);
+    for (i = 0; i < 10; i++) printf(" %d", ndigit[i]);
 
     printf(", white space = %d, other = %d\n", nwhite, nother);
 

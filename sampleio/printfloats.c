@@ -1,6 +1,5 @@
 #include <stdio.h>
 int main() {
-
     int integer = 9876;
     float decimal = 987.6543;
 

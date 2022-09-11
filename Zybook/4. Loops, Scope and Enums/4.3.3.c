@@ -7,7 +7,7 @@
 int main(void) {
     int numInsects;
 
-    scanf("%d", &numInsects); // Must be >= 1
+    scanf("%d", &numInsects);  // Must be >= 1
 
     /* Your solution goes here  */
     while (numInsects < 100) {

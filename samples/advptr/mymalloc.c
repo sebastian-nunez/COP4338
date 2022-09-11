@@ -26,10 +26,8 @@ int main(int argc, char** argv) {
         return -3;
     }
 
-    for (i = 0; i < sz; i++)
-        x[i] = i * 10;
-    for (i = 0; i < sz; i++)
-        printf("%d: %d\n", i, x[i]);
+    for (i = 0; i < sz; i++) x[i] = i * 10;
+    for (i = 0; i < sz; i++) printf("%d: %d\n", i, x[i]);
 
     free(x);
 

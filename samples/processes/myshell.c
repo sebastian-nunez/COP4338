@@ -14,8 +14,7 @@ int get_args(char* cmdline, char* args[]) {
     int i = 0;
 
     /* if no args */
-    if ((args[0] = strtok(cmdline, "\n\t ")) == NULL)
-        return 0;
+    if ((args[0] = strtok(cmdline, "\n\t ")) == NULL) return 0;
 
     while ((args[++i] = strtok(NULL, "\n\t ")) != NULL) {
         if (i >= MAX_ARGS) {
@@ -32,8 +31,7 @@ void execute(char* cmdline) {
     char* args[MAX_ARGS];
 
     int nargs = get_args(cmdline, args);
-    if (nargs <= 0)
-        return;
+    if (nargs <= 0) return;
 
     if (!strcmp(args[0], "quit") || !strcmp(args[0], "exit")) {
         exit(0);

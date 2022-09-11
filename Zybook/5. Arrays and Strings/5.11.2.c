@@ -2,8 +2,8 @@
 #include <string.h>
 
 int main(void) {
-    char nameArr[10];     // User specified name
-    char greetingArr[17]; // Output greeting and name
+    char nameArr[10];      // User specified name
+    char greetingArr[17];  // Output greeting and name
 
     // Prompt user to enter a name
     printf("Enter name: ");

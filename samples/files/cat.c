@@ -2,8 +2,7 @@
 
 void display(FILE* in, FILE* out) {
     int c;
-    while ((c = fgetc(in)) != EOF)
-        fputc(c, out);
+    while ((c = fgetc(in)) != EOF) fputc(c, out);
 }
 
 int main(int argc, char* argv[]) {
@@ -36,9 +35,7 @@ int main(int argc, char* argv[]) {
 
     display(fptr, fptr_out);
 
-    if (argc >= 2)
-        fclose(fptr);
-    if (argc >= 3)
-        fclose(fptr_out);
+    if (argc >= 2) fclose(fptr);
+    if (argc >= 3) fclose(fptr_out);
     return 0;
 }

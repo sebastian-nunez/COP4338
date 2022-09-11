@@ -7,10 +7,10 @@
 #include <stdio.h>
 
 int main(void) {
-    double initMass;   // Initial mass of a substance
-    double growthRate; // Annual growth rate
-    double yearsGrow;  // Years of growth
-    double finalMass;  // Final mass after those years
+    double initMass;    // Initial mass of a substance
+    double growthRate;  // Annual growth rate
+    double yearsGrow;   // Years of growth
+    double finalMass;   // Final mass after those years
 
     printf("Enter initial mass: ");
     scanf("%lf", &initMass);

@@ -17,13 +17,11 @@ int main(void) {
     }
 
     /* Your solution goes here  */
-    for (int i = 0; i < 4; i++)
-        printf("%d ", courseGrades[i]);
+    for (int i = 0; i < 4; i++) printf("%d ", courseGrades[i]);
 
     printf("\n");
 
-    for (int i = 3; i >= 0; i--)
-        printf("%d ", courseGrades[i]);
+    for (int i = 3; i >= 0; i--) printf("%d ", courseGrades[i]);
 
     printf("\n");
 

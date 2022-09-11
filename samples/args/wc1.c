@@ -47,12 +47,9 @@ void count(FILE* fp, int pl, int pw, int pc, char* fname) {
 #if DEBUG
     printf("\n");
 #endif
-    if (pl)
-        printf("%8d", nl);
-    if (pw)
-        printf("%8d", nw);
-    if (pc)
-        printf("%8d", nc);
+    if (pl) printf("%8d", nl);
+    if (pw) printf("%8d", nw);
+    if (pc) printf("%8d", nc);
     printf(" %s\n", fname);
 }
 
@@ -83,8 +80,7 @@ int main(int argc, char* argv[]) {
     }
     argc -= optind;
     argv += optind;
-    if (!pc && !pl && !pw)
-        pl = pw = pc = 1;
+    if (!pc && !pl && !pw) pl = pw = pc = 1;
 
     if (argc == 0) {
         fp = stdin;

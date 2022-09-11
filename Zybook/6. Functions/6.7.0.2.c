@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 double HrMinToMin(int origHours, int origMinutes) {
-    int totMinutes; // Resulting minutes
+    int totMinutes;  // Resulting minutes
 
     totMinutes = (origHours * 60) + origMinutes;
 

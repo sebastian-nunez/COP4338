@@ -18,8 +18,7 @@ int calc_darts(int n) {
     for (i = 0; i < n; i++) {
         double x = (double)rand() / RAND_MAX;
         double y = (double)rand() / RAND_MAX;
-        if (sqrt(x * x + y * y) <= 1)
-            s++;
+        if (sqrt(x * x + y * y) <= 1) s++;
     }
     return s;
 }

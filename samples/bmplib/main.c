@@ -1,5 +1,6 @@
-#include "bmplib.h"
 #include <stdlib.h>
+
+#include "bmplib.h"
 
 /*
  * This method enlarges a 24-bit, uncompressed .bmp file
@@ -56,8 +57,7 @@ int rotate(PIXEL* original, int rows, int cols, int rotation, PIXEL** new, int* 
 int flip(PIXEL* original, PIXEL** new, int rows, int cols) {
     int row, col;
 
-    if ((rows <= 0) || (cols <= 0))
-        return -1;
+    if ((rows <= 0) || (cols <= 0)) return -1;
 
     *new = (PIXEL*)malloc(rows * cols * sizeof(PIXEL));
 

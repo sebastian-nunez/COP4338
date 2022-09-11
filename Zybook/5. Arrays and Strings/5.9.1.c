@@ -17,8 +17,8 @@ int main(void) {
     int milesTracker[NUM_ROWS][NUM_COLS];
     int i;
     int j;
-    int maxMiles = 0; // Assign with first element in milesTracker before loop
-    int minMiles = 0; // Assign with first element in milesTracker before loop
+    int maxMiles = 0;  // Assign with first element in milesTracker before loop
+    int minMiles = 0;  // Assign with first element in milesTracker before loop
 
     for (i = 0; i < NUM_ROWS; i++) {
         for (j = 0; j < NUM_COLS; j++) {
@@ -31,11 +31,9 @@ int main(void) {
     minMiles = milesTracker[0][0];
     for (int i = 0; i < NUM_ROWS; i++)
         for (int j = 0; j < NUM_COLS; j++) {
-            if (milesTracker[i][j] > maxMiles)
-                maxMiles = milesTracker[i][j];
+            if (milesTracker[i][j] > maxMiles) maxMiles = milesTracker[i][j];
 
-            if (milesTracker[i][j] < minMiles)
-                minMiles = milesTracker[i][j];
+            if (milesTracker[i][j] < minMiles) minMiles = milesTracker[i][j];
         }
 
     printf("Min miles: %d\n", minMiles);

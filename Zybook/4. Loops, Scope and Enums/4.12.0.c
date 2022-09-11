@@ -17,26 +17,26 @@ int main(void) {
         if (lightVal == LS_GREEN) {
             printf("Green light  ");
             scanf(" %c", &userCmd);
-            if (userCmd == 'n') { // Next
+            if (userCmd == 'n') {  // Next
                 lightVal = LS_YELLOW;
             }
         } else if (lightVal == LS_YELLOW) {
             printf("Yellow light  ");
             scanf(" %c", &userCmd);
-            if (userCmd == 'n') { // Next
+            if (userCmd == 'n') {  // Next
                 lightVal = LS_RED;
             }
         } else if (lightVal == LS_RED) {
             printf("Red light  ");
             scanf(" %c", &userCmd);
-            if (userCmd == 'n') { // Next
+            if (userCmd == 'n') {  // Next
                 lightVal = LS_GREEN;
             }
         }
 
-        if (userCmd == 'r') { // Force immediate red
+        if (userCmd == 'r') {  // Force immediate red
             lightVal = LS_RED;
-        } else if (userCmd == 'q') { // Quit
+        } else if (userCmd == 'q') {  // Quit
             lightVal = LS_DONE;
         }
     }

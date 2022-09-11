@@ -1,5 +1,6 @@
-#include "ringbuf.h"
 #include <stdio.h>
+
+#include "ringbuf.h"
 
 void* producer(void* arg) {
     struct ringbuf_t* rb = (struct ringbuf_t*)arg;
@@ -31,8 +32,7 @@ int main() {
     struct ringbuf_t* rb;
 
     rb = rb_init(10);
-    if (!rb)
-        return 0;
+    if (!rb) return 0;
 
     pthread_create(&t0, NULL, producer, (void*)rb);
     pthread_create(&t1, NULL, consumer, (void*)rb);

@@ -29,7 +29,7 @@ int FindGCD(int aVal, int bVal) {
     numA = aVal;
     numB = bVal;
 
-    while (numA != numB) { // Euclid's algorithm
+    while (numA != numB) {  // Euclid's algorithm
         if (numB > numA) {
             numB = numB - numA;
         } else {

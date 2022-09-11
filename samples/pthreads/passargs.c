@@ -12,8 +12,7 @@ void* printhello(void* arg) {
     if (!s->id) {
         int i;
         float x = 1;
-        for (i = 0; i < 1000000; i++)
-            x = x * x;
+        for (i = 0; i < 1000000; i++) x = x * x;
     }
     printf("\"%s\" from thread %d\n", s->msg, s->id);
     return 0;

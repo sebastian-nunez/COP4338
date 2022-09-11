@@ -19,8 +19,7 @@ int main(int argc, char** argv) {
     char *sname = "default_sname", *fname;
     static char usage[] = "usage: %s [-dmp] -f fname [-s sname] name [name ...]\n";
 
-    while ((c = getopt(argc, argv, "df:mps:")) != -1)
-        switch (c) {
+    while ((c = getopt(argc, argv, "df:mps:")) != -1) switch (c) {
             case 'd':
                 debug = 1;
                 break;
@@ -66,8 +65,7 @@ int main(int argc, char** argv) {
     printf("sname = \"%s\"\n", sname);
 
     if (optind < argc) /* these are the arguments after the command-line options */
-        for (; optind < argc; optind++)
-            printf("argument: \"%s\"\n", argv[optind]);
+        for (; optind < argc; optind++) printf("argument: \"%s\"\n", argv[optind]);
     else {
         printf("no arguments left to process\n");
     }

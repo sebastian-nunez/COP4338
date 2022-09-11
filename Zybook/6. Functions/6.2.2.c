@@ -18,7 +18,7 @@ int main(void) {
     scanf("%d", &userInches);
 
     PrintFeetInchShort(userFeet,
-                       userInches); // Will be run with (5, 8), then (4, 11)
+                       userInches);  // Will be run with (5, 8), then (4, 11)
 
     return 0;
 }

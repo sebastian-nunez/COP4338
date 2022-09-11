@@ -15,7 +15,7 @@ int main(void) {
     int userValues[NUM_VALS];
     int i;
     int matchValue;
-    int numMatches = -99; // Assign numMatches with 0 before your for loop
+    int numMatches = -99;  // Assign numMatches with 0 before your for loop
 
     scanf("%d", &matchValue);
 
@@ -26,8 +26,7 @@ int main(void) {
     /* Your solution goes here  */
     numMatches = 0;
     for (int i = 0; i < 4; i++)
-        if (userValues[i] == matchValue)
-            numMatches++;
+        if (userValues[i] == matchValue) numMatches++;
 
     printf("matchValue: %d, numMatches: %d\n", matchValue, numMatches);
 

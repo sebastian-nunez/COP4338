@@ -40,8 +40,7 @@ int main(int argc, char* argv[]) {
             if (request) {
                 for (i = 0; i < CHUNKSIZE;) {
                     rands[i] = random();
-                    if (rands[i] <= INT_MAX)
-                        i++;
+                    if (rands[i] <= INT_MAX) i++;
                 }
                 MPI_Send(rands, CHUNKSIZE, MPI_INT, status.MPI_SOURCE, REPLY, world);
             }
@@ -77,8 +76,7 @@ int main(int argc, char* argv[]) {
                 // totalin+totalout, Pi );
                 MPI_Send(&request, 1, MPI_INT, server, REQUEST, world);
             } else {
-                if (request)
-                    MPI_Send(&request, 1, MPI_INT, server, REQUEST, world);
+                if (request) MPI_Send(&request, 1, MPI_INT, server, REQUEST, world);
             }
         }
         MPI_Comm_free(&workers);

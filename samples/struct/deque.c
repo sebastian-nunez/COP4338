@@ -51,24 +51,20 @@ void list_elements() {
 }
 
 void delete_node(struct Node* p) {
-    if (!p->prev) { // I'm at the head
+    if (!p->prev) {  // I'm at the head
         head = p->next;
-        if (head)
-            head->prev = 0;
-    } else { // I'm not at the head
+        if (head) head->prev = 0;
+    } else {  // I'm not at the head
         p->prev->next = p->next;
-        if (p->next)
-            p->next->prev = p->prev;
+        if (p->next) p->next->prev = p->prev;
     }
 
-    if (!p->next) { // I'm at the tail
+    if (!p->next) {  // I'm at the tail
         tail = p->prev;
-        if (tail)
-            tail->next = 0;
-    } else { // I'm not at the tail
+        if (tail) tail->next = 0;
+    } else {  // I'm not at the tail
         p->next->prev = p->prev;
-        if (p->prev)
-            p->prev->next = p->next;
+        if (p->prev) p->prev->next = p->next;
     }
 
     free(p->content);

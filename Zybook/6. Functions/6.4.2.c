@@ -14,8 +14,8 @@ double CalcCylinderSurfaceArea(double baseRadius, double height) {
 }
 
 int main(void) {
-    double radius; // User defined feet
-    double height; // User defined height
+    double radius;  // User defined feet
+    double height;  // User defined height
 
     // Prompt user for radius
     printf("Enter base radius: ");

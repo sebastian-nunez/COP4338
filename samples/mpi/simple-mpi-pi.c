@@ -8,8 +8,7 @@ int calc_darts(int n) {
     for (i = 0; i < n; i++) {
         double x = (double)rand() / RAND_MAX;
         double y = (double)rand() / RAND_MAX;
-        if (sqrt(x * x + y * y) <= 1)
-            s++;
+        if (sqrt(x * x + y * y) <= 1) s++;
     }
     return s;
 }
@@ -36,8 +35,7 @@ int main(int argc, char* argv[]) {
 
     s = calc_darts(n / p);
     MPI_Reduce(&s, &t, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
-    if (!id)
-        printf("pi =~ %lf\n", 4.0 * t / n);
+    if (!id) printf("pi =~ %lf\n", 4.0 * t / n);
 
     MPI_Finalize();
     return 0;

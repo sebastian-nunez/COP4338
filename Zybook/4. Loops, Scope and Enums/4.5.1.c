@@ -20,7 +20,7 @@ int main(void) {
     for (i = 0; i < numValues; ++i) {
         scanf("%d", &currValue);
 
-        if (i == 0) { // First iteration
+        if (i == 0) {  // First iteration
             maxSoFar = currValue;
         } else if (currValue > maxSoFar) {
             maxSoFar = currValue;

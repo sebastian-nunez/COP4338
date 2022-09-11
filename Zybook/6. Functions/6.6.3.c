@@ -15,8 +15,7 @@ void PrintShampooInstructions(int iNumCycles) {
     else if (iNumCycles > 4)
         printf("Too many.\n");
     else {
-        for (int i = 1; i <= iNumCycles; i++)
-            printf("%d: Lather and rinse.\n", i);
+        for (int i = 1; i <= iNumCycles; i++) printf("%d: Lather and rinse.\n", i);
         printf("Done.\n");
     }
 }

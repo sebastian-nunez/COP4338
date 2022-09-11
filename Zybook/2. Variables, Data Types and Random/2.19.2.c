@@ -5,7 +5,7 @@
 // 7
 
 #include <stdio.h>
-#include <stdlib.h> // Enables use of rand()
+#include <stdlib.h>  // Enables use of rand()
 
 int main(void) {
     int seedVal;

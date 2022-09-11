@@ -30,7 +30,7 @@ int main(void) {
     scanf("%d", &annualSalary);
 
     while (annualSalary > 0) {
-        totalDeductions = 0; // Start with 0 for each annual salary
+        totalDeductions = 0;  // Start with 0 for each annual salary
         printf("%s\n", PROMPT_DEDUCTION);
         scanf("%d", &oneDeduction);
 
@@ -46,7 +46,7 @@ int main(void) {
             adjustedSalary = 0;
             taxRate = 0.0;
         } else if (adjustedSalary <= 20000) {
-            taxRate = 0.10; // 0.10 is 10% written as a decimal
+            taxRate = 0.10;  // 0.10 is 10% written as a decimal
         } else if (adjustedSalary <= 50000) {
             taxRate = 0.20;
         } else if (adjustedSalary <= 100000) {
@@ -55,7 +55,7 @@ int main(void) {
             taxRate = 0.40;
         }
 
-        taxToPay = (int)(adjustedSalary * taxRate); // Truncate tax to an integer amount
+        taxToPay = (int)(adjustedSalary * taxRate);  // Truncate tax to an integer amount
         printf("Annual salary: %d\n", annualSalary);
         printf("\nDeductions: %d\n", totalDeductions);
         printf("Adjusted salary after deductions: %d\n", adjustedSalary);

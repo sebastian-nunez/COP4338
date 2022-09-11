@@ -17,8 +17,7 @@ int main() {
         }
     }
 
-    if (max > 0)
-        printf("The longest line entered was: %s (Length: %d)\n", longest, max);
+    if (max > 0) printf("The longest line entered was: %s (Length: %d)\n", longest, max);
 
     return 0;
 }

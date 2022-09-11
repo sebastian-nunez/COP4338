@@ -27,7 +27,7 @@ struct Point* callbyref_error(struct Point* v) {
     k = *v;
     k.x += 10;
     k.y = 1;
-    p = &k; // ERROR: function returns address of local variable
+    p = &k;  // ERROR: function returns address of local variable
     return p;
 }
 
@@ -64,7 +64,7 @@ int main() {
 
     struct Point* p;
     p = malloc(sizeof(struct Point));
-    (*p).x = 3; // equvalent of "p->x = 3";
+    (*p).x = 3;  // equvalent of "p->x = 3";
     p->y = 5;
     p->name = "my name";
     printf("p: x=%lf, y=%lf, name=%s\n", p->x, p->y, p->name);

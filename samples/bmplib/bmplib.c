@@ -1,4 +1,5 @@
 #include "bmplib.h"
+
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -43,16 +44,13 @@ int readFile(char* filename, int* rows, int* cols, PIXEL** bitmap) {
         fd = STDIN_FILENO;
 
     ret = readHeader(fd, rows, cols, &start);
-    if (ret)
-        return ret;
+    if (ret) return ret;
 
     *bitmap = (PIXEL*)malloc(sizeof(PIXEL) * (*rows) * (*cols));
     ret = readBits(fd, *bitmap, *rows, *cols, start);
-    if (ret)
-        return ret;
+    if (ret) return ret;
 
-    if (filename)
-        close(fd);
+    if (filename) close(fd);
 
     return 0;
 }
@@ -70,15 +68,12 @@ int writeFile(char* filename, int rows, int cols, PIXEL* bitmap) {
         fd = STDOUT_FILENO;
 
     ret = writeHeader(fd, rows, cols, start);
-    if (ret)
-        return ret;
+    if (ret) return ret;
 
     ret = writeBits(fd, rows, cols, bitmap, start);
-    if (ret)
-        return ret;
+    if (ret) return ret;
 
-    if (filename)
-        close(fd);
+    if (filename) close(fd);
 
     return 0;
 }

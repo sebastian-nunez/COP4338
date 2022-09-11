@@ -12,10 +12,10 @@
 // Source: www.statista.com, 2011
 
 int main(void) {
-    const int NUM_COUNTRY = 10;                           // Number of countries supported
-    const int MAX_COUNTRY_NAME_LENGTH = 50;               // Max length for names
-    char ctryNames[NUM_COUNTRY][MAX_COUNTRY_NAME_LENGTH]; // 2D array of country tv stats
-    int arrPosition = 0;                                  // User specified position
+    const int NUM_COUNTRY = 10;                            // Number of countries supported
+    const int MAX_COUNTRY_NAME_LENGTH = 50;                // Max length for names
+    char ctryNames[NUM_COUNTRY][MAX_COUNTRY_NAME_LENGTH];  // 2D array of country tv stats
+    int arrPosition = 0;                                   // User specified position
 
     // Populate array
     strcpy(ctryNames[0], "U.S.A.");

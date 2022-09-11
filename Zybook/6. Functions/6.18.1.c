@@ -64,7 +64,7 @@ int main(void) {
     while (annualSalary >= 0) {
         taxRate = GetCorrespondingTableValue(annualSalary, salaryBase, taxBase, BASE_TABLE_ELEMENTS);
 
-        taxToPay = (int)(annualSalary * taxRate); // Truncate tax to an integer amount
+        taxToPay = (int)(annualSalary * taxRate);  // Truncate tax to an integer amount
         printf("Annual salary: %d", annualSalary);
         printf("\nTax rate: %lf", taxRate);
         printf("\nTax to pay: %d\n", taxToPay);

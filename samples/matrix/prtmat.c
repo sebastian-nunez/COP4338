@@ -43,8 +43,7 @@ int main(int argc, char* argv[]) {
             perror("Error reading matrix file");
             return 3;
         }
-        for (j = 0; j < n && j < blocksize; j++)
-            printf("%4.2f ", (float)a[j]);
+        for (j = 0; j < n && j < blocksize; j++) printf("%4.2f ", (float)a[j]);
         printf("\n");
     }
 

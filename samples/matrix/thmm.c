@@ -37,8 +37,7 @@ void read_matrix(char* fname, float*** a, float** sa, int* m, int* n) {
     }
 
     *a = (float**)malloc((*m) * sizeof(float*));
-    for (i = 0; i < *m; i++)
-        (*a)[i] = &(*sa)[i * (*n)];
+    for (i = 0; i < *m; i++) (*a)[i] = &(*sa)[i * (*n)];
 
     fclose(finptr);
 }
@@ -81,8 +80,7 @@ void block_matmul(int crow, int ccol, /* corner of C block */
     int i, j, k;
     for (i = 0; i < n; i++)
         for (j = 0; j < n; j++)
-            for (k = 0; k < n; k++)
-                c[crow + i][ccol + j] += a[arow + i][acol + k] * b[brow + k][bcol + j];
+            for (k = 0; k < n; k++) c[crow + i][ccol + j] += a[arow + i][acol + k] * b[brow + k][bcol + j];
 }
 
 /* dumb matrix multiplication; used for debugging purposes */
@@ -184,8 +182,7 @@ int main(int argc, char* argv[]) {
     sc = (float*)malloc(n * n * sizeof(float));
     memset(sc, 0, n * n * sizeof(float));
     c = (float**)malloc(n * sizeof(float*));
-    for (i = 0; i < n; i++)
-        c[i] = &sc[i * n];
+    for (i = 0; i < n; i++) c[i] = &sc[i * n];
 
     /* do the multiplication */
     matmul(p, a, b, c, n);

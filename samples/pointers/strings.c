@@ -19,8 +19,7 @@ void mystrcpy(char* a, char* b) {
 void mystrcmp(char* a, char* b) {
     /* we assume both a and b can't be null */
     while (*a == *b) {
-        if (*a == '\0')
-            printf("4: a is equal to b\n");
+        if (*a == '\0') printf("4: a is equal to b\n");
         a++;
         b++;
     }
@@ -32,15 +31,13 @@ void mystrcmp(char* a, char* b) {
 
 void mystrcat(char* a, char* b) {
     /* we assume both a and b can't be null */
-    while (*a)
-        a++;
+    while (*a) a++;
     while ((*a++ = *b++))
         ;
 }
 
 int mylen(char* s) {
-    if (!s)
-        return 0;
+    if (!s) return 0;
 
     int l = 0;
     while (s[l++])
@@ -73,22 +70,25 @@ int main() {
     return 0;
 
     x++;
-    printf("2: value of x is %p, address of x is %p, object pointed by x is "
-           "'%c', string pointed by x is \"%s\"\n",
-           x, &x, *x, x);
+    printf(
+        "2: value of x is %p, address of x is %p, object pointed by x is "
+        "'%c', string pointed by x is \"%s\"\n",
+        x, &x, *x, x);
     /* you cannot do y++ */
 
     mystrcpy(z, x); /* what happens if you do mystrcpy(x, y) instead? */
-    printf("3: value of z is %p, address of z is %p, object pointed by z is "
-           "'%c', string pointed by z is \"%s\"\n",
-           z, &z, *z, z);
+    printf(
+        "3: value of z is %p, address of z is %p, object pointed by z is "
+        "'%c', string pointed by z is \"%s\"\n",
+        z, &z, *z, z);
 
     mystrcmp(x, y);
 
     mystrcat(z, y);
-    printf("3: value of z is %p, address of z is %p, object pointed by z is "
-           "'%c', string pointed by z is \"%s\"\n",
-           z, &z, *z, z);
+    printf(
+        "3: value of z is %p, address of z is %p, object pointed by z is "
+        "'%c', string pointed by z is \"%s\"\n",
+        z, &z, *z, z);
 
     return 0;
 }

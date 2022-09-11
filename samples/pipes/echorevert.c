@@ -42,25 +42,20 @@ int main() {
                 continue;
             revert(buf);
             n = write(c2p[1], buf, strlen(buf) + 1);
-            if (n < 0)
-                exit(-1);
+            if (n < 0) exit(-1);
         }
     } else { /* parent process */
         close(p2c[0]);
         close(c2p[1]);
         while (fgets(buf, BUFSIZ, stdin)) {
             int len = strlen(buf);
-            if (len > 0 && buf[len - 1] == '\n')
-                buf[--len] = 0; /* remove the newline */
-            if (len <= 0)
-                break; /* terminates when empty line is encountered */
+            if (len > 0 && buf[len - 1] == '\n') buf[--len] = 0; /* remove the newline */
+            if (len <= 0) break;                                 /* terminates when empty line is encountered */
             /*printf("%s", buf);*/
             n = write(p2c[1], buf, len + 1);
-            if (n < 0)
-                exit(-1);
+            if (n < 0) exit(-1);
             n = read(c2p[0], buf, BUFSIZ);
-            if (n < 0)
-                exit(-1);
+            if (n < 0) exit(-1);
             printf("%s\n", buf);
         }
         kill(pid, SIGKILL);

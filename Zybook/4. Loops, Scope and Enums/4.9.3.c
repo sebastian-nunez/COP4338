@@ -17,16 +17,16 @@
 #include <stdio.h>
 
 int main(void) {
-    char phoneChar; // Current char in phone number string
+    char phoneChar;  // Current char in phone number string
 
     printf("Enter phone number: ");
 
-    scanf("%c", &phoneChar); // Reads first char of user input
+    scanf("%c", &phoneChar);  // Reads first char of user input
     printf("Numbers only: ");
 
     while (phoneChar != '\n') {
         if (((phoneChar >= '0') && (phoneChar <= '9')) || (phoneChar == '-')) {
-            printf("%c", phoneChar); // Print element as is
+            printf("%c", phoneChar);  // Print element as is
             // FIXME: Add remaining else-if branches
         } else if (((phoneChar >= 'a') && (phoneChar <= 'c')) || ((phoneChar >= 'A') && (phoneChar <= 'C'))) {
             printf("2");
@@ -34,7 +34,7 @@ int main(void) {
             printf("?");
         }
 
-        scanf("%c", &phoneChar); // Read next char of user input
+        scanf("%c", &phoneChar);  // Read next char of user input
     }
 
     printf("\n");

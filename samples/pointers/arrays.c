@@ -6,8 +6,7 @@ int main() {
     int i;
 
     printf("x=%p, *x=%d, *(x+2)=%d\n", x, *x, *(x + 2));
-    for (i = 0; i < 5; i++)
-        printf("x[%d]=%d, &x[%d]=%p\n", i, x[i], i, &x[i]);
+    for (i = 0; i < 5; i++) printf("x[%d]=%d, &x[%d]=%p\n", i, x[i], i, &x[i]);
     printf("&x=%p\n", &x);
 
     y = x;
@@ -15,8 +14,7 @@ int main() {
         *y = *y + 5;
         y++;
     }
-    for (i = 0; i < 5; i++)
-        printf("x[%d]=%d, &x[%d]=%p\n", i, x[i], i, &x[i]);
+    for (i = 0; i < 5; i++) printf("x[%d]=%d, &x[%d]=%p\n", i, x[i], i, &x[i]);
 
     /* on the contrary, you cannot do 'x++' since x is an array variable!!! */
 

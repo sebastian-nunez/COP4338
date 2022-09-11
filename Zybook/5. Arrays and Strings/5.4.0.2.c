@@ -6,10 +6,10 @@
 #include <stdio.h>
 
 int main(void) {
-    const int NUM_ELEMENTS = 8; // Number of elements
-    int userVals[NUM_ELEMENTS]; // User numbers
-    int i;                      // Loop index
-    int sumVal;                 // For computing sum
+    const int NUM_ELEMENTS = 8;  // Number of elements
+    int userVals[NUM_ELEMENTS];  // User numbers
+    int i;                       // Loop index
+    int sumVal;                  // For computing sum
 
     // Prompt user to populate array
     printf("Enter %d integer values...\n", NUM_ELEMENTS);

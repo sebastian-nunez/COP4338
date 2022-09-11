@@ -6,13 +6,13 @@
 
 /* Usage: program username userage */
 int main(int argc, char* argv[]) {
-    char nameStr[100]; // User name
-    char ageStr[100];  // User age
+    char nameStr[100];  // User name
+    char ageStr[100];   // User age
 
     // Check if correct number of arguments provided
     if (argc != 3) {
         printf("Usage: myprog.exe name age\n");
-        return 1; // 1 indicates error
+        return 1;  // 1 indicates error
     }
 
     // Grab inputs from command line

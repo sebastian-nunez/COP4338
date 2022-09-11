@@ -28,8 +28,7 @@ void read_matrix(char* fname, float*** a, float** sa, int* m, int* n) {
     }
 
     *a = (float**)malloc((*m) * sizeof(float*));
-    for (i = 0; i < *m; i++)
-        (*a)[i] = &(*sa)[i * (*n)];
+    for (i = 0; i < *m; i++) (*a)[i] = &(*sa)[i * (*n)];
 
     fclose(finptr);
 }
@@ -68,8 +67,7 @@ void dumb_matmul(float** a, float** b, float** c, int N) {
     int i, j, k;
     for (i = 0; i < N; i++)
         for (j = 0; j < N; j++)
-            for (k = 0; k < N; k++)
-                c[i][j] += a[i][k] * b[k][j];
+            for (k = 0; k < N; k++) c[i][j] += a[i][k] * b[k][j];
 }
 
 /* matrix multiplication using recursive block decomposition */
@@ -129,8 +127,7 @@ int main(int argc, char* argv[]) {
     sc = (float*)malloc(n * n * sizeof(float));
     memset(sc, 0, n * n * sizeof(float));
     c = (float**)malloc(n * sizeof(float*));
-    for (i = 0; i < n; i++)
-        c[i] = &sc[i * n];
+    for (i = 0; i < n; i++) c[i] = &sc[i * n];
 
     /* do the multiplication */
     matmul(a, b, c, n);

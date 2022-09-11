@@ -1,4 +1,4 @@
-#include "a.h"
+#include <lib/main.h>
 
 #include <algorithm>
 #include <cstdlib>
@@ -7,21 +7,23 @@
 #include <iostream>
 #include <iterator>
 
+#include "a.h"
 #include "b.h"
-#include <lib/main.h>
 
 // This should be 1 liner
 class EmptyClass {};
 
-struct EmptyStruct {}; // dummy comment
+struct EmptyStruct {};  // dummy comment
 
 class NotEmptyClass {
     int a;
 };
 
-template <class T> class EmptyTemplate {};
+template <class T>
+class EmptyTemplate {};
 
-template <typename K, typename V = list<K>> class hash {};
+template <typename K, typename V = list<K>>
+class hash {};
 
 void emptyFunction() {}
 
@@ -46,14 +48,15 @@ namespace EmptyNamespace {}
 #endif
 #endif
 
-#define EXAMPLE                                                                                                        \
-    do {                                                                                                               \
-        int x = aaaaa;                                                                                                 \
-        int b;                                                                                                         \
-        int dddddddddd;                                                                                                \
+#define EXAMPLE         \
+    do {                \
+        int x = aaaaa;  \
+        int b;          \
+        int dddddddddd; \
     } while (0)
 
-template <typename T, int size> bool is_sorted(T (&array)[size]) {
+template <typename T, int size>
+bool is_sorted(T (&array)[size]) {
     return std::adjacent_find(array, array + size, std::greater<T>()) == array + size;
 }
 
@@ -104,34 +107,33 @@ int sampleCallback(int a, int beforeCallMe) {
 }
 
 namespace A {
-    namespace B {
-        namespace C {
-            namespace D {
+namespace B {
+namespace C {
+namespace D {
 
-                int veryLongFunction(int anotherArgument, int beforeCallMe, bool isThisOkForYouMan,
-                                     std::vector<int> unknownValueForThisParameter) {
-                    int a;     // My comment a
-                    int b = 2; // comment  b
-                    return a * beforeCallMe;
-                }
+int veryLongFunction(int anotherArgument, int beforeCallMe, bool isThisOkForYouMan,
+                     std::vector<int> unknownValueForThisParameter) {
+    int a;      // My comment a
+    int b = 2;  // comment  b
+    return a * beforeCallMe;
+}
 
-                // clang should restore comment if missing and remove everything afterwords
-            } // namespace D
-        }     // namespace C
-    }         // namespace B
-} // namespace A
+// clang should restore comment if missing and remove everything afterwords
+}  // namespace D
+}  // namespace C
+}  // namespace B
+}  // namespace A
 
 namespace A {
-    namespace C {
-        int veryLongFunctionAbcAASKJHGAKLSFNCJKASDNCUIABSALSKJDNKAJSHDKJASHDJHKJASDHKJAHBSD(
-            int anotherArgument, int beforeCallMe, bool isThisOkForYouMan,
-            std::vector<int> unknownValueForThisParameter) {
-            int a;     // My comment a
-            int b = 2; // comment  b
-            return a * beforeCallMe;
-        }
-    } // namespace C
-} // namespace A
+namespace C {
+int veryLongFunctionAbcAASKJHGAKLSFNCJKASDNCUIABSALSKJDNKAJSHDKJASHDJHKJASDHKJAHBSD(
+    int anotherArgument, int beforeCallMe, bool isThisOkForYouMan, std::vector<int> unknownValueForThisParameter) {
+    int a;      // My comment a
+    int b = 2;  // comment  b
+    return a * beforeCallMe;
+}
+}  // namespace C
+}  // namespace A
 
 int main() {
     std::srand(std::time(0));
@@ -214,51 +216,51 @@ private:
 };
 
 namespace fooNS {
-    class FooClass : Foo, virtual FooBase {
+class FooClass : Foo, virtual FooBase {
 // comment start ar first column
 #define FooClass_B FooBase
 
-        typedef int (FooClass::*ACTION)(int);
+    typedef int (FooClass::*ACTION)(int);
 
-    public:
-        FooClass() {
-            act = &FooClass::nv_action;
-        }
+public:
+    FooClass() {
+        act = &FooClass::nv_action;
+    }
 
-        virtual ~FooClass() {}
+    virtual ~FooClass() {}
 
-        int nv_action(int arg) {
-            return arg;
-        }
+    int nv_action(int arg) {
+        return arg;
+    }
 
-        virtual int action(int color, char alpha, float);
+    virtual int action(int color, char alpha, float);
 
-        virtual Foo* getSelf() {
-            return Foo::getSelf();
-        }
+    virtual Foo* getSelf() {
+        return Foo::getSelf();
+    }
 
-        int method() {
-            return 0;
-        }
+    int method() {
+        return 0;
+    }
 
-        ACTION act;
+    ACTION act;
 
-    private:
-        int var;
-    };
-} // namespace fooNS
+private:
+    int var;
+};
+}  // namespace fooNS
 
 int fooNS::FooClass::action(int color, char alpha, float) {
     return doSomething(color);
 }
 
 namespace A {
-    namespace B {
-        typedef void(fn)(int i, int j, int k);
+namespace B {
+typedef void(fn)(int i, int j, int k);
 
-        typedef void (*block)(int i, int j, int k);
-    } // namespace B
-} // namespace A
+typedef void (*block)(int i, int j, int k);
+}  // namespace B
+}  // namespace A
 typedef int X;
 
 int& refTest(X&& x) {
@@ -343,18 +345,22 @@ enum class NotSingleLineEnum { a };
 
 enum fooE { SUNDAY = 111, MONDAY = 222, TUESDAY = 333, WEDNESDAY = TUESDAY + 1 } foo_e;
 
-template <typename T, typename M> inline T const& Min(T const& a, M const& b) {
+template <typename T, typename M>
+inline T const& Min(T const& a, M const& b) {
     return a < b ? a : b;
 }
 
-template <class T> struct FooT {
+template <class T>
+struct FooT {
     hash<int, list<char>> elems;
 
-    template <int N> int foo() {
+    template <int N>
+    int foo() {
         return N;
     }
 
-    template <> int foo<2>() {
+    template <>
+    int foo<2>() {
         return Min<>(1, 5);
     }
 
@@ -377,7 +383,7 @@ template <class T> struct FooT {
 };
 
 // No extra space before brace initialization
-EmptyStruct emptyStruct = EmptyStruct{}; // otherwise: = EmptyStruct {};
+EmptyStruct emptyStruct = EmptyStruct{};  // otherwise: = EmptyStruct {};
 
 // comment
-EmptyStruct emptyStruct = EmptyStruct{}; // 1 space after ';'' otherwise: ;//1 space after...
+EmptyStruct emptyStruct = EmptyStruct{};  // 1 space after ';'' otherwise: ;//1 space after...

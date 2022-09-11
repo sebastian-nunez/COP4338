@@ -38,7 +38,7 @@ int main(void) {
         if (annualSalary <= 0) {
             taxRate = 0.0;
         } else if (annualSalary <= 20000) {
-            taxRate = 0.10; // 0.10 is 10% written as a decimal
+            taxRate = 0.10;  // 0.10 is 10% written as a decimal
         } else if (annualSalary <= 50000) {
             taxRate = 0.20;
         } else if (annualSalary <= 100000) {
@@ -47,7 +47,7 @@ int main(void) {
             taxRate = 0.40;
         }
 
-        taxToPay = (int)(annualSalary * taxRate); // Truncate tax to an integer amount
+        taxToPay = (int)(annualSalary * taxRate);  // Truncate tax to an integer amount
         printf("Annual salary: %d", annualSalary);
         printf("\tTax rate: %lf", taxRate);
         printf("\tTax to pay: %d\n", taxToPay);
