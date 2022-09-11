@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 int main(void) {
-    const int MAX_LEN = 30;  // Max string length
-    char userStr[MAX_LEN];   // User defined string
+    const int MAX_LEN = 30; // Max string length
+    char userStr[MAX_LEN];  // User defined string
     int i;
 
     // Prompt user to enter string

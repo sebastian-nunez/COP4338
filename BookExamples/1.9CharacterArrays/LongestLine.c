@@ -5,13 +5,12 @@
 int getLine(char line[], int maxlength);
 void copy(char from[], char to[]);
 
-int main()
-{
+int main() {
     int len, max;
     char line[MAXLINE], longest[MAXLINE];
 
     max = 0;
-    while((len = getLine(line, MAXLINE)) > 0) {
+    while ((len = getLine(line, MAXLINE)) > 0) {
         if (len > max) {
             max = len;
             copy(line, longest);
@@ -24,11 +23,10 @@ int main()
     return 0;
 }
 
-int getLine(char line[], int maxlength)
-{
+int getLine(char line[], int maxlength) {
     int c, i;
 
-    for(i = 0; i < maxlength && (c = getchar()) != EOF && c != '\n'; i++) {
+    for (i = 0; i < maxlength && (c = getchar()) != EOF && c != '\n'; i++) {
         line[i] = c;
     }
 
@@ -42,12 +40,10 @@ int getLine(char line[], int maxlength)
     return i;
 }
 
-void copy(char from[], char to[])
-{
+void copy(char from[], char to[]) {
     int i = 0;
-    while(from[i] != '\0') {
+    while (from[i] != '\0') {
         to[i] = from[i];
         i++;
     }
-
 }

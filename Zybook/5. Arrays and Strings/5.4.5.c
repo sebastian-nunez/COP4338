@@ -1,6 +1,8 @@
-// Write a for loop to print all NUM_VALS elements of array hourlyTemp. Separate elements with a comma and space. Ex: If hourlyTemp = {90, 92, 94, 95}, print:
+// Write a for loop to print all NUM_VALS elements of array hourlyTemp. Separate
+// elements with a comma and space. Ex: If hourlyTemp = {90, 92, 94, 95}, print:
 // 90, 92, 94, 95
-// Your code's output should end with the last element, without a subsequent comma, space, or newline.
+// Your code's output should end with the last element, without a subsequent
+// comma, space, or newline.
 
 #include <stdio.h>
 

@@ -1,7 +1,12 @@
-// Write a loop that sets newScores to oldScores shifted once left, with element 0 copied to the end. Ex: If oldScores = {10, 20, 30, 40}, then newScores = {20, 30, 40, 10}.
+// Write a loop that sets newScores to oldScores shifted once left, with element
+// 0 copied to the end. Ex: If oldScores = {10, 20, 30, 40}, then newScores =
+// {20, 30, 40, 10}.
 
 #include <stdio.h>
+/*
 
+
+ */
 int main(void) {
     const int SCORES_SIZE = 4;
     int oldScores[SCORES_SIZE];

@@ -1,11 +1,10 @@
-// Add two more statements to main() to test inputs 3 and -1. Use print statements similar to the existing one (don't use assert).
+// Add two more statements to main() to test inputs 3 and -1. Use print
+// statements similar to the existing one (don't use assert).
 
 #include <stdio.h>
 
 // Function returns origNum cubed
-int CubeNum(int origNum) {
-    return origNum * origNum * origNum;
-}
+int CubeNum(int origNum) { return origNum * origNum * origNum; }
 
 int main(void) {
     printf("Testing started\n");

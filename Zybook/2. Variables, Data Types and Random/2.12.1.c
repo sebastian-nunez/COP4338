@@ -1,4 +1,5 @@
-// Compute the average kids per family. Note that the integers should be type cast to doubles.
+// Compute the average kids per family. Note that the integers should be type
+// cast to doubles.
 
 #include <stdio.h>
 

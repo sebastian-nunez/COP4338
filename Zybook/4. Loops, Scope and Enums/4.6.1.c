@@ -1,6 +1,6 @@
-// Complete the do-while loop to output from 0 to the value of countLimit using printVal. Assume the user will only input a positive number.
-// For example, if countLimit is 5 the output will be
-// 0 1 2 3 4 5
+// Complete the do-while loop to output from 0 to the value of countLimit using
+// printVal. Assume the user will only input a positive number. For example, if
+// countLimit is 5 the output will be 0 1 2 3 4 5
 
 #include <stdio.h>
 

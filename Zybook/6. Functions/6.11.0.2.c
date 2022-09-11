@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-void AdjustScores(double scoreVals[], int numVals,
-                  double scoreAdj) {
+void AdjustScores(double scoreVals[], int numVals, double scoreAdj) {
     int i;
 
     for (i = 0; i < numVals; ++i) {
@@ -30,8 +29,8 @@ double CalculateAverage(const double scoreVals[], int numVals) {
 }
 
 int main(void) {
-    const int NUM_SCORES = 4;       // Array size
-    double testScores[NUM_SCORES];  // User test scores
+    const int NUM_SCORES = 4;      // Array size
+    double testScores[NUM_SCORES]; // User test scores
     int i;
     double averageScore;
 

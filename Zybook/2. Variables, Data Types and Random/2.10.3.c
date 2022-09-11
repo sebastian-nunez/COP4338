@@ -1,4 +1,5 @@
-// Determine the distance between point (x1, y1) and point (x2, y2), and assign the result to pointsDistance. The calculation is:
+// Determine the distance between point (x1, y1) and point (x2, y2), and assign
+// the result to pointsDistance. The calculation is:
 
 // Distance = sqrt((x2 - x1)^2 + (y2-y1)^2)
 

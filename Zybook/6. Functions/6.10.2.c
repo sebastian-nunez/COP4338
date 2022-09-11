@@ -1,4 +1,6 @@
-// Write a function call to ConvertTime() to store the number of millennia, decades, and years within the integer variables numMillennia, numDecades, and numYears, respectively.
+// Write a function call to ConvertTime() to store the number of millennia,
+// decades, and years within the integer variables numMillennia, numDecades, and
+// numYears, respectively.
 
 // Ex: If the input is 2013, then the output is:
 
@@ -8,7 +10,8 @@
 
 #include <stdio.h>
 
-void ConvertTime(int totalYears, int* numMillennia, int* numDecades, int* numYears) {
+void ConvertTime(int totalYears, int *numMillennia, int *numDecades,
+                 int *numYears) {
     *numMillennia = totalYears / 1000;
     totalYears = totalYears % 1000;
 

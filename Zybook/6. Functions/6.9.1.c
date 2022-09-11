@@ -1,4 +1,5 @@
-// Using the CelsiusToKelvin function as a guide, create a new function, changing the name to KelvinToCelsius, and modifying the function accordingly.
+// Using the CelsiusToKelvin function as a guide, create a new function,
+// changing the name to KelvinToCelsius, and modifying the function accordingly.
 
 #include <stdio.h>
 

@@ -1,12 +1,22 @@
 // zyDE 5.15.1: Validate domain names with arrays.
 // Arrays are useful to process lists.
 
-// A top-level domain (TLD) name is the last part of an Internet domain name like .com in example.com. A core generic top-level domain (core gTLD) is a TLD that is either .com, .net, .org, or .info. A restricted top-level domain is a TLD that is either .biz, .name, or .pro. A second-level domain is a single name that precedes a TLD as in apple in apple.com.
+// A top-level domain (TLD) name is the last part of an Internet domain name
+// like .com in example.com. A core generic top-level domain (core gTLD) is a
+// TLD that is either .com, .net, .org, or .info. A restricted top-level domain
+// is a TLD that is either .biz, .name, or .pro. A second-level domain is a
+// single name that precedes a TLD as in apple in apple.com.
 
-// The following program repeatedly prompts for a domain name, and indicates whether that domain name consists of a second-level domain followed by a core gTLD. Valid core gTLD's are stored in an array. For this program, a valid domain name must contain only one period, such as apple.com, but not support.apple.com. The program ends when the user enters -1.
+// The following program repeatedly prompts for a domain name, and indicates
+// whether that domain name consists of a second-level domain followed by a core
+// gTLD. Valid core gTLD's are stored in an array. For this program, a valid
+// domain name must contain only one period, such as apple.com, but not
+// support.apple.com. The program ends when the user enters -1.
 
 // Run the program and enter domain names to validate.
-// Extend the program to also recognize restricted TLDs using an array, and statements to validate against that array. The program should also report whether the TLD is a core gTLD or a restricted gTLD. Run the program again.
+// Extend the program to also recognize restricted TLDs using an array, and
+// statements to validate against that array. The program should also report
+// whether the TLD is a core gTLD or a restricted gTLD. Run the program again.
 
 #include <ctype.h>
 #include <stdbool.h>
@@ -81,15 +91,17 @@ int main(void) {
         }
 
         // If there is exactly one period that is not at the start
-        // or end of searchName, check if the TLD is a core gTLD or a restricted gTLD
+        // or end of searchName, check if the TLD is a core gTLD or a restricted
+        // gTLD
         if ((periodCounter == 1) && (searchName[0] != '.') &&
             (searchName[strlen(searchName) - 1] != '.')) {
             isValidDomainName = true;
         }
 
         if (isValidDomainName) {
-            // Extract the Top-level Domain name starting at the period's position.
-            // Ex: If searchName = "example.com", the next statement extracts ".com"
+            // Extract the Top-level Domain name starting at the period's
+            // position. Ex: If searchName = "example.com", the next statement
+            // extracts ".com"
             for (i = periodPosition; i < strlen(searchName); ++i) {
                 theGtld[i - periodPosition] = searchName[i];
             }

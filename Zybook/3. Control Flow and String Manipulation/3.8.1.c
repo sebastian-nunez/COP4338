@@ -1,5 +1,5 @@
-// Re-type the code and fix any errors. The code should convert non-positive numbers to 1.
-// if (userNum > 0)
+// Re-type the code and fix any errors. The code should convert non-positive
+// numbers to 1. if (userNum > 0)
 //    printf("Positive.\n");
 // else
 //    printf("Non-positive, converting to 1.\n");

@@ -1,4 +1,4 @@
-all:	mymalloc mymath 
+all:	mymalloc mymath
 
 mymalloc:	mymalloc.c
 	gcc -Wall $< -o $@

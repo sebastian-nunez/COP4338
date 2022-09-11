@@ -1,7 +1,8 @@
-// Write a function PrintShampooInstructions(), with int parameter numCycles, and void return type. If numCycles is less than 1, print "Too few.". If more than 4, print "Too many.". Else, print "N: Lather and rinse." numCycles times, where N is the cycle number, followed by "Done.". End with a newline. Example output with input 2:
-// 1: Lather and rinse.
-// 2: Lather and rinse.
-// Done.
+// Write a function PrintShampooInstructions(), with int parameter numCycles,
+// and void return type. If numCycles is less than 1, print "Too few.". If more
+// than 4, print "Too many.". Else, print "N: Lather and rinse." numCycles
+// times, where N is the cycle number, followed by "Done.". End with a newline.
+// Example output with input 2: 1: Lather and rinse. 2: Lather and rinse. Done.
 
 // Hint: Declare and use a loop variable.
 

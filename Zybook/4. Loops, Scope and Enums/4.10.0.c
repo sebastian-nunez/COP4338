@@ -1,6 +1,13 @@
-// The nested for loops generate all possible meal options for the number of empanadas and tacos that can be purchased. The inner loop body calculates the cost of the current meal option. If equal to the user's money, the search is over, so the break statement immediately exits the inner loop. The outer loop body also checks if equal, and if so that break statement exits the outer loop.
+// The nested for loops generate all possible meal options for the number of
+// empanadas and tacos that can be purchased. The inner loop body calculates the
+// cost of the current meal option. If equal to the user's money, the search is
+// over, so the break statement immediately exits the inner loop. The outer loop
+// body also checks if equal, and if so that break statement exits the outer
+// loop.
 
-// The program could be written without break statements, but the loop's condition expressions would be more complex and the program would require additional code, perhaps being harder to understand.
+// The program could be written without break statements, but the loop's
+// condition expressions would be more complex and the program would require
+// additional code, perhaps being harder to understand.
 
 #include <stdio.h>
 
@@ -41,8 +48,8 @@ int main(void) {
     }
 
     if (mealCost == userMoney) {
-        printf("$%d buys %d empanadas and %d tacos without change.\n",
-               mealCost, numEmpanadas, numTacos);
+        printf("$%d buys %d empanadas and %d tacos without change.\n", mealCost,
+               numEmpanadas, numTacos);
     } else {
         printf("You cannot buy a meal without having change left over.\n");
     }

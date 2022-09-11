@@ -1,5 +1,5 @@
-// Write an expression that prints "Eligible" if userAge is between 18 and 25 inclusive.
-// Ex: 17 prints "Ineligible", 18 prints "Eligible".
+// Write an expression that prints "Eligible" if userAge is between 18 and 25
+// inclusive. Ex: 17 prints "Ineligible", 18 prints "Eligible".
 
 #include <stdio.h>
 

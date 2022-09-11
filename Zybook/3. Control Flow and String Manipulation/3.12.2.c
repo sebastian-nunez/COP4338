@@ -1,4 +1,7 @@
-// Write an if-else statement to describe an integer. Print "Positive even number" if isEven and isPositive are both true. Print "Positive number" if isEven is false and isPositive is true. Print "Not a positive number" otherwise. End with newline.
+// Write an if-else statement to describe an integer. Print "Positive even
+// number" if isEven and isPositive are both true. Print "Positive number" if
+// isEven is false and isPositive is true. Print "Not a positive number"
+// otherwise. End with newline.
 
 #include <stdbool.h>
 #include <stdio.h>

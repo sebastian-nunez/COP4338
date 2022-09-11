@@ -1,4 +1,5 @@
-// Assign isTeenager with true if kidAge is 13 to 19 inclusive. Otherwise, assign isTeenager with false.
+// Assign isTeenager with true if kidAge is 13 to 19 inclusive. Otherwise,
+// assign isTeenager with false.
 
 #include <stdbool.h>
 #include <stdio.h>

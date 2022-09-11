@@ -1,4 +1,5 @@
-// Write an expression to detect that the first character of userInput matches firstLetter.
+// Write an expression to detect that the first character of userInput matches
+// firstLetter.
 
 #include <stdio.h>
 #include <string.h>

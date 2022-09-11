@@ -1,4 +1,5 @@
-// Write a statement that increases numPeople by 5. If numPeople is initially 10, then numPeople becomes 15.
+// Write a statement that increases numPeople by 5. If numPeople is initially
+// 10, then numPeople becomes 15.
 
 #include <stdio.h>
 

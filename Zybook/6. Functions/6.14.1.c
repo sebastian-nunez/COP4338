@@ -1,4 +1,4 @@
-#include <math.h>  // To use "pow" function
+#include <math.h> // To use "pow" function
 #include <stdio.h>
 
 /* Program to convert given-year U.S. dollars to
@@ -9,10 +9,10 @@
 double ToCurrDollars(double pastDol, int pastYr, int currYr);
 
 int main(void) {
-    double pastDol;  // Starting dollar amount
-    double currDol;  // Ending dollar amount (converted value)
-    int pastYr;      // Starting year
-    int currYr;      // Ending year (converted to year)
+    double pastDol; // Starting dollar amount
+    double currDol; // Ending dollar amount (converted value)
+    int pastYr;     // Starting year
+    int currYr;     // Ending year (converted to year)
 
     // Prompt user for previous year/dollar and current year
     printf("Enter current year: ");
@@ -25,8 +25,8 @@ int main(void) {
     // Function call to convert past to current dollars
     currDol = ToCurrDollars(pastDol, pastYr, currYr);
 
-    printf("$%lf in %d is about $%lf in %d\n",
-           pastDol, pastYr, currDol, currYr);
+    printf("$%lf in %d is about $%lf in %d\n", pastDol, pastYr, currDol,
+           currYr);
 
     return 0;
 }
@@ -34,7 +34,7 @@ int main(void) {
 // (Function DEFINITION)
 // Function returns equivalent value of pastDol in pastYr to currYr
 double ToCurrDollars(double pastDol, int pastYr, int currYr) {
-    double currDol;  // Equivalent dollar amount given inflation
+    double currDol; // Equivalent dollar amount given inflation
 
     currDol = pastDol * pow(1.04, currYr - pastYr);
 

@@ -1,6 +1,12 @@
-// The nested loops generate all possible combinations of tacos and empanadas. If the total number of tacos and empanadas is not exactly divisible by the number of diners (e.g., ((numTacos + numEmpanadas) % numDiners) != 0), the continue statement proceeds to the next iteration, thus causing incrementing of numEmpanadas and checking of the loop condition.
+// The nested loops generate all possible combinations of tacos and empanadas.
+// If the total number of tacos and empanadas is not exactly divisible by the
+// number of diners (e.g., ((numTacos + numEmpanadas) % numDiners) != 0), the
+// continue statement proceeds to the next iteration, thus causing incrementing
+// of numEmpanadas and checking of the loop condition.
 
-// Break and continue statements can avoid excessive indenting/nesting within a loop. But they could be easily overlooked, and should be used sparingly, when their use is clear to the reader.
+// Break and continue statements can avoid excessive indenting/nesting within a
+// loop. But they could be easily overlooked, and should be used sparingly, when
+// their use is clear to the reader.
 
 #include <stdio.h>
 

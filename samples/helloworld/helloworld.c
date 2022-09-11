@@ -9,8 +9,7 @@
 
 #include <stdio.h>
 
-int main()
-{
-  printf("Hello World TO ALL!\n");
-  return 0;
+int main() {
+    printf("Hello World TO ALL!\n");
+    return 0;
 }

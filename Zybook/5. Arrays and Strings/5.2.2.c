@@ -1,7 +1,6 @@
-// Write three statements to print the first three elements of array runTimes. Follow each statement with a newline. Ex: If runTimes[5] = {800, 775, 790, 805, 808}, print:
-// 800
-// 775
-// 790
+// Write three statements to print the first three elements of array runTimes.
+// Follow each statement with a newline. Ex: If runTimes[5] = {800, 775, 790,
+// 805, 808}, print: 800 775 790
 
 #include <stdio.h>
 

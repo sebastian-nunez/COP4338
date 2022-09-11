@@ -1,9 +1,15 @@
 // zyDE 3.20.1: Search for name using branches.
-// A core generic top-level domain (core gTLD) name is one of the following Internet domains: .com, .net, .org, and .info (ICANN: gTLDs). The following program asks the user to input a name and prints whether that name is a gTLD. The program uses the strcmp() function, which returns zero if the two compared strings are identical.
+// A core generic top-level domain (core gTLD) name is one of the following
+// Internet domains: .com, .net, .org, and .info (ICANN: gTLDs). The following
+// program asks the user to input a name and prints whether that name is a gTLD.
+// The program uses the strcmp() function, which returns zero if the two
+// compared strings are identical.
 
-// Run the program, noting that the .info input name is not currently recognized as a gTLD.
-// Extend the if-else statement to detect the .info domain name as a gTLD. Run the program again.
-// Extend the program to output a message if the user entered the name without a leading dot. Ex:"com" does not start with a dot.
+// Run the program, noting that the .info input name is not currently recognized
+// as a gTLD. Extend the if-else statement to detect the .info domain name as a
+// gTLD. Run the program again. Extend the program to output a message if the
+// user entered the name without a leading dot. Ex:"com" does not start with a
+// dot.
 
 #include <stdbool.h>
 #include <stdio.h>

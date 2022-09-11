@@ -1,4 +1,5 @@
-// Write one statement that declares an integer variable numHouses initialized to 25.
+// Write one statement that declares an integer variable numHouses initialized
+// to 25.
 
 #include <stdio.h>
 

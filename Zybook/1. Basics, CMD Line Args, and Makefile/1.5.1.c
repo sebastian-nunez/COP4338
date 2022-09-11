@@ -1,4 +1,5 @@
-// Type the statements. Then, correct the one syntax error in each statement. Hints: Statements end in semicolons, and string literals use double quotes.
+// Type the statements. Then, correct the one syntax error in each statement.
+// Hints: Statements end in semicolons, and string literals use double quotes.
 // printf("Predictions are hard.\n";
 // printf("Especially ');
 // printf("about the future.\n").

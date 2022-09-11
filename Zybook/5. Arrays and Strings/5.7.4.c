@@ -1,4 +1,5 @@
-// Double any element's value that is less than controlVal. Ex: If controlVal = 10, then dataPoints = {2, 12, 9, 20} becomes {4, 12, 18, 20}.
+// Double any element's value that is less than controlVal. Ex: If controlVal =
+// 10, then dataPoints = {2, 12, 9, 20} becomes {4, 12, 18, 20}.
 
 #include <stdio.h>
 

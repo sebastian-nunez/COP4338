@@ -36,9 +36,10 @@ int main(void) {
             } else {
                 ++i;
             }
-        }  // End inner while loop (search for appropriate table row)
+        } // End inner while loop (search for appropriate table row)
 
-        taxToPay = (int)(annualSalary * taxRate);  // Truncate tax to an integer amount
+        taxToPay =
+            (int)(annualSalary * taxRate); // Truncate tax to an integer amount
         annualSalaries[numSalaries] = annualSalary;
         taxesToPay[numSalaries] = taxToPay;
 
@@ -50,7 +51,7 @@ int main(void) {
         // Get the next annual salary
         printf("\nEnter annual salary (0 to exit): \n");
         scanf("%d", &annualSalary);
-    }  // End outer while loop (valid annualSalary entered)
+    } // End outer while loop (valid annualSalary entered)
 
     // Sum the annual salaries and taxes to pay and print the totals
     totalSalaries = 0;

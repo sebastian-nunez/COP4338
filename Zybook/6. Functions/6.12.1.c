@@ -1,10 +1,10 @@
-// Use the function GetUserInfo() to get a user's information. If user enters 20 and Holly, sample program output is:
-// Holly is 20 years old.
+// Use the function GetUserInfo() to get a user's information. If user enters 20
+// and Holly, sample program output is: Holly is 20 years old.
 
 #include <stdio.h>
 #include <string.h>
 
-void GetUserInfo(int* userAge, char userName[]) {
+void GetUserInfo(int *userAge, char userName[]) {
     printf("Enter your age: \n");
     scanf("%d", userAge);
     printf("Enter your name: \n");

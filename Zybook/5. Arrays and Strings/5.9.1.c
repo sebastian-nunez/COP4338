@@ -1,4 +1,5 @@
-// Find the maximum value and minimum value in milesTracker. Assign the maximum value to maxMiles, and the minimum value to minMiles.
+// Find the maximum value and minimum value in milesTracker. Assign the maximum
+// value to maxMiles, and the minimum value to minMiles.
 
 // Ex: If the input is:
 
@@ -16,8 +17,8 @@ int main(void) {
     int milesTracker[NUM_ROWS][NUM_COLS];
     int i;
     int j;
-    int maxMiles = 0;  // Assign with first element in milesTracker before loop
-    int minMiles = 0;  // Assign with first element in milesTracker before loop
+    int maxMiles = 0; // Assign with first element in milesTracker before loop
+    int minMiles = 0; // Assign with first element in milesTracker before loop
 
     for (i = 0; i < NUM_ROWS; i++) {
         for (j = 0; j < NUM_COLS; j++) {

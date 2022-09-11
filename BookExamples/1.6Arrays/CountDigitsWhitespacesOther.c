@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-/*This program shall count the number of ocurrences of each digit entered; additionally,
-    it will count the number of whitespace characters (could be an *SPACE*, newline or tab).
-    Laslty, the program will count the number of "Other" characters entered*/
+/*This program shall count the number of ocurrences of each digit entered;
+   additionally, it will count the number of whitespace characters (could be an
+   *SPACE*, newline or tab). Laslty, the program will count the number of
+   "Other" characters entered*/
 int main() {
     int c, i, nwhite, nother;
     int ndigit[10];

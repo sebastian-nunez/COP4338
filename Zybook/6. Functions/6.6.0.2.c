@@ -29,7 +29,7 @@ int FindGCD(int aVal, int bVal) {
     numA = aVal;
     numB = bVal;
 
-    while (numA != numB) {  // Euclid's algorithm
+    while (numA != numB) { // Euclid's algorithm
         if (numB > numA) {
             numB = numB - numA;
         } else {
@@ -62,8 +62,8 @@ int main(void) {
 
     lcmResult = FindLCM(usrNumA, usrNumB);
 
-    printf("\nLeast common multiple of %d and %d is %d\n",
-           usrNumA, usrNumB, lcmResult);
+    printf("\nLeast common multiple of %d and %d is %d\n", usrNumA, usrNumB,
+           lcmResult);
 
     return 0;
 }

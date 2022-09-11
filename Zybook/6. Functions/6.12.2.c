@@ -1,10 +1,11 @@
-// Complete the function to replace any period by an exclamation point. Ex: "Hello. I'm Miley. Nice to meet you." becomes:
-// "Hello! I'm Miley! Nice to meet you!"
+// Complete the function to replace any period by an exclamation point. Ex:
+// "Hello. I'm Miley. Nice to meet you." becomes: "Hello! I'm Miley! Nice to
+// meet you!"
 
 #include <stdio.h>
 #include <string.h>
 
-void MakeSentenceExcited(char* sentenceText) {
+void MakeSentenceExcited(char *sentenceText) {
     /* Your solution goes here  */
     for (int i = 0; i < strlen(sentenceText); i++) {
         if (sentenceText[i] == '.')

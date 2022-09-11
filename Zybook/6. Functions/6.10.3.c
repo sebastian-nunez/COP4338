@@ -1,4 +1,6 @@
-// Define a function SwapRank() that takes two char parameters passed by pointer and swaps the values in the two parameters. The function does not return any value.
+// Define a function SwapRank() that takes two char parameters passed by pointer
+// and swaps the values in the two parameters. The function does not return any
+// value.
 
 // Ex: If the input is B A, then the output is:
 
@@ -7,7 +9,7 @@
 #include <stdio.h>
 
 /* Your code goes here */
-void SwapRank(char* rank1, char* rank2) {
+void SwapRank(char *rank1, char *rank2) {
     char temp = *rank1;
     *rank1 = *rank2;
     *rank2 = temp;

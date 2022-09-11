@@ -3,10 +3,7 @@
 #include <stdio.h>
 
 int main(void) {
-    enum AcceptedCoins { ADD_QUARTER,
-                         ADD_DIME,
-                         ADD_NICKEL,
-                         ADD_UNKNOWN };
+    enum AcceptedCoins { ADD_QUARTER, ADD_DIME, ADD_NICKEL, ADD_UNKNOWN };
     int totalDeposit = 0;
     int userInput;
 

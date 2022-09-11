@@ -1,5 +1,5 @@
-// Assign the size of userInput to stringSize. Ex: if userInput is "Hello", output is:
-// Size of userInput: 5
+// Assign the size of userInput to stringSize. Ex: if userInput is "Hello",
+// output is: Size of userInput: 5
 
 #include <stdio.h>
 #include <string.h>

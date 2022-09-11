@@ -1,4 +1,6 @@
-// Write a do-while loop that continues to prompt a user to enter a number less than 100, until the entered number is actually less than 100. End each prompt with newline. Ex: For the user input 123, 395, 25, the expected output is:
+// Write a do-while loop that continues to prompt a user to enter a number less
+// than 100, until the entered number is actually less than 100. End each prompt
+// with newline. Ex: For the user input 123, 395, 25, the expected output is:
 // Enter a number (<100):
 // Enter a number (<100):
 // Enter a number (<100):

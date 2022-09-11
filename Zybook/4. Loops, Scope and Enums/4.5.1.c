@@ -1,4 +1,6 @@
-// Analyzing data is a common programming task. A common data analysis task is to find the maximum value in a list of values. A loop can achieve that task by updating a max-seen-so-far variable on each iteration.
+// Analyzing data is a common programming task. A common data analysis task is
+// to find the maximum value in a list of values. A loop can achieve that task
+// by updating a max-seen-so-far variable on each iteration.
 
 #include <stdio.h>
 
@@ -18,7 +20,7 @@ int main(void) {
     for (i = 0; i < numValues; ++i) {
         scanf("%d", &currValue);
 
-        if (i == 0) {  // First iteration
+        if (i == 0) { // First iteration
             maxSoFar = currValue;
         } else if (currValue > maxSoFar) {
             maxSoFar = currValue;

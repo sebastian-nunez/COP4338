@@ -1,4 +1,6 @@
-// Write a for loop to populate array userGuesses with NUM_GUESSES integers. Read integers using scanf. Ex: If NUM_GUESSES is 3 and user enters 9 5 2, then userGuesses is {9, 5, 2}.
+// Write a for loop to populate array userGuesses with NUM_GUESSES integers.
+// Read integers using scanf. Ex: If NUM_GUESSES is 3 and user enters 9 5 2,
+// then userGuesses is {9, 5, 2}.
 
 #include <stdio.h>
 

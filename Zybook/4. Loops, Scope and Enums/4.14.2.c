@@ -1,10 +1,20 @@
 // zyDE 4.14.1: Validate domain names.
-// A top-level domain (TLD) name is the last part of an Internet domain name like .com in example.com. A core generic top-level domain (core gTLD) is a TLD that is either .com, .net, .org, or .info. A second-level domain is a single name that precedes a TLD as in apple in apple.com
+// A top-level domain (TLD) name is the last part of an Internet domain name
+// like .com in example.com. A core generic top-level domain (core gTLD) is a
+// TLD that is either .com, .net, .org, or .info. A second-level domain is a
+// single name that precedes a TLD as in apple in apple.com
 
-// The following program uses a loop to repeatedly prompt for a domain name, and indicates whether that domain name consists of a second-level domain followed by a core gTLD. An example of a valid domain name for this program is apple.com. An invalid domain name for this program is support.apple.com because the name contains two periods. The program ends when the user presses just the Enter key in response to a prompt.
+// The following program uses a loop to repeatedly prompt for a domain name, and
+// indicates whether that domain name consists of a second-level domain followed
+// by a core gTLD. An example of a valid domain name for this program is
+// apple.com. An invalid domain name for this program is support.apple.com
+// because the name contains two periods. The program ends when the user presses
+// just the Enter key in response to a prompt.
 
-// Run the program and enter domain names to validate. Note that even valid input is flagged as invalid.
-// Change the program to validate a domain name. A valid domain name for this program has a second-level domain followed by a core gTLD. Run the program again.
+// Run the program and enter domain names to validate. Note that even valid
+// input is flagged as invalid. Change the program to validate a domain name. A
+// valid domain name for this program has a second-level domain followed by a
+// core gTLD. Run the program again.
 
 #include <ctype.h>
 #include <stdbool.h>
@@ -52,8 +62,9 @@ int main(void) {
         }
 
         if ((periodCounter == 1) && (searchName[0] != '.')) {
-            // Extract the top-level domain name starting at the period's position.
-            // Ex: If searchName = "example.com", the next statement extracts ".com"
+            // Extract the top-level domain name starting at the period's
+            // position. Ex: If searchName = "example.com", the next statement
+            // extracts ".com"
             for (j = periodPosition; j < 50; ++j) {
                 theTld[j - periodPosition] = searchName[j];
             }
@@ -73,7 +84,8 @@ int main(void) {
 
         printf("\"%s\" ", inputName);
         if (isCoreGtld) {
-            printf("is a second-level domain followed by a core gTLD \"%s\".\n", theTld);
+            printf("is a second-level domain followed by a core gTLD \"%s\".\n",
+                   theTld);
         } else {
             printf("is not a second-level domain followed by a core gTLD.\n");
         }

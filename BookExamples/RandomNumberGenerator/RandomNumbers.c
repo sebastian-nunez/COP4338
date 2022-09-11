@@ -9,8 +9,7 @@
 
 int randInt(int lower, int upper);
 
-int main()
-{
+int main() {
     int randNum;
     int randDist[RANGE] = {0};
     srand(time(NULL));
@@ -33,7 +32,4 @@ int main()
     return 0;
 }
 
-int randInt(int lower, int upper)
-{
-    return (rand() % upper) + lower;
-}
+int randInt(int lower, int upper) { return (rand() % upper) + lower; }

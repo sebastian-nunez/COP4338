@@ -1,4 +1,5 @@
-// Write an if-else statement that prints "Goodbye" if userString is "Quit", else prints "Hello". End with newline.
+// Write an if-else statement that prints "Goodbye" if userString is "Quit",
+// else prints "Hello". End with newline.
 
 #include <stdio.h>
 #include <string.h>

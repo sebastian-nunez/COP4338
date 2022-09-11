@@ -1,4 +1,5 @@
-// Write a function so that the main() code below can be replaced by the simpler code that calls function MphAndMinutesToMiles(). Original main():
+// Write a function so that the main() code below can be replaced by the simpler
+// code that calls function MphAndMinutesToMiles(). Original main():
 
 // int main(void) {
 //    double milesPerHour;

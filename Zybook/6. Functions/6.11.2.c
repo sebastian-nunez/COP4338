@@ -1,4 +1,6 @@
-// Write a function SwapArrayEnds() that swaps the first and last elements of the function's array parameter. Ex: sortArray = {10, 20, 30, 40} becomes {40, 20, 30, 10}.
+// Write a function SwapArrayEnds() that swaps the first and last elements of
+// the function's array parameter. Ex: sortArray = {10, 20, 30, 40} becomes {40,
+// 20, 30, 10}.
 
 #include <stdio.h>
 

@@ -1,4 +1,6 @@
-// Define stubs for the functions called by the below main(). Each stub should print "FIXME: Finish FunctionName()" followed by a newline, and should return -1. Example output:
+// Define stubs for the functions called by the below main(). Each stub should
+// print "FIXME: Finish FunctionName()" followed by a newline, and should return
+// -1. Example output:
 // FIXME: Finish GetUserNum()
 // FIXME: Finish GetUserNum()
 // FIXME: Finish ComputeAvg()

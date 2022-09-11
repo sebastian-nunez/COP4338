@@ -1,5 +1,5 @@
-// Complete the function definition to return the hours given minutes. Output for sample program:
-// 3.500000
+// Complete the function definition to return the hours given minutes. Output
+// for sample program: 3.500000
 
 #include <stdio.h>
 

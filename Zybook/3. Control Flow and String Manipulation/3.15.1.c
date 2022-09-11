@@ -13,7 +13,8 @@ int main(void) {
     scanf("%s", passCode);
 
     /* Your solution goes here  */
-    hasDigit = isdigit(passCode[0]) || isdigit(passCode[1]) || isdigit(passCode[2]);
+    hasDigit =
+        isdigit(passCode[0]) || isdigit(passCode[1]) || isdigit(passCode[2]);
 
     if (hasDigit) {
         printf("Has a digit.\n");
