@@ -4,8 +4,8 @@
 #include "constants.c"
 
 void printArray(int array[], int size);
-int ascendingOrder(const void *a, const void *b);
-int decendingOrder(const void *a, const void *b);
+int ascendingOrder(const void* a, const void* b);
+int decendingOrder(const void* a, const void* b);
 
 int main() {
     printf("PI IMPORTED: %f\n", PI);
@@ -35,10 +35,10 @@ void printArray(int array[], int size) {
     puts("");
 }
 
-int ascendingOrder(const void *a, const void *b) {
-    return *(int *)a - *(int *)b;
+int ascendingOrder(const void* a, const void* b) {
+    return *(int*)a - *(int*)b;
 }
 
-int decendingOrder(const void *a, const void *b) {
-    return *(int *)b - *(int *)a;
+int decendingOrder(const void* a, const void* b) {
+    return *(int*)b - *(int*)a;
 }

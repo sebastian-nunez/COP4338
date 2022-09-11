@@ -32,4 +32,6 @@ int main() {
     return 0;
 }
 
-int randInt(int lower, int upper) { return (rand() % upper) + lower; }
+int randInt(int lower, int upper) {
+    return (rand() % upper) + lower;
+}

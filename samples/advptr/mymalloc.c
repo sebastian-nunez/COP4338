@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
     int sz, i;
-    int *x;
+    int* x;
 
     if (argc != 2) {
         printf("USAGE: %s <size>\n", argv[0]);
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
   myarray[1] = 1.0; // REGARDLESS, this is WRONG!
 #endif
 
-    x = (int *)malloc(sz * sizeof(int));
+    x = (int*)malloc(sz * sizeof(int));
     if (!x) {
         printf("ERROR: unable to allocate memory of size %d\n", sz);
         return -3;

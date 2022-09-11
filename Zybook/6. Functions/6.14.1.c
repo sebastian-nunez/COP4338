@@ -4,10 +4,13 @@
 /* Program to convert given-year U.S. dollars to
  current dollars, using simplistic method of 4% annual inflation.
  Source: http://inflationdata.com (See: Historical) */
-
-// (Function DECLARATION)
 double ToCurrDollars(double pastDol, int pastYr, int currYr);
 
+/**
+ * @brief
+ *
+ * @return int
+ */
 int main(void) {
     double pastDol; // Starting dollar amount
     double currDol; // Ending dollar amount (converted value)
@@ -25,8 +28,7 @@ int main(void) {
     // Function call to convert past to current dollars
     currDol = ToCurrDollars(pastDol, pastYr, currYr);
 
-    printf("$%lf in %d is about $%lf in %d\n", pastDol, pastYr, currDol,
-           currYr);
+    printf("$%lf in %d is about $%lf in %d\n", pastDol, pastYr, currDol, currYr);
 
     return 0;
 }

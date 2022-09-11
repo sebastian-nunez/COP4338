@@ -16,8 +16,7 @@ int main(void) {
     scanf(" %c ", &c);
 
     /* Your solution goes here  */
-    printf("%c%c%c %c%c%c %c%c%c %c%c%c %c%c%c %c%c%c", a, b, c, a, c, b, b, a,
-           c, b, c, a, c, a, b, c, b, a);
+    printf("%c%c%c %c%c%c %c%c%c %c%c%c %c%c%c %c%c%c", a, b, c, a, c, b, b, a, c, b, c, a, c, a, b, c, b, a);
 
     printf("\n");
 

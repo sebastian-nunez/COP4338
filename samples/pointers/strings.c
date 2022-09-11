@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /* copy from b to a */
-void mystrcpy(char *a, char *b) {
+void mystrcpy(char* a, char* b) {
     /* we assume both a and b can't be null */
 
     /* beginner version */
@@ -16,7 +16,7 @@ void mystrcpy(char *a, char *b) {
     // while((*a++ = *b++));
 }
 
-void mystrcmp(char *a, char *b) {
+void mystrcmp(char* a, char* b) {
     /* we assume both a and b can't be null */
     while (*a == *b) {
         if (*a == '\0')
@@ -30,7 +30,7 @@ void mystrcmp(char *a, char *b) {
         printf("4: a is greater than b\n");
 }
 
-void mystrcat(char *a, char *b) {
+void mystrcat(char* a, char* b) {
     /* we assume both a and b can't be null */
     while (*a)
         a++;
@@ -38,7 +38,7 @@ void mystrcat(char *a, char *b) {
         ;
 }
 
-int mylen(char *s) {
+int mylen(char* s) {
     if (!s)
         return 0;
 
@@ -49,13 +49,12 @@ int mylen(char *s) {
 }
 
 int main() {
-    char *x = "string";
+    char* x = "string";
     char y[] = "this";
     char z[100];
     int w[10];
 
-    printf("sizeof(x)=%lu, sizeof(y)=%lu, sizeof(z)=%lu, sizeof(w)=%lu\n",
-           sizeof(x), sizeof(y), sizeof(z), sizeof(w));
+    printf("sizeof(x)=%lu, sizeof(y)=%lu, sizeof(z)=%lu, sizeof(w)=%lu\n", sizeof(x), sizeof(y), sizeof(z), sizeof(w));
 
     printf("x=%p, &x=%p, *x='%c',%d, x:\"%s\"\n", x, &x, *x, *x, x);
     printf("y=%p, &y=%p, *y='%c',%d, y:\"%s\"\n", y, &y, *y, *y, y);

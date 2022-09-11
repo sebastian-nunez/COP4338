@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 /* Your solution goes here  */
-void CoordTransform(int xValOld, int yValOld, int *xValNew, int *yValNew) {
+void CoordTransform(int xValOld, int yValOld, int* xValNew, int* yValNew) {
     *xValNew = (xValOld + 1) * 2;
     *yValNew = (yValOld + 1) * 2;
 }

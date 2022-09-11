@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-void display(FILE *in, FILE *out) {
+void display(FILE* in, FILE* out) {
     int c;
     while ((c = fgetc(in)) != EOF)
         fputc(c, out);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     FILE *fptr, *fptr_out;
     if (argc == 1) {
         fptr = stdin;

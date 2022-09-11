@@ -3,17 +3,17 @@
 #include <string.h>
 
 struct Node {
-    char *content;
-    struct Node *prev;
-    struct Node *next;
+    char* content;
+    struct Node* prev;
+    struct Node* next;
 };
 
-struct Node *head = 0;
-struct Node *tail = 0;
+struct Node* head = 0;
+struct Node* tail = 0;
 
-struct Node *insert_head(char *str) {
-    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
-    n->content = (char *)malloc(strlen(str) + 1);
+struct Node* insert_head(char* str) {
+    struct Node* n = (struct Node*)malloc(sizeof(struct Node));
+    n->content = (char*)malloc(strlen(str) + 1);
     n->prev = n->next = 0;
     strcpy(n->content, str);
 
@@ -27,9 +27,9 @@ struct Node *insert_head(char *str) {
     return n;
 }
 
-struct Node *insert_tail(char *str) {
-    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
-    n->content = (char *)malloc(strlen(str) + 1);
+struct Node* insert_tail(char* str) {
+    struct Node* n = (struct Node*)malloc(sizeof(struct Node));
+    n->content = (char*)malloc(strlen(str) + 1);
     n->prev = n->next = 0;
     strcpy(n->content, str);
     if (!tail)
@@ -43,14 +43,14 @@ struct Node *insert_tail(char *str) {
 }
 
 void list_elements() {
-    struct Node *p = head;
+    struct Node* p = head;
     while (p) {
         printf("%s\n", p->content);
         p = p->next;
     }
 }
 
-void delete_node(struct Node *p) {
+void delete_node(struct Node* p) {
     if (!p->prev) { // I'm at the head
         head = p->next;
         if (head)
@@ -76,7 +76,7 @@ void delete_node(struct Node *p) {
 }
 
 int main() {
-    struct Node *p2;
+    struct Node* p2;
 
     insert_head("1");
     p2 = insert_head("2");

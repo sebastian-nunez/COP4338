@@ -16,8 +16,7 @@
  * newrows  - the new number of rows (scale*rows)
  * newcols  - the new number of cols (scale*cols)
  */
-int enlarge(PIXEL *original, int rows, int cols, int scale, PIXEL **new,
-            int *newrows, int *newcols) {
+int enlarge(PIXEL* original, int rows, int cols, int scale, PIXEL** new, int* newrows, int* newcols) {
     /* THIS IS THE METHOD THAT YOU SHOULD WRITE */
     return 0;
 }
@@ -36,8 +35,7 @@ int enlarge(PIXEL *original, int rows, int cols, int scale, PIXEL **new,
  * newrows  - the new number of rows
  * newcols  - the new number of cols
  */
-int rotate(PIXEL *original, int rows, int cols, int rotation, PIXEL **new,
-           int *newrows, int *newcols) {
+int rotate(PIXEL* original, int rows, int cols, int rotation, PIXEL** new, int* newrows, int* newcols) {
     /* THIS IS THE METHOD THAT YOU SHOULD WRITE */
     return 0;
 }
@@ -55,18 +53,18 @@ int rotate(PIXEL *original, int rows, int cols, int rotation, PIXEL **new,
  *
  * new      - the new array containing the PIXELs, allocated within
  */
-int flip(PIXEL *original, PIXEL **new, int rows, int cols) {
+int flip(PIXEL* original, PIXEL** new, int rows, int cols) {
     int row, col;
 
     if ((rows <= 0) || (cols <= 0))
         return -1;
 
-    *new = (PIXEL *)malloc(rows * cols * sizeof(PIXEL));
+    *new = (PIXEL*)malloc(rows * cols * sizeof(PIXEL));
 
     for (row = 0; row < rows; row++)
         for (col = 0; col < cols; col++) {
-            PIXEL *o = original + row * cols + col;
-            PIXEL *n = (*new) + row * cols + (cols - 1 - col);
+            PIXEL* o = original + row * cols + col;
+            PIXEL* n = (*new) + row * cols + (cols - 1 - col);
             *n = *o;
         }
 

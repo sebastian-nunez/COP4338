@@ -40,10 +40,8 @@ int main() {
     int selection;
     int seats[MAXSEATS] = {0}; // available seats have a value of 0 (taken seats
                                // will have their corresponding priority)
-    int firstClassIndex =
-        0; // keeps track of the first available seat in first class
-    int economyClassIndex =
-        4; // keeps track of the first available seat in economy
+    int firstClassIndex = 0;   // keeps track of the first available seat in first class
+    int economyClassIndex = 4; // keeps track of the first available seat in economy
 
     // infinite loop, only ends when there is 1) an ERROR 2) Plane is full 3)
     // the user wishes to quit
@@ -59,87 +57,83 @@ int main() {
 
         // parse the selection
         switch (selection) {
-        case 0:
-            puts("Closing the program...");
-            exit(0);
-        case 1:
-            if (firstClassIndex <=
-                FIRSTCLASS_MAX) { // if there are first class seats, we can
-                                  // assign them
-                seats[firstClassIndex++] = Priority_FirstClass;
-                printf("\nCongratulations! You have been assigned seat #%d "
-                       "(FIRST class)\n\n",
-                       firstClassIndex);
-            } else if (economyClassIndex <=
-                       ECONOMYCLASS_MAX) { // no 1st class seats, but economy is
-                                           // open
-                puts("\nUnfortunately, all FIRST class seats have been taken. "
-                     "Do you wish to fly in ECONOMY?\n");
-                puts("Please type 1 for \"YES\"");
-                puts("Please type 2 for \"NO\"");
-                printf("Selection :: ");
-                scanf("%d", &selection);
-
-                if (selection == 1) {
-                    seats[economyClassIndex++] = Priority_Economy;
-                    printf("\nCongratulations! You have been assigned seat #%d "
-                           "(ECONOMY class)\n\n",
-                           economyClassIndex);
-                } else if (selection == 2) {
-                    puts("\nNo worries! The next flight will be tomorrow!\n");
-                    break;
-                } else {
-                    puts("Invalid choice! Your selection has not been saved.");
-                    exit(1);
-                }
-            } else { // the plane is full!
-                puts("\nUnfortunately, all FIRST class and ECONOMY class seats "
-                     "have been taken.");
-                puts("The next flights will be tomorrow!");
+            case 0:
+                puts("Closing the program...");
                 exit(0);
-            }
-
-            break;
-        case 2:
-            if (economyClassIndex <=
-                ECONOMYCLASS_MAX) { // if economy seats are open, we can assign
-                                    // them
-                seats[economyClassIndex++] = Priority_Economy;
-                printf("\nCongratulations! You have been assigned seat #%d "
-                       "(ECONOMY class)\n\n",
-                       economyClassIndex);
-            } else if (firstClassIndex <=
-                       FIRSTCLASS_MAX) { // no economy class seats, but first
-                                         // class is open
-                puts("\nUnfortunately, all ECONOMY seats have been taken. Do "
-                     "you wish to upgrade to FIRST class?\n");
-                puts("Please type 1 for \"YES\"");
-                puts("Please type 2 for \"NO\"");
-                printf("Selection :: ");
-                scanf("%d", &selection);
-
-                if (selection == 1) {
+            case 1:
+                if (firstClassIndex <= FIRSTCLASS_MAX) { // if there are first class seats, we can
+                                                         // assign them
                     seats[firstClassIndex++] = Priority_FirstClass;
                     printf("\nCongratulations! You have been assigned seat #%d "
                            "(FIRST class)\n\n",
                            firstClassIndex);
-                } else if (selection == 2) {
-                    puts("\nNo worries! The next flight will be tomorrow!\n");
-                    break;
-                } else {
-                    puts("Invalid choice! Your selection has not been saved.");
-                    exit(1);
+                } else if (economyClassIndex <= ECONOMYCLASS_MAX) { // no 1st class seats, but economy is
+                                                                    // open
+                    puts("\nUnfortunately, all FIRST class seats have been taken. "
+                         "Do you wish to fly in ECONOMY?\n");
+                    puts("Please type 1 for \"YES\"");
+                    puts("Please type 2 for \"NO\"");
+                    printf("Selection :: ");
+                    scanf("%d", &selection);
+
+                    if (selection == 1) {
+                        seats[economyClassIndex++] = Priority_Economy;
+                        printf("\nCongratulations! You have been assigned seat #%d "
+                               "(ECONOMY class)\n\n",
+                               economyClassIndex);
+                    } else if (selection == 2) {
+                        puts("\nNo worries! The next flight will be tomorrow!\n");
+                        break;
+                    } else {
+                        puts("Invalid choice! Your selection has not been saved.");
+                        exit(1);
+                    }
+                } else { // the plane is full!
+                    puts("\nUnfortunately, all FIRST class and ECONOMY class seats "
+                         "have been taken.");
+                    puts("The next flights will be tomorrow!");
+                    exit(0);
                 }
-            } else { // the plane is full!
-                puts("\nUnfortunately, all FIRST class and ECONOMY class seats "
-                     "have been taken.");
-                puts("The next flights will be tomorrow!");
-                exit(0);
-            }
-            break;
-        default:
-            puts("Invalid Class selection!");
-            exit(1); // return value 1 -> signifies error
+
+                break;
+            case 2:
+                if (economyClassIndex <= ECONOMYCLASS_MAX) { // if economy seats are open, we can assign
+                                                             // them
+                    seats[economyClassIndex++] = Priority_Economy;
+                    printf("\nCongratulations! You have been assigned seat #%d "
+                           "(ECONOMY class)\n\n",
+                           economyClassIndex);
+                } else if (firstClassIndex <= FIRSTCLASS_MAX) { // no economy class seats, but first
+                                                                // class is open
+                    puts("\nUnfortunately, all ECONOMY seats have been taken. Do "
+                         "you wish to upgrade to FIRST class?\n");
+                    puts("Please type 1 for \"YES\"");
+                    puts("Please type 2 for \"NO\"");
+                    printf("Selection :: ");
+                    scanf("%d", &selection);
+
+                    if (selection == 1) {
+                        seats[firstClassIndex++] = Priority_FirstClass;
+                        printf("\nCongratulations! You have been assigned seat #%d "
+                               "(FIRST class)\n\n",
+                               firstClassIndex);
+                    } else if (selection == 2) {
+                        puts("\nNo worries! The next flight will be tomorrow!\n");
+                        break;
+                    } else {
+                        puts("Invalid choice! Your selection has not been saved.");
+                        exit(1);
+                    }
+                } else { // the plane is full!
+                    puts("\nUnfortunately, all FIRST class and ECONOMY class seats "
+                         "have been taken.");
+                    puts("The next flights will be tomorrow!");
+                    exit(0);
+                }
+                break;
+            default:
+                puts("Invalid Class selection!");
+                exit(1); // return value 1 -> signifies error
         }
     }
 

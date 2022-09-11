@@ -13,8 +13,7 @@ int main(void) {
     scanf("%lf", &targetValue);
     scanf("%lf", &sensorReading);
 
-    if (/* Your solution goes here  */ fabs(sensorReading - targetValue) <
-        0.0001) {
+    if (/* Your solution goes here  */ fabs(sensorReading - targetValue) < 0.0001) {
         printf("Equal\n");
     } else {
         printf("Not equal\n");

@@ -35,7 +35,7 @@ void mycopy(int fdsrc, int fddest) {
     printf("Copied %d bytes\n", total);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int fdsrc, fddest;
     int offset;
 
@@ -54,8 +54,7 @@ int main(int argc, char *argv[]) {
 
     fddest = open(argv[3], O_CREAT | O_WRONLY | O_TRUNC);
     if (fddest < 0) {
-        fprintf(stderr, "ERROR: can't open destination file to write: %s\n",
-                argv[3]);
+        fprintf(stderr, "ERROR: can't open destination file to write: %s\n", argv[3]);
         return 3;
     }
 

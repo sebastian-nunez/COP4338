@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int i = 0;
     printf("\ncmdline args count=%d", argc);
 

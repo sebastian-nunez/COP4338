@@ -9,7 +9,7 @@
 #include <stdio.h>
 
 /* Your code goes here */
-void SwapRank(char *rank1, char *rank2) {
+void SwapRank(char* rank1, char* rank2) {
     char temp = *rank1;
     *rank1 = *rank2;
     *rank2 = temp;

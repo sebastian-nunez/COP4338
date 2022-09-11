@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void GetUserInfo(int *userAge, char userName[]) {
+void GetUserInfo(int* userAge, char userName[]) {
     printf("Enter your age: \n");
     scanf("%d", userAge);
     printf("Enter your name: \n");

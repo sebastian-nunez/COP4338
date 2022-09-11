@@ -12,7 +12,7 @@
 #define REQUEST 1
 #define REPLY 2
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int iter, in, out, i, max, ranks[1], done;
     double x, y, Pi;
     int numprocs, myid, server, totalin, totalout, workerid;
@@ -36,16 +36,14 @@ int main(int argc, char *argv[]) {
     if (myid == server) { /* I am the rand server */
         srandom(12345);
         do {
-            MPI_Recv(&request, 1, MPI_INT, MPI_ANY_SOURCE, REQUEST, world,
-                     &status);
+            MPI_Recv(&request, 1, MPI_INT, MPI_ANY_SOURCE, REQUEST, world, &status);
             if (request) {
                 for (i = 0; i < CHUNKSIZE;) {
                     rands[i] = random();
                     if (rands[i] <= INT_MAX)
                         i++;
                 }
-                MPI_Send(rands, CHUNKSIZE, MPI_INT, status.MPI_SOURCE, REPLY,
-                         world);
+                MPI_Send(rands, CHUNKSIZE, MPI_INT, status.MPI_SOURCE, REPLY, world);
             }
         } while (request > 0);
     } else { /* I am a worker process */
@@ -87,8 +85,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (myid == 0) {
-        printf("\npi=%.20lf in=%d out=%d total=%d\n", Pi, totalin, totalout,
-               totalin + totalout);
+        printf("\npi=%.20lf in=%d out=%d total=%d\n", Pi, totalin, totalout, totalin + totalout);
     }
     MPI_Finalize();
     return 0;

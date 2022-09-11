@@ -28,8 +28,7 @@ int main(void) {
         if (((phoneChar >= '0') && (phoneChar <= '9')) || (phoneChar == '-')) {
             printf("%c", phoneChar); // Print element as is
             // FIXME: Add remaining else-if branches
-        } else if (((phoneChar >= 'a') && (phoneChar <= 'c')) ||
-                   ((phoneChar >= 'A') && (phoneChar <= 'C'))) {
+        } else if (((phoneChar >= 'a') && (phoneChar <= 'c')) || ((phoneChar >= 'A') && (phoneChar <= 'C'))) {
             printf("2");
         } else {
             printf("?");

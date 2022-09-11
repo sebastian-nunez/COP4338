@@ -5,8 +5,8 @@
 #define THRESHOLD 4
 
 /* read a matrix from a file */
-void read_matrix(char *fname, float ***a, float **sa, int *m, int *n) {
-    FILE *finptr;
+void read_matrix(char* fname, float*** a, float** sa, int* m, int* n) {
+    FILE* finptr;
     int i, sz;
 
     finptr = fopen(fname, "r");
@@ -15,20 +15,19 @@ void read_matrix(char *fname, float ***a, float **sa, int *m, int *n) {
         exit(1);
     }
 
-    if (fread(m, sizeof(int), 1, finptr) != 1 ||
-        fread(n, sizeof(int), 1, finptr) != 1) {
+    if (fread(m, sizeof(int), 1, finptr) != 1 || fread(n, sizeof(int), 1, finptr) != 1) {
         perror("Error reading matrix file");
         exit(1);
     }
     sz = (*m) * (*n);
 
-    *sa = (float *)malloc(sz * sizeof(float));
+    *sa = (float*)malloc(sz * sizeof(float));
     if (fread(*sa, sizeof(float), sz, finptr) != sz) {
         perror("Error reading matrix file");
         exit(1);
     }
 
-    *a = (float **)malloc((*m) * sizeof(float *));
+    *a = (float**)malloc((*m) * sizeof(float*));
     for (i = 0; i < *m; i++)
         (*a)[i] = &(*sa)[i * (*n)];
 
@@ -36,10 +35,10 @@ void read_matrix(char *fname, float ***a, float **sa, int *m, int *n) {
 }
 
 /* write a matrix to a file */
-void write_matrix(char *fname, float *sa, int m, int n) {
-    FILE *foutptr;
+void write_matrix(char* fname, float* sa, int m, int n) {
+    FILE* foutptr;
     int i;
-    float *ptr;
+    float* ptr;
 
     foutptr = fopen(fname, "w");
     if (!foutptr) {
@@ -47,8 +46,7 @@ void write_matrix(char *fname, float *sa, int m, int n) {
         exit(1);
     }
 
-    if (fwrite(&m, sizeof(int), 1, foutptr) != 1 ||
-        fwrite(&n, sizeof(int), 1, foutptr) != 1) {
+    if (fwrite(&m, sizeof(int), 1, foutptr) != 1 || fwrite(&n, sizeof(int), 1, foutptr) != 1) {
         perror("Error reading matrix file");
         exit(1);
     }
@@ -66,7 +64,7 @@ void write_matrix(char *fname, float *sa, int m, int n) {
 }
 
 /* dumb matrix multiplication; used for debugging purposes */
-void dumb_matmul(float **a, float **b, float **c, int N) {
+void dumb_matmul(float** a, float** b, float** c, int N) {
     int i, j, k;
     for (i = 0; i < N; i++)
         for (j = 0; j < N; j++)
@@ -80,7 +78,7 @@ void recursive_matmul(int crow, int ccol, /* corner of C block */
                       int brow, int bcol, /* corner of B block */
                       int n,              /* block size */
                       int N,              /* matrices are N*N */
-                      float **a, float **b, float **c) {
+                      float** a, float** b, float** c) {
     if (n > THRESHOLD) {
         /* break up the matrices and call recursive_matmul on sub-matrices */
     } else {
@@ -89,12 +87,12 @@ void recursive_matmul(int crow, int ccol, /* corner of C block */
 }
 
 /* call this function to do matrix multiplication */
-void matmul(float **a, float **b, float **c, int N) {
+void matmul(float** a, float** b, float** c, int N) {
     /*recursive_matmul(0, 0, 0, 0, 0, 0, N, N, a, b, c);*/
     dumb_matmul(a, b, c, N);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int n;               /* dimension of the matrix */
     float *sa, *sb, *sc; /* storage for matrix A, B, and C */
     float **a, **b, **c; /* 2-d array to access matrix A, B, and C */
@@ -128,9 +126,9 @@ int main(int argc, char *argv[]) {
     }
 
     /* initialize matrix C */
-    sc = (float *)malloc(n * n * sizeof(float));
+    sc = (float*)malloc(n * n * sizeof(float));
     memset(sc, 0, n * n * sizeof(float));
-    c = (float **)malloc(n * sizeof(float *));
+    c = (float**)malloc(n * sizeof(float*));
     for (i = 0; i < n; i++)
         c[i] = &sc[i * n];
 

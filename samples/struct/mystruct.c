@@ -5,7 +5,7 @@
 struct Point {
     double x;
     double y;
-    char *name;
+    char* name;
 };
 
 struct Point callbyval(struct Point v) {
@@ -15,14 +15,14 @@ struct Point callbyval(struct Point v) {
     return v;
 }
 
-struct Point *callbyref(struct Point *v) {
+struct Point* callbyref(struct Point* v) {
     printf("V: x=%lf, y=%lf, name=%s\n", v->x, v->y, v->name);
     v->x += 10;
     v->y = 1;
     return v;
 }
 
-struct Point *callbyref_error(struct Point *v) {
+struct Point* callbyref_error(struct Point* v) {
     struct Point k, *p;
     k = *v;
     k.x += 10;
@@ -62,7 +62,7 @@ int main() {
     u = w;
     printf("U: x=%lf, y=%lf, name=%s\n", u.x, u.y, u.name);
 
-    struct Point *p;
+    struct Point* p;
     p = malloc(sizeof(struct Point));
     (*p).x = 3; // equvalent of "p->x = 3";
     p->y = 5;

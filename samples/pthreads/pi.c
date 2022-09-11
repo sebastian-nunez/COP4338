@@ -24,8 +24,8 @@ int calc_darts(int n) {
     return s;
 }
 
-void *work(void *arg) {
-    struct mythread *myt = (struct mythread *)arg;
+void* work(void* arg) {
+    struct mythread* myt = (struct mythread*)arg;
     int s = calc_darts(myt->n);
     pthread_mutex_lock(&mutex);
     sum += s;
@@ -33,9 +33,9 @@ void *work(void *arg) {
     return 0;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int n, p, i;
-    struct mythread *t;
+    struct mythread* t;
 
     if (argc != 3) {
         printf("USAGE: %s n p\n", argv[0]);
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     srand(time(0));
     pthread_mutex_init(&mutex, NULL);
 
-    t = (struct mythread *)malloc(p * sizeof(struct mythread));
+    t = (struct mythread*)malloc(p * sizeof(struct mythread));
     for (i = 0; i < p; i++) {
         t[i].n = n / p;
         t[i].idx = i;

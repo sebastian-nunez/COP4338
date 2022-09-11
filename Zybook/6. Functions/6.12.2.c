@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void MakeSentenceExcited(char *sentenceText) {
+void MakeSentenceExcited(char* sentenceText) {
     /* Your solution goes here  */
     for (int i = 0; i < strlen(sentenceText); i++) {
         if (sentenceText[i] == '.')

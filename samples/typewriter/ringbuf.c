@@ -2,7 +2,7 @@
 #include <assert.h>
 #include <stdlib.h>
 
-static int rb_next_slot(struct ringbuf_t *rb, int idx) {
+static int rb_next_slot(struct ringbuf_t* rb, int idx) {
     assert(rb);
     assert(0 <= idx && idx < rb->bufsiz);
     idx++;
@@ -11,17 +11,17 @@ static int rb_next_slot(struct ringbuf_t *rb, int idx) {
     return idx;
 }
 
-struct ringbuf_t *rb_init(int bufsiz) {
-    struct ringbuf_t *rb;
+struct ringbuf_t* rb_init(int bufsiz) {
+    struct ringbuf_t* rb;
 
     if (bufsiz <= 1)
         return 0; /* bufsiz must be greater than 1 */
 
-    rb = (struct ringbuf_t *)malloc(sizeof(struct ringbuf_t));
+    rb = (struct ringbuf_t*)malloc(sizeof(struct ringbuf_t));
     if (!rb)
         return 0; /* problem with memory allocation */
 
-    rb->buf = (char *)malloc(bufsiz);
+    rb->buf = (char*)malloc(bufsiz);
     if (!rb->buf)
         return 0; /* problem with memory allocation */
 
@@ -34,13 +34,13 @@ struct ringbuf_t *rb_init(int bufsiz) {
     return rb;
 }
 
-void rb_finalize(struct ringbuf_t *rb) {
+void rb_finalize(struct ringbuf_t* rb) {
     assert(rb && rb->buf);
     free(rb->buf);
     free(rb);
 }
 
-int rb_size(struct ringbuf_t *rb) {
+int rb_size(struct ringbuf_t* rb) {
     assert(rb);
     if (rb->back < rb->front)
         return rb->back + rb->bufsiz - rb->front;
@@ -48,18 +48,17 @@ int rb_size(struct ringbuf_t *rb) {
         return rb->back - rb->front;
 }
 
-int rb_is_full(struct ringbuf_t *rb) {
+int rb_is_full(struct ringbuf_t* rb) {
     assert(rb);
-    return rb_size(rb) ==
-           rb->bufsiz - 1; /*(rb->front == rb_next_slot(rb, rb->back));*/
+    return rb_size(rb) == rb->bufsiz - 1; /*(rb->front == rb_next_slot(rb, rb->back));*/
 }
 
-int rb_is_empty(struct ringbuf_t *rb) {
+int rb_is_empty(struct ringbuf_t* rb) {
     assert(rb);
     return !rb_size(rb); /*(rb->front == rb->back);*/
 }
 
-void rb_insert(struct ringbuf_t *rb, int c) {
+void rb_insert(struct ringbuf_t* rb, int c) {
     int was_empty;
 
     assert(rb);
@@ -74,7 +73,7 @@ void rb_insert(struct ringbuf_t *rb, int c) {
     pthread_mutex_unlock(&rb->mutex);
 }
 
-int rb_remove(struct ringbuf_t *rb) {
+int rb_remove(struct ringbuf_t* rb) {
     int was_full;
     int c;
 

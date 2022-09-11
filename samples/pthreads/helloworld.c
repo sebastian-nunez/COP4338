@@ -1,14 +1,14 @@
 #include <pthread.h>
 #include <stdio.h>
 
-void *helloworld(void *p) {
+void* helloworld(void* p) {
     printf("hello world (from child thread)!\n");
-    return (void *)1;
+    return (void*)1;
 }
 
 int main() {
     pthread_t t1;
-    void *x;
+    void* x;
 
     pthread_create(&t1, NULL, &helloworld, NULL);
     printf("hello world (from main thread)!\n");

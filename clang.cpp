@@ -15,12 +15,11 @@
 static char block[] = "--block";
 int test = 0;
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
     srand(time(NULL));
 
     static char pidText[] = "PID: ";
-    std::string helpText =
-        "Attach a debugger and execute 'set foo=0' to continue";
+    std::string helpText = "Attach a debugger and execute 'set foo=0' to continue";
     char helloText[] = "Hello World!";
 
     std::cout << helloText << std::endl;

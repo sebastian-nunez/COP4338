@@ -7,8 +7,7 @@
 #include <stdio.h>
 
 /* Your solution goes here  */
-double PyramidVolume(double baseLength, double baseWidth,
-                     double pyramidHeight) {
+double PyramidVolume(double baseLength, double baseWidth, double pyramidHeight) {
     double baseArea = baseLength * baseWidth;
     return baseArea * pyramidHeight * 1.0 / 3.0;
 }

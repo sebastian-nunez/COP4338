@@ -12,7 +12,7 @@ void usage() {
     exit(1);
 }
 
-void count(FILE *fp, int pl, int pw, int pc, char *fname) {
+void count(FILE* fp, int pl, int pw, int pc, char* fname) {
     int c;          /* input character */
     int nl, nw, nc; /* counters for lines, words, and characters */
     int state;      /* whether it's in the middle of a word */
@@ -23,23 +23,23 @@ void count(FILE *fp, int pl, int pw, int pc, char *fname) {
     while ((c = getc(fp)) != EOF) {
         nc++;
         switch (c) {
-        case '\n':
-            nl++;
-            /* no break here*/
-        case ' ':
-        case '\t':
-            state = OUT;
-            break;
-        default:
-            if (state == OUT) {
-                state = IN;
-                nw++;
+            case '\n':
+                nl++;
+                /* no break here*/
+            case ' ':
+            case '\t':
+                state = OUT;
+                break;
+            default:
+                if (state == OUT) {
+                    state = IN;
+                    nw++;
 #if DEBUG
-                printf("\n");
+                    printf("\n");
 #endif
-            }
+                }
 #if DEBUG
-            printf("%c", c);
+                printf("%c", c);
 #endif
         }
     }
@@ -56,29 +56,29 @@ void count(FILE *fp, int pl, int pw, int pc, char *fname) {
     printf(" %s\n", fname);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int c;          /* input character */
     int pl, pw, pc; /* whether the user wants to print line, word, and character
                        count */
-    FILE *fp;       /* input file pointer */
+    FILE* fp;       /* input file pointer */
 
     /* parse command-line arguments */
     pl = pw = pc = 0;
     while ((c = getopt(argc, argv, "clmw")) != -1) {
         switch (c) {
-        case 'c':
-        case 'm':
-            pc = 1;
-            break;
-        case 'l':
-            pl = 1;
-            break;
-        case 'w':
-            pw = 1;
-            break;
-        case '?':
-        default:
-            usage();
+            case 'c':
+            case 'm':
+                pc = 1;
+                break;
+            case 'l':
+                pl = 1;
+                break;
+            case 'w':
+                pw = 1;
+                break;
+            case '?':
+            default:
+                usage();
         }
     }
     argc -= optind;

@@ -11,9 +11,7 @@ int main(void) {
 
     scanf("%d", &userVal);
 
-    strcpy(condStr, /* Your solution goes here  */ (userVal < 0)
-                        ? "negative"
-                        : "non-negative");
+    strcpy(condStr, /* Your solution goes here  */ (userVal < 0) ? "negative" : "non-negative");
 
     printf("%d is %s.\n", userVal, condStr);
 

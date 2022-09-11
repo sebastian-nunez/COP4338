@@ -38,8 +38,7 @@ int main(void) {
             }
         } // End inner while loop (search for appropriate table row)
 
-        taxToPay =
-            (int)(annualSalary * taxRate); // Truncate tax to an integer amount
+        taxToPay = (int)(annualSalary * taxRate); // Truncate tax to an integer amount
         annualSalaries[numSalaries] = annualSalary;
         taxesToPay[numSalaries] = taxToPay;
 

@@ -1,1 +1,11 @@
+BasedOnStyle: LLVM
+TabWidth: 4
 IndentWidth: 4
+UseTab: Never
+ColumnLimit: 120
+AccessModifierOffset: -4
+AllowShortFunctionsOnASingleLine: Empty
+PointerAlignment: Left
+IndentCaseLabels: true
+NamespaceIndentation: All
+FixNamespaceComments: false

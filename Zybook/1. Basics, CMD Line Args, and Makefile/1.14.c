@@ -9,8 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]) {
-    FILE *inFile = NULL; // File pointer
+int main(int argc, char* argv[]) {
+    FILE* inFile = NULL; // File pointer
     int fileNum1;        // Data value from file
     int fileNum2;        // Data value from file
 

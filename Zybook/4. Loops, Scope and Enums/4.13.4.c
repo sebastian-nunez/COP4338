@@ -33,8 +33,7 @@ int main(void) {
     printf("Enter the increment for the table: \n");
     scanf("%d", &incomeIncrement);
 
-    for (annualSalary = startingAnnualSalary;
-         annualSalary <= endingAnnualSalary; annualSalary += incomeIncrement) {
+    for (annualSalary = startingAnnualSalary; annualSalary <= endingAnnualSalary; annualSalary += incomeIncrement) {
         // Determine the tax rate from the annual salary
         if (annualSalary <= 0) {
             taxRate = 0.0;
@@ -48,8 +47,7 @@ int main(void) {
             taxRate = 0.40;
         }
 
-        taxToPay =
-            (int)(annualSalary * taxRate); // Truncate tax to an integer amount
+        taxToPay = (int)(annualSalary * taxRate); // Truncate tax to an integer amount
         printf("Annual salary: %d", annualSalary);
         printf("\tTax rate: %lf", taxRate);
         printf("\tTax to pay: %d\n", taxToPay);

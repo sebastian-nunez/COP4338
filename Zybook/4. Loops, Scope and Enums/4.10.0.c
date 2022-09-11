@@ -48,8 +48,7 @@ int main(void) {
     }
 
     if (mealCost == userMoney) {
-        printf("$%d buys %d empanadas and %d tacos without change.\n", mealCost,
-               numEmpanadas, numTacos);
+        printf("$%d buys %d empanadas and %d tacos without change.\n", mealCost, numEmpanadas, numTacos);
     } else {
         printf("You cannot buy a meal without having change left over.\n");
     }

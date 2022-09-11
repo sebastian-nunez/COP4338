@@ -47,8 +47,7 @@ int main(void) {
             mealCost = (numEmpanadas * EMPANADA_COST) + (numTacos * TACO_COST);
 
             if (mealCost == userMoney) {
-                printf("$%d buys %d empanadas and %d tacos without change.\n",
-                       mealCost, numEmpanadas, numTacos);
+                printf("$%d buys %d empanadas and %d tacos without change.\n", mealCost, numEmpanadas, numTacos);
                 numOptions = numOptions + 1;
             }
         }

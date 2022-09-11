@@ -3,7 +3,7 @@
 
 #define BUFSIZ 1024
 
-void mycopy(FILE *fpsrc, FILE *fpdest) {
+void mycopy(FILE* fpsrc, FILE* fpdest) {
     char buf[BUFSIZ];
     int total = 0;
 
@@ -23,7 +23,7 @@ void mycopy(FILE *fpsrc, FILE *fpdest) {
     printf("Copied %d bytes\n", total);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     FILE *fpsrc, *fpdest;
     int offset;
 
@@ -42,8 +42,7 @@ int main(int argc, char *argv[]) {
 
     fpdest = fopen(argv[3], "w");
     if (!fpdest) {
-        fprintf(stderr, "ERROR: can't open destination file to write: %s\n",
-                argv[3]);
+        fprintf(stderr, "ERROR: can't open destination file to write: %s\n", argv[3]);
         return 3;
     }
 

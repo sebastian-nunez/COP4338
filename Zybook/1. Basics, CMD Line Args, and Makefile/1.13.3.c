@@ -5,7 +5,7 @@
 #include <string.h>
 
 /* Usage: program username userage */
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     char nameStr[100]; // User name
     char ageStr[100];  // User age
 

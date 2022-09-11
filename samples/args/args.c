@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int i;
     printf("you entered %d command-line argument(s):\n", argc);
     for (i = 0; i < argc; i++)

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int x;
     float y;
     scanf("%d %f\n", &x, &y);

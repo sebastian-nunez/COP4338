@@ -14,7 +14,7 @@ int calc_darts(int n) {
     return s;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int p, id;
     int n;    /* number of darts to throw for all processes */
     int s, t; /* number of darts landed in the pie here and everywhere */

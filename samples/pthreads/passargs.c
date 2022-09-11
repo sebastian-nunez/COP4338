@@ -3,11 +3,11 @@
 
 struct mystruct {
     int id;
-    char *msg;
+    char* msg;
 };
 
-void *printhello(void *arg) {
-    struct mystruct *s = (struct mystruct *)arg;
+void* printhello(void* arg) {
+    struct mystruct* s = (struct mystruct*)arg;
 
     if (!s->id) {
         int i;
@@ -25,8 +25,8 @@ struct mystruct s1 = {1, "whatever I want to put here"};
 int main() {
     pthread_t t0, t1;
 
-    pthread_create(&t0, NULL, printhello, (void *)&s0);
-    pthread_create(&t1, NULL, printhello, (void *)&s1);
+    pthread_create(&t0, NULL, printhello, (void*)&s0);
+    pthread_create(&t1, NULL, printhello, (void*)&s1);
 
     pthread_join(t0, NULL);
     pthread_join(t1, NULL);

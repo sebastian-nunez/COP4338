@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 /* Your code goes here */
-bool AdjustState(int airTemp, char *thermoState) {
+bool AdjustState(int airTemp, char* thermoState) {
     if (airTemp < 60) {
         *thermoState = 'L';
     } else if (airTemp > 60) {

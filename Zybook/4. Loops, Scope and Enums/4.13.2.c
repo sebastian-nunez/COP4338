@@ -55,8 +55,7 @@ int main(void) {
             taxRate = 0.40;
         }
 
-        taxToPay = (int)(adjustedSalary *
-                         taxRate); // Truncate tax to an integer amount
+        taxToPay = (int)(adjustedSalary * taxRate); // Truncate tax to an integer amount
         printf("Annual salary: %d\n", annualSalary);
         printf("\nDeductions: %d\n", totalDeductions);
         printf("Adjusted salary after deductions: %d\n", adjustedSalary);

@@ -8,7 +8,7 @@ void swap1(int i, int j) {
     j = t;
 }
 
-void swap2(int *i, int *j) {
+void swap2(int* i, int* j) {
     int t;
 
     t = *i;
@@ -18,14 +18,13 @@ void swap2(int *i, int *j) {
 
 int main() {
     int x, a, b;
-    int *y;
+    int* y;
 
     x = 5;
     printf("value of x is %d, address of x is %p\n", x, &x);
 
     y = &x;
-    printf("value of y is %p, address of y is %p, object pointed by y is %d\n",
-           y, &y, *y);
+    printf("value of y is %p, address of y is %p, object pointed by y is %d\n", y, &y, *y);
 
     *y = 10;
     *y = *y * 3;

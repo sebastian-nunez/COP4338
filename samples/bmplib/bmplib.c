@@ -6,7 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 
-static int myread(int fd, char *buf, unsigned int size) {
+static int myread(int fd, char* buf, unsigned int size) {
     int r = 0;
     while (r < size) {
         int x = read(fd, &buf[r], size - r);
@@ -18,7 +18,7 @@ static int myread(int fd, char *buf, unsigned int size) {
     return size;
 }
 
-static int mywrite(int fd, char *buf, unsigned int size) {
+static int mywrite(int fd, char* buf, unsigned int size) {
     int w = 0;
     while (w < size) {
         int x = write(fd, &buf[w], size - w);
@@ -30,7 +30,7 @@ static int mywrite(int fd, char *buf, unsigned int size) {
     return size;
 }
 
-int readFile(char *filename, int *rows, int *cols, PIXEL **bitmap) {
+int readFile(char* filename, int* rows, int* cols, PIXEL** bitmap) {
     int fd, ret;
     unsigned int start;
 
@@ -46,7 +46,7 @@ int readFile(char *filename, int *rows, int *cols, PIXEL **bitmap) {
     if (ret)
         return ret;
 
-    *bitmap = (PIXEL *)malloc(sizeof(PIXEL) * (*rows) * (*cols));
+    *bitmap = (PIXEL*)malloc(sizeof(PIXEL) * (*rows) * (*cols));
     ret = readBits(fd, *bitmap, *rows, *cols, start);
     if (ret)
         return ret;
@@ -57,7 +57,7 @@ int readFile(char *filename, int *rows, int *cols, PIXEL **bitmap) {
     return 0;
 }
 
-int writeFile(char *filename, int rows, int cols, PIXEL *bitmap) {
+int writeFile(char* filename, int rows, int cols, PIXEL* bitmap) {
     int fd, ret;
     unsigned int start = DEFAULT_BITMAP_OFFSET;
 
@@ -83,15 +83,15 @@ int writeFile(char *filename, int rows, int cols, PIXEL *bitmap) {
     return 0;
 }
 
-int readHeader(int fd, int *rows, int *cols, unsigned int *start) {
+int readHeader(int fd, int* rows, int* cols, unsigned int* start) {
     BITMAPFILEHEADER bmfh;
     BITMAPINFOHEADER bmih;
 
-    if (myread(fd, ((char *)&bmfh) + 2, sizeof(bmfh) - 2) <= 0) {
+    if (myread(fd, ((char*)&bmfh) + 2, sizeof(bmfh) - 2) <= 0) {
         perror("Can't read BITMAPFILEHEADER");
         return -2;
     }
-    if (myread(fd, (char *)&bmih, sizeof(bmih)) <= 0) {
+    if (myread(fd, (char*)&bmih, sizeof(bmih)) <= 0) {
         perror("Can't read BITMAPINFOHEADER");
         return -3;
     }
@@ -144,11 +144,11 @@ int writeHeader(int fd, int rows, int cols, unsigned int start) {
     bmih.biClrUsed = 0;
     bmih.biClrImportant = 0;
 
-    if (mywrite(fd, ((char *)&bmfh) + 2, sizeof(bmfh) - 2) < 0) {
+    if (mywrite(fd, ((char*)&bmfh) + 2, sizeof(bmfh) - 2) < 0) {
         perror("Can't write BITMAPFILEHEADER");
         return -2;
     }
-    if (mywrite(fd, (char *)&bmih, sizeof(bmih)) < 0) {
+    if (mywrite(fd, (char*)&bmih, sizeof(bmih)) < 0) {
         perror("Can't write BITMAPINFOHEADER");
         return -3;
     }
@@ -156,14 +156,13 @@ int writeHeader(int fd, int rows, int cols, unsigned int start) {
     return 0;
 }
 
-int readBits(int fd, PIXEL *bitmap, int rows, int cols, unsigned int start) {
+int readBits(int fd, PIXEL* bitmap, int rows, int cols, unsigned int start) {
     int row;
     char padding[3];
     int padAmount;
     char useless[DEFAULT_BITMAP_OFFSET];
 
-    padAmount =
-        ((cols * sizeof(PIXEL)) % 4) ? (4 - ((cols * sizeof(PIXEL)) % 4)) : 0;
+    padAmount = ((cols * sizeof(PIXEL)) % 4) ? (4 - ((cols * sizeof(PIXEL)) % 4)) : 0;
 
     start -= sizeof(BITMAPFILEHEADER) - 2 + sizeof(BITMAPINFOHEADER);
     if (start > 0 && myread(fd, useless, start) < 0) {
@@ -178,8 +177,7 @@ int readBits(int fd, PIXEL *bitmap, int rows, int cols, unsigned int start) {
     */
 
     for (row = 0; row < rows; row++) {
-        if (myread(fd, (char *)(bitmap + (row * cols)), cols * sizeof(PIXEL)) <
-            0) {
+        if (myread(fd, (char*)(bitmap + (row * cols)), cols * sizeof(PIXEL)) < 0) {
             perror("Can't read bitmap");
             return -7;
         }
@@ -194,14 +192,13 @@ int readBits(int fd, PIXEL *bitmap, int rows, int cols, unsigned int start) {
     return 0;
 }
 
-int writeBits(int fd, int rows, int cols, PIXEL *bitmap, unsigned int start) {
+int writeBits(int fd, int rows, int cols, PIXEL* bitmap, unsigned int start) {
     int row;
     char padding[3];
     int padAmount;
     char useless[DEFAULT_BITMAP_OFFSET];
 
-    padAmount =
-        ((cols * sizeof(PIXEL)) % 4) ? (4 - ((cols * sizeof(PIXEL)) % 4)) : 0;
+    padAmount = ((cols * sizeof(PIXEL)) % 4) ? (4 - ((cols * sizeof(PIXEL)) % 4)) : 0;
     memset(padding, 0, 3);
 
     start -= sizeof(BITMAPFILEHEADER) - 2 + sizeof(BITMAPINFOHEADER);
@@ -220,8 +217,7 @@ int writeBits(int fd, int rows, int cols, PIXEL *bitmap, unsigned int start) {
     */
 
     for (row = 0; row < rows; row++) {
-        if (mywrite(fd, (char *)(bitmap + (row * cols)), cols * sizeof(PIXEL)) <
-            0) {
+        if (mywrite(fd, (char*)(bitmap + (row * cols)), cols * sizeof(PIXEL)) < 0) {
             perror("Can't write bitmap");
             return -7;
         }

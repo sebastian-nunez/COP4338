@@ -84,8 +84,7 @@ int main(void) {
 
         printf("\"%s\" ", inputName);
         if (isCoreGtld) {
-            printf("is a second-level domain followed by a core gTLD \"%s\".\n",
-                   theTld);
+            printf("is a second-level domain followed by a core gTLD \"%s\".\n", theTld);
         } else {
             printf("is not a second-level domain followed by a core gTLD.\n");
         }

@@ -14,7 +14,7 @@ int main(void) {
     printf("Enter your age in years: ");
     scanf("%d", &userAgeYears);
 
-    userAgeDays = userAgeYears * 365; // Calculate days without leap years
+    userAgeDays = userAgeYears * 365;               // Calculate days without leap years
     userAgeDays = userAgeDays + (userAgeYears / 4); // Add days for leap years
 
     printf("You are %d days old.\n", userAgeDays);

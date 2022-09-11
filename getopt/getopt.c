@@ -11,37 +11,36 @@
 
 int debug = 0;
 
-int main(int argc, char **argv) {
-    extern char *optarg;
+int main(int argc, char** argv) {
+    extern char* optarg;
     extern int optind;
     int c, err = 0;
     int mflag = 0, pflag = 0, fflag = 0, sflag = 0;
     char *sname = "default_sname", *fname;
-    static char usage[] =
-        "usage: %s [-dmp] -f fname [-s sname] name [name ...]\n";
+    static char usage[] = "usage: %s [-dmp] -f fname [-s sname] name [name ...]\n";
 
     while ((c = getopt(argc, argv, "df:mps:")) != -1)
         switch (c) {
-        case 'd':
-            debug = 1;
-            break;
-        case 'm':
-            mflag = 1;
-            break;
-        case 'p':
-            pflag = 1;
-            break;
-        case 'f':
-            fflag = 1;
-            fname = optarg;
-            break;
-        case 's':
-            sflag = 1;
-            sname = optarg;
-            break;
-        case '?':
-            err = 1;
-            break;
+            case 'd':
+                debug = 1;
+                break;
+            case 'm':
+                mflag = 1;
+                break;
+            case 'p':
+                pflag = 1;
+                break;
+            case 'f':
+                fflag = 1;
+                fname = optarg;
+                break;
+            case 's':
+                sflag = 1;
+                sname = optarg;
+                break;
+            case '?':
+                err = 1;
+                break;
         }
     if (fflag == 0) { /* -f was mandatory */
         fprintf(stderr, "%s: missing -f option\n", argv[0]);
@@ -66,8 +65,7 @@ int main(int argc, char **argv) {
     printf("fname = \"%s\"\n", fname);
     printf("sname = \"%s\"\n", sname);
 
-    if (optind <
-        argc) /* these are the arguments after the command-line options */
+    if (optind < argc) /* these are the arguments after the command-line options */
         for (; optind < argc; optind++)
             printf("argument: \"%s\"\n", argv[optind]);
     else {

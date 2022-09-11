@@ -3,9 +3,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void usage(char *name) { fprintf(stderr, "Usage: %s filename\n", name); }
+void usage(char* name) {
+    fprintf(stderr, "Usage: %s filename\n", name);
+}
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     pid_t pid;
     int fd, pp[2];
     char buf[BUFSIZ];

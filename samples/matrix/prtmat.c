@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int i, j;
     int m, n;
-    FILE *finptr;
-    float *a;
+    FILE* finptr;
+    float* a;
     int blocksize;
 
     /* the user can optionally choose to print out only the first few
@@ -31,14 +31,13 @@ int main(int argc, char *argv[]) {
     } else
         blocksize = 1000000; /* basically infinite */
 
-    if (fread(&m, sizeof(int), 1, finptr) != 1 ||
-        fread(&n, sizeof(int), 1, finptr) != 1) {
+    if (fread(&m, sizeof(int), 1, finptr) != 1 || fread(&n, sizeof(int), 1, finptr) != 1) {
         perror("Error reading matrix file");
         return 3;
     }
     printf("Matrix[%d][%d]:\n", m, n);
 
-    a = (float *)malloc(n * sizeof(float));
+    a = (float*)malloc(n * sizeof(float));
     for (i = 0; i < m && i < blocksize; i++) {
         if (fread(a, sizeof(float), n, finptr) != n) {
             perror("Error reading matrix file");

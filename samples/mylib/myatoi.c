@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int myatoi(char *str) {
-    char *ptr = str;
+int myatoi(char* str) {
+    char* ptr = str;
     int result = 0;
 
     if (!ptr)

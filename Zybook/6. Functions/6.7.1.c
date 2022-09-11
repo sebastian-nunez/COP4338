@@ -4,7 +4,9 @@
 #include <stdio.h>
 
 // Function returns origNum cubed
-int CubeNum(int origNum) { return origNum * origNum * origNum; }
+int CubeNum(int origNum) {
+    return origNum * origNum * origNum;
+}
 
 int main(void) {
     printf("Testing started\n");

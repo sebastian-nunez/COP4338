@@ -4,7 +4,7 @@
 
 int x = 0;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int p, id;
     char hostname[1024];
 

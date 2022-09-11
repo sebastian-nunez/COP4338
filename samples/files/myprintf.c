@@ -1,9 +1,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-void myprintf(char *fmt, ...) {
+void myprintf(char* fmt, ...) {
     va_list ap;
-    char *p;
+    char* p;
 
     va_start(ap, fmt);
     for (p = fmt; *p; p++) {
@@ -11,19 +11,19 @@ void myprintf(char *fmt, ...) {
             putchar(*p);
         else {
             switch (*++p) {
-            case 'd': {
-                int a = va_arg(ap, int);
-                printf("%d", a);
-                break;
-            }
-            case 'f':
-                printf("%f", va_arg(ap, float));
-                break;
-            case 's':
-                printf("%s", va_arg(ap, char *));
-                break;
-            default:
-                putchar(*p);
+                case 'd': {
+                    int a = va_arg(ap, int);
+                    printf("%d", a);
+                    break;
+                }
+                case 'f':
+                    printf("%f", va_arg(ap, float));
+                    break;
+                case 's':
+                    printf("%s", va_arg(ap, char*));
+                    break;
+                default:
+                    putchar(*p);
             }
         }
     }

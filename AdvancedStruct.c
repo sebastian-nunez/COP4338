@@ -5,22 +5,24 @@
 typedef struct Point {
     int x;
     int y;
-    void (*add)(struct Point *, int x, int y);
-    void (*sub)(struct Point *, int x, int y);
-    void (*print)(const struct Point *);
+    void (*add)(struct Point*, int x, int y);
+    void (*sub)(struct Point*, int x, int y);
+    void (*print)(const struct Point*);
 } Point;
 
-void add(struct Point *point, int x, int y) {
+void add(struct Point* point, int x, int y) {
     point->x += x;
     point->y += y;
 }
 
-void sub(struct Point *point, int x, int y) {
+void sub(struct Point* point, int x, int y) {
     point->x -= x;
     point->y -= y;
 }
 
-void print(const Point *point) { printf("(%d, %d)\n", point->x, point->y); }
+void print(const Point* point) {
+    printf("(%d, %d)\n", point->x, point->y);
+}
 
 int main(void) {
     Point p1 = {0, 0, add, sub, print};

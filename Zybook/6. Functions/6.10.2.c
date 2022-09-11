@@ -10,8 +10,7 @@
 
 #include <stdio.h>
 
-void ConvertTime(int totalYears, int *numMillennia, int *numDecades,
-                 int *numYears) {
+void ConvertTime(int totalYears, int* numMillennia, int* numDecades, int* numYears) {
     *numMillennia = totalYears / 1000;
     totalYears = totalYears % 1000;
 

@@ -93,8 +93,7 @@ int main(void) {
         // If there is exactly one period that is not at the start
         // or end of searchName, check if the TLD is a core gTLD or a restricted
         // gTLD
-        if ((periodCounter == 1) && (searchName[0] != '.') &&
-            (searchName[strlen(searchName) - 1] != '.')) {
+        if ((periodCounter == 1) && (searchName[0] != '.') && (searchName[strlen(searchName) - 1] != '.')) {
             isValidDomainName = true;
         }
 

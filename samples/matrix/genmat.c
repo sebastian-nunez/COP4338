@@ -4,12 +4,12 @@
 #include <string.h>
 #include <sys/time.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int i, j;
     int m, n;
-    FILE *foutptr;
-    float *a;
-    float *ptr;
+    FILE* foutptr;
+    float* a;
+    float* ptr;
     struct timeval tp;
 
     if (argc != 4) {
@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
     gettimeofday(&tp, NULL);
     srand((int)tp.tv_usec);
 
-    a = (float *)malloc(n * sizeof(float));
+    a = (float*)malloc(n * sizeof(float));
     for (i = 0; i < m; i++) {
         ptr = a;
         for (j = 0; j < n; j++) {

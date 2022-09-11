@@ -7,7 +7,7 @@
 
 #define BUFSIZ 1024
 
-void revert(char *buf) {
+void revert(char* buf) {
     int i = 0, j = strlen(buf) - 1;
 
     while (i < j) {

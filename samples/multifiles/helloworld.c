@@ -1,4 +1,4 @@
-extern void myprintf(char *str);
+extern void myprintf(char* str);
 
 int main() {
     myprintf("Hello, world!\n");

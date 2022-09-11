@@ -15,8 +15,7 @@ double CalcBaseArea(double baseLength, double baseWidth) {
 }
 
 /* Your solution goes here  */
-double CalcPyramidVolume(double dBaseLength, double dBaseWidth,
-                         double dPyramidHeight) {
+double CalcPyramidVolume(double dBaseLength, double dBaseWidth, double dPyramidHeight) {
     return CalcBaseArea(dBaseLength, dBaseWidth) * 1.0 / 3.0 * dPyramidHeight;
 }
 
@@ -29,8 +28,7 @@ int main(void) {
     scanf("%lf", &userWidth);
     scanf("%lf", &userHeight);
 
-    printf("Volume: %lf\n",
-           CalcPyramidVolume(userLength, userWidth, userHeight));
+    printf("Volume: %lf\n", CalcPyramidVolume(userLength, userWidth, userHeight));
 
     return 0;
 }

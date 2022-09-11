@@ -11,16 +11,16 @@ int main(void) {
 
     /* Your solution goes here  */
     switch (origLetter) {
-    case 'a':
-    case 'A':
-        printf("Alpha\n");
-        break;
-    case 'b':
-    case 'B':
-        printf("Beta\n");
-        break;
-    default:
-        printf("Unknown\n");
+        case 'a':
+        case 'A':
+            printf("Alpha\n");
+            break;
+        case 'b':
+        case 'B':
+            printf("Beta\n");
+            break;
+        default:
+            printf("Unknown\n");
     }
 
     return 0;

@@ -10,7 +10,7 @@
 #define MAX_ARGS 20
 #define BUFSIZ 1024
 
-int get_args(char *cmdline, char *args[]) {
+int get_args(char* cmdline, char* args[]) {
     int i = 0;
 
     /* if no args */
@@ -27,9 +27,9 @@ int get_args(char *cmdline, char *args[]) {
     return i;
 }
 
-void execute(char *cmdline) {
+void execute(char* cmdline) {
     int pid, async;
-    char *args[MAX_ARGS];
+    char* args[MAX_ARGS];
 
     int nargs = get_args(cmdline, args);
     if (nargs <= 0)
@@ -63,7 +63,7 @@ void execute(char *cmdline) {
     }
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     char cmdline[BUFSIZ];
 
     for (;;) {

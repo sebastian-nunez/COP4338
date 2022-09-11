@@ -9,7 +9,7 @@
 
 #include "stdio.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int i;
 
     // Prints argc and argv values

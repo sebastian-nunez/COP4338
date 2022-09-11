@@ -1,15 +1,16 @@
 #include <math.h>
 #include <stdio.h>
 
-double CalcCircularBaseArea(double radius) { return M_PI * radius * radius; }
+double CalcCircularBaseArea(double radius) {
+    return M_PI * radius * radius;
+}
 
 double CalcCylinderVolume(double baseRadius, double height) {
     return CalcCircularBaseArea(baseRadius) * height;
 }
 
 double CalcCylinderSurfaceArea(double baseRadius, double height) {
-    return (2 * M_PI * baseRadius * height) +
-           (2 * CalcCircularBaseArea(baseRadius));
+    return (2 * M_PI * baseRadius * height) + (2 * CalcCircularBaseArea(baseRadius));
 }
 
 int main(void) {

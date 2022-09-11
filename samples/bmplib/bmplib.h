@@ -36,18 +36,18 @@ typedef struct {
    null, it's standard input); return the number of 'rows', the number
    of 'cols', and the 'bitmap' as an array of PIXELs. The function
    return 0 if successful. */
-int readFile(char *filename, int *rows, int *cols, PIXEL **bitmap);
+int readFile(char* filename, int* rows, int* cols, PIXEL** bitmap);
 
 /* Write an uncompressed 24-bit bmp to a file named 'filename' (if
    null, it's standard output); the dimension of the bmp is the number
    of 'rows' by the number of 'cols', and the 'bitmap' contains an
    array of PIXELs.  The function return 0 if successful. */
-int writeFile(char *filename, int rows, int cols, PIXEL *bitmap);
+int writeFile(char* filename, int rows, int cols, PIXEL* bitmap);
 
 /* Read bmp file header from file 'fd', return the number of 'rows',
    the number of 'cols', and the 'start' position of the bitmap. The
    function returns 0 if successful. */
-int readHeader(int fd, int *rows, int *cols, unsigned int *start);
+int readHeader(int fd, int* rows, int* cols, unsigned int* start);
 
 /* Write bmp file header to file 'fd'; the dimention of the bitmap is
    the number of 'rows' by the number of 'cols', and it starts at the
@@ -57,11 +57,11 @@ int writeHeader(int fd, int rows, int cols, unsigned int start);
 /* Read the 'bitmap' from file 'fd'; the dimention of the bitmap is
    the number of 'rows' by the number of 'cols', and it starts at the
    'start' position. The function returns 0 if successful. */
-int readBits(int fd, PIXEL *bitmap, int rows, int cols, unsigned int start);
+int readBits(int fd, PIXEL* bitmap, int rows, int cols, unsigned int start);
 
 /* Write the 'bitmap' to file 'fd'; the dimention of the bitmap is the
    number of 'rows' by the number of 'cols', and it starts at the
    'start' position. The function returns 0 if successful. */
-int writeBits(int fd, int rows, int cols, PIXEL *bitmap, unsigned int start);
+int writeBits(int fd, int rows, int cols, PIXEL* bitmap, unsigned int start);
 
 #endif /*BMPLIB_H*/

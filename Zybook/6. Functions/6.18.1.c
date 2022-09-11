@@ -26,8 +26,7 @@ int PromptForInteger(const char userPrompt[]) {
 // *************************************************************************
 
 // Function to get a value from one table based on a range in the other table
-double GetCorrespondingTableValue(int search, int baseTable[],
-                                  double valueTable[], int tableSize) {
+double GetCorrespondingTableValue(int search, int baseTable[], double valueTable[], int tableSize) {
     double value;
     int i;
     bool keepLooking;
@@ -63,11 +62,9 @@ int main(void) {
     annualSalary = PromptForInteger(USER_PROMPT);
 
     while (annualSalary >= 0) {
-        taxRate = GetCorrespondingTableValue(annualSalary, salaryBase, taxBase,
-                                             BASE_TABLE_ELEMENTS);
+        taxRate = GetCorrespondingTableValue(annualSalary, salaryBase, taxBase, BASE_TABLE_ELEMENTS);
 
-        taxToPay =
-            (int)(annualSalary * taxRate); // Truncate tax to an integer amount
+        taxToPay = (int)(annualSalary * taxRate); // Truncate tax to an integer amount
         printf("Annual salary: %d", annualSalary);
         printf("\nTax rate: %lf", taxRate);
         printf("\nTax to pay: %d\n", taxToPay);

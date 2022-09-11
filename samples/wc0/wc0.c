@@ -13,23 +13,23 @@ int main() {
     while ((c = getchar()) != EOF) {
         nc++;
         switch (c) {
-        case '\n':
-            nl++;
-            /* no break here*/
-        case ' ':
-        case '\t':
-            state = OUT;
-            break;
-        default:
-            if (state == OUT) {
-                state = IN;
-                nw++;
+            case '\n':
+                nl++;
+                /* no break here*/
+            case ' ':
+            case '\t':
+                state = OUT;
+                break;
+            default:
+                if (state == OUT) {
+                    state = IN;
+                    nw++;
 #if DEBUG
-                printf("\n");
+                    printf("\n");
 #endif
-            }
+                }
 #if DEBUG
-            printf("%c", c);
+                printf("%c", c);
 #endif
         }
     }
