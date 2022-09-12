@@ -1,9 +1,8 @@
-/*
-        example of command line parsing via getopt
-        usage: getopt [-dmp] -f fname [-s sname] name [name ...]
-
-        Paul Krzyzanowski
-*/
+/**
+ * example of command line parsing via getopt
+ * usage: getopt [-dmp] -f fname [-s sname] name [name ...]
+ * Paul Krzyzanowski
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,7 +18,8 @@ int main(int argc, char** argv) {
     char *sname = "default_sname", *fname;
     static char usage[] = "usage: %s [-dmp] -f fname [-s sname] name [name ...]\n";
 
-    while ((c = getopt(argc, argv, "df:mps:")) != -1) switch (c) {
+    while ((c = getopt(argc, argv, "df:mps:")) != -1) {
+        switch (c) {
             case 'd':
                 debug = 1;
                 break;
@@ -41,14 +41,14 @@ int main(int argc, char** argv) {
                 err = 1;
                 break;
         }
-    if (fflag == 0) { /* -f was mandatory */
+    }
+
+    if (fflag == 0) {  // -f was mandatory
         fprintf(stderr, "%s: missing -f option\n", argv[0]);
         fprintf(stderr, usage, argv[0]);
         exit(1);
     } else if ((optind + 1) > argc) {
-        /* need at least one argument (change +1 to +2 for two, etc. as needeed)
-         */
-
+        // need at least one argument (change +1 to +2 for two, etc. as needeed)
         printf("optind = %d, argc=%d\n", optind, argc);
         fprintf(stderr, "%s: missing name\n", argv[0]);
         fprintf(stderr, usage, argv[0]);
@@ -57,14 +57,15 @@ int main(int argc, char** argv) {
         fprintf(stderr, usage, argv[0]);
         exit(1);
     }
-    /* see what we have */
+
+    // see what we have
     printf("debug = %d\n", debug);
     printf("pflag = %d\n", pflag);
     printf("mflag = %d\n", mflag);
     printf("fname = \"%s\"\n", fname);
     printf("sname = \"%s\"\n", sname);
 
-    if (optind < argc) /* these are the arguments after the command-line options */
+    if (optind < argc)  // these are the arguments after the command-line options
         for (; optind < argc; optind++) printf("argument: \"%s\"\n", argv[optind]);
     else {
         printf("no arguments left to process\n");
