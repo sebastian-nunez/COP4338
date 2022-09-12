@@ -10,5 +10,4 @@ mystdio.o: mystdio.c
 	gcc -c mystdio.c -o mystdio.o
 
 clean:
-	rm -f helloworld.o mystdio.o helloworld core *~ 
-
+	rm -f helloworld.o mystdio.o helloworld core *~

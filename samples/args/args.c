@@ -4,8 +4,7 @@
 int main(int argc, char* argv[]) {
     int i;
     printf("you entered %d command-line argument(s):\n", argc);
-    for (i = 0; i < argc; i++)
-        printf("argv[%d]: %s\n", i, argv[i]);
+    for (i = 0; i < argc; i++) printf("argv[%d]: %s\n", i, argv[i]);
 
     // want to turn a string to int, long, or double?
     if (argc != 4) {
