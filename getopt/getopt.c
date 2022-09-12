@@ -18,6 +18,7 @@ int main(int argc, char* argv[]) {
     char *sname = "default_sname", *fname;
     static char usage[] = "usage: %s [-dmp] -f fname [-s sname] name [name ...]\n";
 
+    //"df:mps:" are the allowed flags. : -> previous flag takes an argument
     while ((c = getopt(argc, argv, "df:mps:")) != -1) {
         switch (c) {
             case 'd':
