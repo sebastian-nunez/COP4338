@@ -3,12 +3,12 @@
  * and consonants in the sentence.
  */
 #include <stdio.h>
- 
+
 void main()
 {
     char sentence[80];
     int i, vowels = 0, consonants = 0, special = 0;
- 
+
     printf("Enter a sentence \n");
     gets(sentence);
     for (i = 0; sentence[i] != '\0'; i++)
