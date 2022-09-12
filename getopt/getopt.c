@@ -10,7 +10,7 @@
 
 int debug = 0;
 
-int main(int argc, char** argv) {
+int main(int argc, char* argv[]) {
     extern char* optarg;
     extern int optind;
     int c, err = 0;
@@ -65,10 +65,12 @@ int main(int argc, char** argv) {
     printf("fname = \"%s\"\n", fname);
     printf("sname = \"%s\"\n", sname);
 
-    if (optind < argc)  // these are the arguments after the command-line options
-        for (; optind < argc; optind++) printf("argument: \"%s\"\n", argv[optind]);
-    else {
+    if (optind < argc) {  // these are the arguments after the command-line options
+        for (; optind < argc; optind++)
+            printf("argument: \"%s\"\n", argv[optind]);
+    } else {
         printf("no arguments left to process\n");
     }
+
     exit(0);
 }
