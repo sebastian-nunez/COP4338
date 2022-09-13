@@ -1,29 +1,3 @@
-# **Chapter 7: Structs**
-
-- [**Chapter 7: Structs**](#chapter-7-structs)
-  - [Defining Structs and Typedef](#defining-structs-and-typedef)
-  - [Returning Structs from Functions](#returning-structs-from-functions)
-  - [Structs and Arrays](#structs-and-arrays)
-  - [Structs, Arrays, and Functions (Example)](#structs-arrays-and-functions-example)
-  - [Seperate Files for Structs](#seperate-files-for-structs)
-
-## Defining Structs and Typedef
-
-![Defining Structs and Typedef](7.1%20Defining%20Structs%20and%20Typedef.png)
-
-## Returning Structs from Functions
-
-![Returning Structs from Functions](7.2%20Returning%20Structs%20from%20Functions.png)
-
-## Structs and Arrays
-
-![Structs and Arrays](./7.3%20Structs%20and%20Arrays.png)
-
-## Structs, Arrays, and Functions (Example)
-
-A programmer commonly uses structs, arrays, and functions together. Consider a program that allows a reservations agent to reserve seats for people, useful for a theater, an airplane, etc. The below program defines a Seat struct whose data members are a person's first name, last name, and the amount paid for the seat. The program declares an array of 5 seats to represent the theater, airplane, etc., initializes all seats to being empty (indicated by a first name of "empty"), and then allows a user to enter commands to print all seats, reserve a seat, or quit.
-
-```c
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
@@ -119,8 +93,3 @@ int main(void) {
 
     return 0;
 }
-```
-
-## Seperate Files for Structs
-
-![Seperate Files for Structs](7.5%20Separate%20Files%20for%20Structs.png)
