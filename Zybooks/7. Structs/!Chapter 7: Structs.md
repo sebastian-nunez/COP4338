@@ -5,6 +5,7 @@
   - [Returning Structs from Functions](#returning-structs-from-functions)
   - [Structs and Arrays](#structs-and-arrays)
   - [Structs, Arrays, and Functions (Example)](#structs-arrays-and-functions-example)
+  - [Derefencing a Pointer to a Struct (->)](#derefencing-a-pointer-to-a-struct--)
   - [Seperate Files for Structs](#seperate-files-for-structs)
 
 ## Defining Structs and Typedef
@@ -120,6 +121,10 @@ int main(void) {
     return 0;
 }
 ```
+
+## Derefencing a Pointer to a Struct (->)
+
+![Derefencing a Pointer to a Struct](7.4%20Deferencing%20a%20Pointer%20to%20a%20Struct.png)
 
 ## Seperate Files for Structs
 
