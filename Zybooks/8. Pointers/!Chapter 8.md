@@ -27,3 +27,15 @@
 ## Free Function
 
 ![Free Function](8.3%20Free%20Function.png)
+
+## Pointers with Structs
+
+![Pointers with Structs](8.4%20Pointers%20with%20Structs.png)
+
+## String Functions with Pointers
+
+![String Functions with Pointers](8.5%20String%20functions%20with%20Pointers.png)
+
+## String Searching Methods (Table)
+
+![String Searching Methods (Table)](<8.5%20String%20Searching%20(Table).png>)
