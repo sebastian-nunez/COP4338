@@ -4,17 +4,17 @@
 #include <stdio.h>
 
 double GetMinutesAsHours(double origMinutes) {
-    /* Your solution goes here  */
-    return origMinutes / 60.0;
+  /* Your solution goes here  */
+  return origMinutes / 60.0;
 }
 
 int main(void) {
-    double minutes;
+  double minutes;
 
-    scanf("%lf", &minutes);
+  scanf("%lf", &minutes);
 
-    // Will be run with 210.0, 3600.0, and 0.0.
-    printf("%f\n", GetMinutesAsHours(minutes));
+  // Will be run with 210.0, 3600.0, and 0.0.
+  printf("%f\n", GetMinutesAsHours(minutes));
 
-    return 0;
+  return 0;
 }

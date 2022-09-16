@@ -6,25 +6,25 @@
 #include <stdio.h>
 
 int main(void) {
-    int numRows;
-    int numColumns;
-    int currentRow;
-    int currentColumn;
-    char currentColumnLetter;
+  int numRows;
+  int numColumns;
+  int currentRow;
+  int currentColumn;
+  char currentColumnLetter;
 
-    scanf("%d", &numRows);
-    scanf("%d", &numColumns);
+  scanf("%d", &numRows);
+  scanf("%d", &numColumns);
 
-    /* Your solution goes here  */
-    for (int row = 1; row <= numRows; row++) {
-        currentColumnLetter = 'A';
-        for (int col = 0; col < numColumns; col++) {
-            printf("%d%c ", row, currentColumnLetter);
-            currentColumnLetter++;
-        }
+  /* Your solution goes here  */
+  for (int row = 1; row <= numRows; row++) {
+    currentColumnLetter = 'A';
+    for (int col = 0; col < numColumns; col++) {
+      printf("%d%c ", row, currentColumnLetter);
+      currentColumnLetter++;
     }
+  }
 
-    printf("\n");
+  printf("\n");
 
-    return 0;
+  return 0;
 }

@@ -5,19 +5,19 @@
 #include <stdio.h>
 
 int main(void) {
-    bool isTeenager;
-    int kidAge;
+  bool isTeenager;
+  int kidAge;
 
-    scanf("%d", &kidAge);
+  scanf("%d", &kidAge);
 
-    /* Your solution goes here  */
-    isTeenager = kidAge >= 13 && kidAge <= 19;
+  /* Your solution goes here  */
+  isTeenager = kidAge >= 13 && kidAge <= 19;
 
-    if (isTeenager) {
-        printf("Teen\n");
-    } else {
-        printf("Not teen\n");
-    }
+  if (isTeenager) {
+    printf("Teen\n");
+  } else {
+    printf("Not teen\n");
+  }
 
-    return 0;
+  return 0;
 }

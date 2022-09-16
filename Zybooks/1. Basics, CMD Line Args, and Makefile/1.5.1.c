@@ -8,15 +8,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int userNum;
+  int userNum;
 
-    userNum = 5;
+  userNum = 5;
 
-    /* Your solution goes here  */
-    printf("Predictions are hard.\n");
-    printf("Especially ");
-    printf("about the future.\n");
-    printf("Num is: %d\n", userNum);
+  /* Your solution goes here  */
+  printf("Predictions are hard.\n");
+  printf("Especially ");
+  printf("about the future.\n");
+  printf("Num is: %d\n", userNum);
 
-    return 0;
+  return 0;
 }

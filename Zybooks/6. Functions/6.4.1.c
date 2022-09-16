@@ -11,24 +11,25 @@
 #include <stdio.h>
 
 double CalcBaseArea(double baseLength, double baseWidth) {
-    return baseLength * baseWidth;
+  return baseLength * baseWidth;
 }
 
 /* Your solution goes here  */
-double CalcPyramidVolume(double dBaseLength, double dBaseWidth, double dPyramidHeight) {
-    return CalcBaseArea(dBaseLength, dBaseWidth) * 1.0 / 3.0 * dPyramidHeight;
+double CalcPyramidVolume(double dBaseLength, double dBaseWidth,
+                         double dPyramidHeight) {
+  return CalcBaseArea(dBaseLength, dBaseWidth) * 1.0 / 3.0 * dPyramidHeight;
 }
 
 int main(void) {
-    double userLength;
-    double userWidth;
-    double userHeight;
+  double userLength;
+  double userWidth;
+  double userHeight;
 
-    scanf("%lf", &userLength);
-    scanf("%lf", &userWidth);
-    scanf("%lf", &userHeight);
+  scanf("%lf", &userLength);
+  scanf("%lf", &userWidth);
+  scanf("%lf", &userHeight);
 
-    printf("Volume: %lf\n", CalcPyramidVolume(userLength, userWidth, userHeight));
+  printf("Volume: %lf\n", CalcPyramidVolume(userLength, userWidth, userHeight));
 
-    return 0;
+  return 0;
 }

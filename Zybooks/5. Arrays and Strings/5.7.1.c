@@ -5,26 +5,26 @@
 #include <stdio.h>
 
 int main(void) {
-    const int SCORES_SIZE = 4;
-    int lowerScores[SCORES_SIZE];
-    int i;
+  const int SCORES_SIZE = 4;
+  int lowerScores[SCORES_SIZE];
+  int i;
 
-    for (i = 0; i < SCORES_SIZE; ++i) {
-        scanf("%d", &(lowerScores[i]));
+  for (i = 0; i < SCORES_SIZE; ++i) {
+    scanf("%d", &(lowerScores[i]));
+  }
+
+  /* Your solution goes here  */
+  for (int i = 0; i < SCORES_SIZE; i++) {
+    lowerScores[i]--;
+    if (lowerScores[i] < 0) {
+      lowerScores[i] = 0;
     }
+  }
 
-    /* Your solution goes here  */
-    for (int i = 0; i < SCORES_SIZE; i++) {
-        lowerScores[i]--;
-        if (lowerScores[i] < 0) {
-            lowerScores[i] = 0;
-        }
-    }
+  for (i = 0; i < SCORES_SIZE; ++i) {
+    printf("%d ", lowerScores[i]);
+  }
+  printf("\n");
 
-    for (i = 0; i < SCORES_SIZE; ++i) {
-        printf("%d ", lowerScores[i]);
-    }
-    printf("\n");
-
-    return 0;
+  return 0;
 }

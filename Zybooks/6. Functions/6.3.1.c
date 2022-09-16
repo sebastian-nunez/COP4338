@@ -22,17 +22,17 @@
 
 /* Your solution goes here  */
 double MphAndMinutesToMiles(double dMilesPerHour, double dMinutesTraveled) {
-    return dMilesPerHour * (dMinutesTraveled / 60.0);
+  return dMilesPerHour * (dMinutesTraveled / 60.0);
 }
 
 int main(void) {
-    double milesPerHour;
-    double minutesTraveled;
+  double milesPerHour;
+  double minutesTraveled;
 
-    scanf("%lf", &milesPerHour);
-    scanf("%lf", &minutesTraveled);
+  scanf("%lf", &milesPerHour);
+  scanf("%lf", &minutesTraveled);
 
-    printf("Miles: %lf\n", MphAndMinutesToMiles(milesPerHour, minutesTraveled));
+  printf("Miles: %lf\n", MphAndMinutesToMiles(milesPerHour, minutesTraveled));
 
-    return 0;
+  return 0;
 }

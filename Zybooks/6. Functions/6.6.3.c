@@ -10,21 +10,22 @@
 
 /* Your solution goes here  */
 void PrintShampooInstructions(int iNumCycles) {
-    if (iNumCycles < 1)
-        printf("Too few.\n");
-    else if (iNumCycles > 4)
-        printf("Too many.\n");
-    else {
-        for (int i = 1; i <= iNumCycles; i++) printf("%d: Lather and rinse.\n", i);
-        printf("Done.\n");
-    }
+  if (iNumCycles < 1)
+    printf("Too few.\n");
+  else if (iNumCycles > 4)
+    printf("Too many.\n");
+  else {
+    for (int i = 1; i <= iNumCycles; i++)
+      printf("%d: Lather and rinse.\n", i);
+    printf("Done.\n");
+  }
 }
 
 int main(void) {
-    int userCycles;
+  int userCycles;
 
-    scanf("%d", &userCycles);
-    PrintShampooInstructions(userCycles);
+  scanf("%d", &userCycles);
+  PrintShampooInstructions(userCycles);
 
-    return 0;
+  return 0;
 }

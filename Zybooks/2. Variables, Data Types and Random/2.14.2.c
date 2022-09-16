@@ -7,18 +7,19 @@
 #include <stdio.h>
 
 int main(void) {
-    char a;
-    char b;
-    char c;
+  char a;
+  char b;
+  char c;
 
-    scanf(" %c ", &a);
-    scanf(" %c ", &b);
-    scanf(" %c ", &c);
+  scanf(" %c ", &a);
+  scanf(" %c ", &b);
+  scanf(" %c ", &c);
 
-    /* Your solution goes here  */
-    printf("%c%c%c %c%c%c %c%c%c %c%c%c %c%c%c %c%c%c", a, b, c, a, c, b, b, a, c, b, c, a, c, a, b, c, b, a);
+  /* Your solution goes here  */
+  printf("%c%c%c %c%c%c %c%c%c %c%c%c %c%c%c %c%c%c", a, b, c, a, c, b, b, a, c,
+         b, c, a, c, a, b, c, b, a);
 
-    printf("\n");
+  printf("\n");
 
-    return 0;
+  return 0;
 }

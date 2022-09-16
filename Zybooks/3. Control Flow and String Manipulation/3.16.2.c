@@ -6,14 +6,16 @@
 #include <string.h>
 
 int main(void) {
-    char condStr[50];
-    int userVal;
+  char condStr[50];
+  int userVal;
 
-    scanf("%d", &userVal);
+  scanf("%d", &userVal);
 
-    strcpy(condStr, /* Your solution goes here  */ (userVal < 0) ? "negative" : "non-negative");
+  strcpy(condStr, /* Your solution goes here  */ (userVal < 0)
+                      ? "negative"
+                      : "non-negative");
 
-    printf("%d is %s.\n", userVal, condStr);
+  printf("%d is %s.\n", userVal, condStr);
 
-    return 0;
+  return 0;
 }

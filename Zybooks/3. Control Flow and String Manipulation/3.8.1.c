@@ -10,19 +10,19 @@
 #include <stdio.h>
 
 int main(void) {
-    int userNum;
+  int userNum;
 
-    scanf("%d", &userNum);
+  scanf("%d", &userNum);
 
-    /* Your solution goes here  */
-    if (userNum > 0)
-        printf("Positive.\n");
-    else {
-        printf("Non-positive, converting to 1.\n");
-        userNum = 1;
-    }
+  /* Your solution goes here  */
+  if (userNum > 0)
+    printf("Positive.\n");
+  else {
+    printf("Non-positive, converting to 1.\n");
+    userNum = 1;
+  }
 
-    printf("Final: %d\n", userNum);
+  printf("Final: %d\n", userNum);
 
-    return 0;
+  return 0;
 }

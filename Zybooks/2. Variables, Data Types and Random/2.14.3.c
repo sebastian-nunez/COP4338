@@ -7,11 +7,11 @@
 #include <stdio.h>
 
 int main(void) {
-    /* Your solution goes here  */
-    char letterStart;
-    scanf("%c", &letterStart);
+  /* Your solution goes here  */
+  char letterStart;
+  scanf("%c", &letterStart);
 
-    printf("%c%c\n", letterStart, letterStart + 1);
+  printf("%c%c\n", letterStart, letterStart + 1);
 
-    return 0;
+  return 0;
 }

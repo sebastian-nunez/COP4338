@@ -16,50 +16,50 @@
 #include <string.h>
 
 int main(void) {
-    char inputName[50];
-    char searchName[50];
-    char coreGtld1[50];
-    char coreGtld2[50];
-    char coreGtld3[50];
-    char coreGtld4[50];
-    bool isCoreGtld;
+  char inputName[50];
+  char searchName[50];
+  char coreGtld1[50];
+  char coreGtld2[50];
+  char coreGtld3[50];
+  char coreGtld4[50];
+  bool isCoreGtld;
 
-    strcpy(coreGtld1, ".com");
-    strcpy(coreGtld2, ".net");
-    strcpy(coreGtld3, ".org");
-    strcpy(coreGtld4, ".info");
-    isCoreGtld = false;
+  strcpy(coreGtld1, ".com");
+  strcpy(coreGtld2, ".net");
+  strcpy(coreGtld3, ".org");
+  strcpy(coreGtld4, ".info");
+  isCoreGtld = false;
 
-    printf("\nEnter a top-level domain name: \n");
-    scanf("%s", inputName);
+  printf("\nEnter a top-level domain name: \n");
+  scanf("%s", inputName);
 
-    // If the user entered a name without a leading dot,
-    // print an error message.
-    if (inputName[0] != '.') {
-        printf("\"%s\" does not start with a dot.\n", inputName);
+  // If the user entered a name without a leading dot,
+  // print an error message.
+  if (inputName[0] != '.') {
+    printf("\"%s\" does not start with a dot.\n", inputName);
+  } else {
+    strcpy(searchName, inputName);
+
+    // Determine whether the user-entered name is a gTLD
+    if (strcmp(searchName, coreGtld1) == 0) {
+      isCoreGtld = true;
+    } else if (strcmp(searchName, coreGtld2) == 0) {
+      isCoreGtld = true;
+    } else if (strcmp(searchName, coreGtld3) == 0) {
+      isCoreGtld = true;
+    } else if (strcmp(searchName, coreGtld4) == 0) {
+      isCoreGtld = true;
     } else {
-        strcpy(searchName, inputName);
-
-        // Determine whether the user-entered name is a gTLD
-        if (strcmp(searchName, coreGtld1) == 0) {
-            isCoreGtld = true;
-        } else if (strcmp(searchName, coreGtld2) == 0) {
-            isCoreGtld = true;
-        } else if (strcmp(searchName, coreGtld3) == 0) {
-            isCoreGtld = true;
-        } else if (strcmp(searchName, coreGtld4) == 0) {
-            isCoreGtld = true;
-        } else {
-            isCoreGtld = false;
-        }
-
-        printf("The name \"%s\" ", inputName);
-        if (isCoreGtld) {
-            printf("is a core gTLD.\n");
-        } else {
-            printf("is not a core gTLD.\n");
-        }
+      isCoreGtld = false;
     }
 
-    return 0;
+    printf("The name \"%s\" ", inputName);
+    if (isCoreGtld) {
+      printf("is a core gTLD.\n");
+    } else {
+      printf("is not a core gTLD.\n");
+    }
+  }
+
+  return 0;
 }

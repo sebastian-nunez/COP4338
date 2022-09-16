@@ -6,14 +6,14 @@
 #include <time.h>    // Enables use of time()
 
 int main(void) {
-    int seedVal;
+  int seedVal;
 
-    scanf("%d", &seedVal);
-    srand(seedVal);
+  scanf("%d", &seedVal);
+  srand(seedVal);
 
-    /* Your solution goes here  */
-    printf("%d\n", (rand() % 50) + 100);
-    printf("%d\n", (rand() % 50) + 100);
+  /* Your solution goes here  */
+  printf("%d\n", (rand() % 50) + 100);
+  printf("%d\n", (rand() % 50) + 100);
 
-    return 0;
+  return 0;
 }

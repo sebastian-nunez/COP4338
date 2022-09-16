@@ -7,14 +7,14 @@
 #include <string.h>
 
 int main(void) {
-    char passCode[3];
+  char passCode[3];
 
-    scanf("%s", passCode);
+  scanf("%s", passCode);
 
-    /* Your solution goes here  */
-    if (isalpha(passCode[0])) passCode[0] = '_';
-    if (isalpha(passCode[1])) passCode[1] = '_';
+  /* Your solution goes here  */
+  if (isalpha(passCode[0])) passCode[0] = '_';
+  if (isalpha(passCode[1])) passCode[1] = '_';
 
-    printf("%s\n", passCode);
-    return 0;
+  printf("%s\n", passCode);
+  return 0;
 }

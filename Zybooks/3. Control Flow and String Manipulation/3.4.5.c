@@ -8,20 +8,20 @@
 #include <stdio.h>
 
 int main(void) {
-    int givenYear;
+  int givenYear;
 
-    scanf("%d", &givenYear);
+  scanf("%d", &givenYear);
 
-    /* Your solution goes here  */
-    if (givenYear >= 2101) {
-        printf("Distant future\n");
-    } else if (givenYear >= 2001) {
-        printf("21st century\n");
-    } else if (givenYear >= 1901) {
-        printf("20th century\n");
-    } else {
-        printf("Long ago\n");
-    }
+  /* Your solution goes here  */
+  if (givenYear >= 2101) {
+    printf("Distant future\n");
+  } else if (givenYear >= 2001) {
+    printf("21st century\n");
+  } else if (givenYear >= 1901) {
+    printf("20th century\n");
+  } else {
+    printf("Long ago\n");
+  }
 
-    return 0;
+  return 0;
 }

@@ -6,18 +6,18 @@
 #include <string.h>
 
 int main(void) {
-    char firstString[50];
-    char secondString[50];
+  char firstString[50];
+  char secondString[50];
 
-    scanf("%s", firstString);
-    scanf("%s", secondString);
+  scanf("%s", firstString);
+  scanf("%s", secondString);
 
-    /* Your solution goes here  */
-    if (strcmp(firstString, secondString) < 0) {
-        printf("%s %s\n", firstString, secondString);
-    } else {
-        printf("%s %s\n", secondString, firstString);
-    }
+  /* Your solution goes here  */
+  if (strcmp(firstString, secondString) < 0) {
+    printf("%s %s\n", firstString, secondString);
+  } else {
+    printf("%s %s\n", secondString, firstString);
+  }
 
-    return 0;
+  return 0;
 }

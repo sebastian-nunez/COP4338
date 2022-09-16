@@ -10,26 +10,26 @@
 */
 
 int main(void) {
-    int maxSoFar;
-    int currValue;
-    int numValues;
-    int i;
+  int maxSoFar;
+  int currValue;
+  int numValues;
+  int i;
 
-    scanf("%d", &numValues);
+  scanf("%d", &numValues);
 
-    for (i = 0; i < numValues; ++i) {
-        scanf("%d", &currValue);
+  for (i = 0; i < numValues; ++i) {
+    scanf("%d", &currValue);
 
-        if (i == 0) {  // First iteration
-            maxSoFar = currValue;
-        } else if (currValue > maxSoFar) {
-            maxSoFar = currValue;
-        }
+    if (i == 0) {  // First iteration
+      maxSoFar = currValue;
+    } else if (currValue > maxSoFar) {
+      maxSoFar = currValue;
     }
+  }
 
-    if (numValues > 0) {
-        printf("Max: %d\n", maxSoFar);
-    }
+  if (numValues > 0) {
+    printf("Max: %d\n", maxSoFar);
+  }
 
-    return 0;
+  return 0;
 }

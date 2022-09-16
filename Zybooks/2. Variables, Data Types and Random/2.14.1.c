@@ -5,14 +5,14 @@
 #include <stdio.h>
 
 int main(void) {
-    char letterToQuit;
-    int numPresses;
+  char letterToQuit;
+  int numPresses;
 
-    scanf(" %c ", &letterToQuit);
-    scanf("%d", &numPresses);
+  scanf(" %c ", &letterToQuit);
+  scanf("%d", &numPresses);
 
-    /* Your solution goes here  */
-    printf("Press the %c key %d times to quit.\n", letterToQuit, numPresses);
+  /* Your solution goes here  */
+  printf("Press the %c key %d times to quit.\n", letterToQuit, numPresses);
 
-    return 0;
+  return 0;
 }

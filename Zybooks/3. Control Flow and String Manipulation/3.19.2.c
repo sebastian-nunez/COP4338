@@ -14,30 +14,31 @@
 #include <stdio.h>
 
 int main(void) {
-    int annualSalary;
-    double taxRate;
-    int taxToPay;
+  int annualSalary;
+  double taxRate;
+  int taxToPay;
 
-    printf("Enter annual salary: \n");
-    scanf("%d", &annualSalary);
+  printf("Enter annual salary: \n");
+  scanf("%d", &annualSalary);
 
-    // Determine the tax rate from the annual salary
-    // FIXME: Write code to address the challenge question above
-    if (annualSalary <= 20000) {
-        taxRate = 0.10;
-    } else if (annualSalary <= 50000) {
-        taxRate = 0.20;
-    }
-    // FIXME: Add tier
-    else {
-        taxRate = 0.30;
-    }
+  // Determine the tax rate from the annual salary
+  // FIXME: Write code to address the challenge question above
+  if (annualSalary <= 20000) {
+    taxRate = 0.10;
+  } else if (annualSalary <= 50000) {
+    taxRate = 0.20;
+  }
+  // FIXME: Add tier
+  else {
+    taxRate = 0.30;
+  }
 
-    taxToPay = (int)(annualSalary * taxRate);  // Truncate tax to an integer amount
+  taxToPay =
+      (int)(annualSalary * taxRate);  // Truncate tax to an integer amount
 
-    printf("Annual Salary: %d\n", annualSalary);
-    printf("Tax rate: %lf\n", taxRate);
-    printf("Tax to pay: %d\n", taxToPay);
+  printf("Annual Salary: %d\n", annualSalary);
+  printf("Tax rate: %lf\n", taxRate);
+  printf("Tax to pay: %d\n", taxToPay);
 
-    return 0;
+  return 0;
 }

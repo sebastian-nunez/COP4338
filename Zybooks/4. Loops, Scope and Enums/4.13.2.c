@@ -17,55 +17,56 @@
 #include <stdio.h>
 
 int main(void) {
-    const char SALARY_PROMPT[] = "\nEnter annual salary (0 to exit): ";
-    const char PROMPT_DEDUCTION[] = "Enter a deduction (0 to end deductions): ";
-    int annualSalary;
-    int oneDeduction;
-    int adjustedSalary;
-    int totalDeductions;
-    double taxRate;
-    int taxToPay;
+  const char SALARY_PROMPT[] = "\nEnter annual salary (0 to exit): ";
+  const char PROMPT_DEDUCTION[] = "Enter a deduction (0 to end deductions): ";
+  int annualSalary;
+  int oneDeduction;
+  int adjustedSalary;
+  int totalDeductions;
+  double taxRate;
+  int taxToPay;
 
-    printf("%s\n", SALARY_PROMPT);
-    scanf("%d", &annualSalary);
+  printf("%s\n", SALARY_PROMPT);
+  scanf("%d", &annualSalary);
 
-    while (annualSalary > 0) {
-        totalDeductions = 0;  // Start with 0 for each annual salary
-        printf("%s\n", PROMPT_DEDUCTION);
-        scanf("%d", &oneDeduction);
+  while (annualSalary > 0) {
+    totalDeductions = 0;  // Start with 0 for each annual salary
+    printf("%s\n", PROMPT_DEDUCTION);
+    scanf("%d", &oneDeduction);
 
-        while (oneDeduction > 0) {
-            totalDeductions += oneDeduction;
-            printf("%s\n", PROMPT_DEDUCTION);
-            scanf("%d", &oneDeduction);
-        }
-
-        // Determine the tax rate from the adjusted salary
-        adjustedSalary = annualSalary - totalDeductions;
-        if (adjustedSalary <= 0) {
-            adjustedSalary = 0;
-            taxRate = 0.0;
-        } else if (adjustedSalary <= 20000) {
-            taxRate = 0.10;  // 0.10 is 10% written as a decimal
-        } else if (adjustedSalary <= 50000) {
-            taxRate = 0.20;
-        } else if (adjustedSalary <= 100000) {
-            taxRate = 0.30;
-        } else {
-            taxRate = 0.40;
-        }
-
-        taxToPay = (int)(adjustedSalary * taxRate);  // Truncate tax to an integer amount
-        printf("Annual salary: %d\n", annualSalary);
-        printf("\nDeductions: %d\n", totalDeductions);
-        printf("Adjusted salary after deductions: %d\n", adjustedSalary);
-        printf("Tax rate: %lf\n", taxRate);
-        printf("Tax to pay: %d\n", taxToPay);
-
-        // Get the next annual salary
-        printf("%s\n", SALARY_PROMPT);
-        scanf("%d", &annualSalary);
+    while (oneDeduction > 0) {
+      totalDeductions += oneDeduction;
+      printf("%s\n", PROMPT_DEDUCTION);
+      scanf("%d", &oneDeduction);
     }
 
-    return 0;
+    // Determine the tax rate from the adjusted salary
+    adjustedSalary = annualSalary - totalDeductions;
+    if (adjustedSalary <= 0) {
+      adjustedSalary = 0;
+      taxRate = 0.0;
+    } else if (adjustedSalary <= 20000) {
+      taxRate = 0.10;  // 0.10 is 10% written as a decimal
+    } else if (adjustedSalary <= 50000) {
+      taxRate = 0.20;
+    } else if (adjustedSalary <= 100000) {
+      taxRate = 0.30;
+    } else {
+      taxRate = 0.40;
+    }
+
+    taxToPay =
+        (int)(adjustedSalary * taxRate);  // Truncate tax to an integer amount
+    printf("Annual salary: %d\n", annualSalary);
+    printf("\nDeductions: %d\n", totalDeductions);
+    printf("Adjusted salary after deductions: %d\n", adjustedSalary);
+    printf("Tax rate: %lf\n", taxRate);
+    printf("Tax to pay: %d\n", taxToPay);
+
+    // Get the next annual salary
+    printf("%s\n", SALARY_PROMPT);
+    scanf("%d", &annualSalary);
+  }
+
+  return 0;
 }

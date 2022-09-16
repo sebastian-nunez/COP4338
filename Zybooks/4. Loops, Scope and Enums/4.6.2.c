@@ -8,15 +8,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int userInput;
+  int userInput;
 
-    /* Your solution goes here  */
-    do {
-        printf("Enter a number (<100): \n");
-        scanf("%d", &userInput);
-    } while (userInput >= 100);
+  /* Your solution goes here  */
+  do {
+    printf("Enter a number (<100): \n");
+    scanf("%d", &userInput);
+  } while (userInput >= 100);
 
-    printf("Your number < 100 is: %d\n", userInput);
+  printf("Your number < 100 is: %d\n", userInput);
 
-    return 0;
+  return 0;
 }

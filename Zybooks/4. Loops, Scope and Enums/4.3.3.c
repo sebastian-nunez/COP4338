@@ -5,17 +5,17 @@
 #include <stdio.h>
 
 int main(void) {
-    int numInsects;
+  int numInsects;
 
-    scanf("%d", &numInsects);  // Must be >= 1
+  scanf("%d", &numInsects);  // Must be >= 1
 
-    /* Your solution goes here  */
-    while (numInsects < 100) {
-        printf("%d ", numInsects);
-        numInsects *= 2;
-    }
+  /* Your solution goes here  */
+  while (numInsects < 100) {
+    printf("%d ", numInsects);
+    numInsects *= 2;
+  }
 
-    printf("\n");
+  printf("\n");
 
-    return 0;
+  return 0;
 }

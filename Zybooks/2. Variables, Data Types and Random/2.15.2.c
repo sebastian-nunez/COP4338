@@ -8,12 +8,12 @@
 #include <stdio.h>
 
 int main(void) {
-    char firstName[20];
-    char lastName[20];
+  char firstName[20];
+  char lastName[20];
 
-    /* Your solution goes here  */
-    scanf("%s %s", firstName, lastName);
-    printf("%s, %s\n", lastName, firstName);
+  /* Your solution goes here  */
+  scanf("%s %s", firstName, lastName);
+  printf("%s, %s\n", lastName, firstName);
 
-    return 0;
+  return 0;
 }

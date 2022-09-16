@@ -19,39 +19,41 @@
 #include <stdio.h>
 
 int main(void) {
-    int annualSalary;
-    double taxRate;
-    int taxToPay;
-    int startingAnnualSalary;
-    int endingAnnualSalary;
-    int incomeIncrement;
+  int annualSalary;
+  double taxRate;
+  int taxToPay;
+  int startingAnnualSalary;
+  int endingAnnualSalary;
+  int incomeIncrement;
 
-    printf("Enter first annual salary for the table: \n");
-    scanf("%d", &startingAnnualSalary);
-    printf("Enter last annual salary for the table: \n");
-    scanf("%d", &endingAnnualSalary);
-    printf("Enter the increment for the table: \n");
-    scanf("%d", &incomeIncrement);
+  printf("Enter first annual salary for the table: \n");
+  scanf("%d", &startingAnnualSalary);
+  printf("Enter last annual salary for the table: \n");
+  scanf("%d", &endingAnnualSalary);
+  printf("Enter the increment for the table: \n");
+  scanf("%d", &incomeIncrement);
 
-    for (annualSalary = startingAnnualSalary; annualSalary <= endingAnnualSalary; annualSalary += incomeIncrement) {
-        // Determine the tax rate from the annual salary
-        if (annualSalary <= 0) {
-            taxRate = 0.0;
-        } else if (annualSalary <= 20000) {
-            taxRate = 0.10;  // 0.10 is 10% written as a decimal
-        } else if (annualSalary <= 50000) {
-            taxRate = 0.20;
-        } else if (annualSalary <= 100000) {
-            taxRate = 0.30;
-        } else {
-            taxRate = 0.40;
-        }
-
-        taxToPay = (int)(annualSalary * taxRate);  // Truncate tax to an integer amount
-        printf("Annual salary: %d", annualSalary);
-        printf("\tTax rate: %lf", taxRate);
-        printf("\tTax to pay: %d\n", taxToPay);
+  for (annualSalary = startingAnnualSalary; annualSalary <= endingAnnualSalary;
+       annualSalary += incomeIncrement) {
+    // Determine the tax rate from the annual salary
+    if (annualSalary <= 0) {
+      taxRate = 0.0;
+    } else if (annualSalary <= 20000) {
+      taxRate = 0.10;  // 0.10 is 10% written as a decimal
+    } else if (annualSalary <= 50000) {
+      taxRate = 0.20;
+    } else if (annualSalary <= 100000) {
+      taxRate = 0.30;
+    } else {
+      taxRate = 0.40;
     }
 
-    return 0;
+    taxToPay =
+        (int)(annualSalary * taxRate);  // Truncate tax to an integer amount
+    printf("Annual salary: %d", annualSalary);
+    printf("\tTax rate: %lf", taxRate);
+    printf("\tTax to pay: %d\n", taxToPay);
+  }
+
+  return 0;
 }

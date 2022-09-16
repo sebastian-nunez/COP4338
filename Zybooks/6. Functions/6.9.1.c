@@ -4,31 +4,31 @@
 #include <stdio.h>
 
 double CelsiusToKelvin(double valueCelsius) {
-    double valueKelvin;
+  double valueKelvin;
 
-    valueKelvin = valueCelsius + 273.15;
+  valueKelvin = valueCelsius + 273.15;
 
-    return valueKelvin;
+  return valueKelvin;
 }
 
 /* Your solution goes here  */
 double KelvinToCelsius(double valueKelvin) {
-    double valueCelsius;
+  double valueCelsius;
 
-    valueCelsius = valueKelvin - 273.15;
+  valueCelsius = valueKelvin - 273.15;
 
-    return valueCelsius;
+  return valueCelsius;
 }
 
 int main(void) {
-    double valueC;
-    double valueK;
+  double valueC;
+  double valueK;
 
-    valueC = 10.0;
-    printf("%lf C is %lf K\n", valueC, CelsiusToKelvin(valueC));
+  valueC = 10.0;
+  printf("%lf C is %lf K\n", valueC, CelsiusToKelvin(valueC));
 
-    scanf("%lf", &valueK);
-    printf("%lf is %lf C\n", valueK, KelvinToCelsius(valueK));
+  scanf("%lf", &valueK);
+  printf("%lf is %lf C\n", valueK, KelvinToCelsius(valueK));
 
-    return 0;
+  return 0;
 }

@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    printf("hello world!\n");
+  printf("hello world!\n");
 
-    int i = 0;
-    if (i > -1) {
-        printf("%f\n", i);
-    }
+  int i = 0;
+  if (i > -1) {
+    printf("%f\n", i);
+  }
 
-    return 0;
+  return 0;
 }

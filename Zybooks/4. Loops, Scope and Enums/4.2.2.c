@@ -11,15 +11,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int userNum;
+  int userNum;
 
+  scanf("%d", &userNum);
+
+  while (/* Your solution goes here  */ userNum >= 0) {
+    printf("Body\n");
     scanf("%d", &userNum);
+  }
+  printf("Done.\n");
 
-    while (/* Your solution goes here  */ userNum >= 0) {
-        printf("Body\n");
-        scanf("%d", &userNum);
-    }
-    printf("Done.\n");
-
-    return 0;
+  return 0;
 }

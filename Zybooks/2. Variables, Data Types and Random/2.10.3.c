@@ -8,29 +8,29 @@
 #include <stdio.h>
 
 int main(void) {
-    double x1;
-    double y1;
-    double x2;
-    double y2;
-    double xDist;
-    double yDist;
-    double pointsDistance;
+  double x1;
+  double y1;
+  double x2;
+  double y2;
+  double xDist;
+  double yDist;
+  double pointsDistance;
 
-    xDist = 0.0;
-    yDist = 0.0;
-    pointsDistance = 0.0;
+  xDist = 0.0;
+  yDist = 0.0;
+  pointsDistance = 0.0;
 
-    scanf("%lf", &x1);
-    scanf("%lf", &y1);
-    scanf("%lf", &x2);
-    scanf("%lf", &y2);
+  scanf("%lf", &x1);
+  scanf("%lf", &y1);
+  scanf("%lf", &x2);
+  scanf("%lf", &y2);
 
-    /* Your solution goes here  */
-    xDist = pow(x2 - x1, 2);
-    yDist = pow(y2 - y1, 2);
-    pointsDistance = sqrt(xDist + yDist);
+  /* Your solution goes here  */
+  xDist = pow(x2 - x1, 2);
+  yDist = pow(y2 - y1, 2);
+  pointsDistance = sqrt(xDist + yDist);
 
-    printf("%lf\n", pointsDistance);
+  printf("%lf\n", pointsDistance);
 
-    return 0;
+  return 0;
 }

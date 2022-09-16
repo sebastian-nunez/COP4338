@@ -13,17 +13,17 @@
 #include <stdio.h>
 
 int main(void) {
-    int userNum;
+  int userNum;
 
-    scanf("%d", &userNum);
+  scanf("%d", &userNum);
 
-    /* Your solution goes here  */
-    while (userNum > 1) {
-        userNum /= 2;
-        printf("%d ", userNum);
-    }
+  /* Your solution goes here  */
+  while (userNum > 1) {
+    userNum /= 2;
+    printf("%d ", userNum);
+  }
 
-    printf("\n");
+  printf("\n");
 
-    return 0;
+  return 0;
 }

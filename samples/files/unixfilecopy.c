@@ -6,67 +6,68 @@
 #define BUFSIZ 1024
 
 void mycopy(int fdsrc, int fddest) {
-    char buf[BUFSIZ];
-    int total = 0;
+  char buf[BUFSIZ];
+  int total = 0;
 
-    for (;;) {
-        int written = 0;
+  for (;;) {
+    int written = 0;
 
-        int x = read(fdsrc, buf, BUFSIZ);
-        if (x < 0) {
-            perror("ERROR: reading file");
-            return;
-        } else if (x == 0)
-            break;
+    int x = read(fdsrc, buf, BUFSIZ);
+    if (x < 0) {
+      perror("ERROR: reading file");
+      return;
+    } else if (x == 0)
+      break;
 
-        while (x > 0) {
-            int y = write(fddest, &buf[written], x);
-            if (y < 0) {
-                perror("ERROR: writing file");
-                return;
-            }
-            x -= y;
-            written += y;
-        }
-
-        total += written;
+    while (x > 0) {
+      int y = write(fddest, &buf[written], x);
+      if (y < 0) {
+        perror("ERROR: writing file");
+        return;
+      }
+      x -= y;
+      written += y;
     }
 
-    printf("Copied %d bytes\n", total);
+    total += written;
+  }
+
+  printf("Copied %d bytes\n", total);
 }
 
 int main(int argc, char* argv[]) {
-    int fdsrc, fddest;
-    int offset;
+  int fdsrc, fddest;
+  int offset;
 
-    if (argc != 4) {
-        fprintf(stderr, "Usage: %s offset SRCFILE DSTFILE\n", argv[0]);
-        return 1;
-    }
+  if (argc != 4) {
+    fprintf(stderr, "Usage: %s offset SRCFILE DSTFILE\n", argv[0]);
+    return 1;
+  }
 
-    offset = atoi(argv[1]);
+  offset = atoi(argv[1]);
 
-    fdsrc = open(argv[2], O_RDONLY);
-    if (fdsrc < 0) {
-        fprintf(stderr, "ERROR: can't open source file to read: %s\n", argv[2]);
-        return 2;
-    }
+  fdsrc = open(argv[2], O_RDONLY);
+  if (fdsrc < 0) {
+    fprintf(stderr, "ERROR: can't open source file to read: %s\n", argv[2]);
+    return 2;
+  }
 
-    fddest = open(argv[3], O_CREAT | O_WRONLY | O_TRUNC);
-    if (fddest < 0) {
-        fprintf(stderr, "ERROR: can't open destination file to write: %s\n", argv[3]);
-        return 3;
-    }
+  fddest = open(argv[3], O_CREAT | O_WRONLY | O_TRUNC);
+  if (fddest < 0) {
+    fprintf(stderr, "ERROR: can't open destination file to write: %s\n",
+            argv[3]);
+    return 3;
+  }
 
-    if (offset >= 0)
-        lseek(fdsrc, offset, SEEK_SET);
-    else
-        lseek(fdsrc, -offset, SEEK_END);
+  if (offset >= 0)
+    lseek(fdsrc, offset, SEEK_SET);
+  else
+    lseek(fdsrc, -offset, SEEK_END);
 
-    mycopy(fdsrc, fddest);
+  mycopy(fdsrc, fddest);
 
-    close(fdsrc);
-    close(fddest);
+  close(fdsrc);
+  close(fddest);
 
-    return 0;
+  return 0;
 }

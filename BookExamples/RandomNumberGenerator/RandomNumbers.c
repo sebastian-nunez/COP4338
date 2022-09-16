@@ -10,28 +10,28 @@
 int randInt(int lower, int upper);
 
 int main() {
-    int randNum;
-    int randDist[RANGE] = {0};
-    srand(time(NULL));
+  int randNum;
+  int randDist[RANGE] = {0};
+  srand(time(NULL));
 
-    for (int i = LOWER; i < MAX_ITERATIONS; i++) {
-        randNum = randInt(LOWER, UPPER);
-        randDist[randNum - LOWER]++;
-    }
+  for (int i = LOWER; i < MAX_ITERATIONS; i++) {
+    randNum = randInt(LOWER, UPPER);
+    randDist[randNum - LOWER]++;
+  }
 
-    int sum = 0;
-    for (int i = LOWER; i < RANGE; i++) {
-        int count = randDist[i];
-        sum += count;
+  int sum = 0;
+  for (int i = LOWER; i < RANGE; i++) {
+    int count = randDist[i];
+    sum += count;
 
-        printf("The number %d, occured: %d times\n", i + LOWER, count);
-    }
+    printf("The number %d, occured: %d times\n", i + LOWER, count);
+  }
 
-    printf("\nThe total number of occurences: %d\n", sum);
+  printf("\nThe total number of occurences: %d\n", sum);
 
-    return 0;
+  return 0;
 }
 
 int randInt(int lower, int upper) {
-    return (rand() % upper) + lower;
+  return (rand() % upper) + lower;
 }

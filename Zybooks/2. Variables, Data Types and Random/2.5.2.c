@@ -5,17 +5,17 @@
 #include <stdio.h>
 
 int main(void) {
-    int numDrinks;
-    int numTacos;
-    int totalCost;
+  int numDrinks;
+  int numTacos;
+  int totalCost;
 
-    scanf("%d", &numDrinks);
-    scanf("%d", &numTacos);
+  scanf("%d", &numDrinks);
+  scanf("%d", &numTacos);
 
-    /* Your solution goes here  */
-    totalCost = (numDrinks * 2) + (numTacos * 3);
+  /* Your solution goes here  */
+  totalCost = (numDrinks * 2) + (numTacos * 3);
 
-    printf("Total cost: %d\n", totalCost);
+  printf("Total cost: %d\n", totalCost);
 
-    return 0;
+  return 0;
 }

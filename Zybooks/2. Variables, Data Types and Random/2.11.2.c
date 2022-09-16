@@ -5,18 +5,18 @@
 #include <stdio.h>
 
 int main(void) {
-    int amountToChange;
-    int numFives;
-    int numOnes;
+  int amountToChange;
+  int numFives;
+  int numOnes;
 
-    scanf("%d", &amountToChange);
-    numFives = amountToChange / 5;
+  scanf("%d", &amountToChange);
+  numFives = amountToChange / 5;
 
-    /* Your solution goes here  */
-    numOnes = amountToChange - (numFives * 5);
+  /* Your solution goes here  */
+  numOnes = amountToChange - (numFives * 5);
 
-    printf("numFives: %d\n", numFives);
-    printf("numOnes: %d\n", numOnes);
+  printf("numFives: %d\n", numFives);
+  printf("numOnes: %d\n", numOnes);
 
-    return 0;
+  return 0;
 }

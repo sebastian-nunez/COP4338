@@ -5,18 +5,18 @@
 #include <stdio.h>
 
 int main(void) {
-    const int NUM_ELEMENTS = 5;
-    int runTimes[NUM_ELEMENTS];
-    int i;
+  const int NUM_ELEMENTS = 5;
+  int runTimes[NUM_ELEMENTS];
+  int i;
 
-    for (i = 0; i < NUM_ELEMENTS; ++i) {
-        scanf("%d", &(runTimes[i]));
-    }
+  for (i = 0; i < NUM_ELEMENTS; ++i) {
+    scanf("%d", &(runTimes[i]));
+  }
 
-    /* Your solution goes here  */
-    printf("%d\n", runTimes[0]);
-    printf("%d\n", runTimes[1]);
-    printf("%d\n", runTimes[2]);
+  /* Your solution goes here  */
+  printf("%d\n", runTimes[0]);
+  printf("%d\n", runTimes[1]);
+  printf("%d\n", runTimes[2]);
 
-    return 0;
+  return 0;
 }

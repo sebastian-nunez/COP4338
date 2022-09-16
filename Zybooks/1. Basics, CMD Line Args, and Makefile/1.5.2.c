@@ -6,14 +6,14 @@
 #include <stdio.h>
 
 int main(void) {
-    int songNum;
+  int songNum;
 
-    songNum = 5;
+  songNum = 5;
 
-    /* Your solution goes here  */
-    printf("Num: %d\n", songNum);
-    printf("%d\n", songNum);
-    printf("%d songs\n", songNum);
+  /* Your solution goes here  */
+  printf("Num: %d\n", songNum);
+  printf("%d\n", songNum);
+  printf("%d songs\n", songNum);
 
-    return 0;
+  return 0;
 }

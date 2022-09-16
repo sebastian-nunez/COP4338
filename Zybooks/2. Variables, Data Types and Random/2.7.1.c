@@ -8,15 +8,15 @@
 #include <stdio.h>
 
 int main(void) {
-    double sphereVolume;
-    double sphereRadius;
+  double sphereVolume;
+  double sphereRadius;
 
-    scanf("%lf", &sphereRadius);
+  scanf("%lf", &sphereRadius);
 
-    /* Your solution goes here  */
-    sphereVolume = (4.0 / 3.0) * M_PI * pow(sphereRadius, 3);
+  /* Your solution goes here  */
+  sphereVolume = (4.0 / 3.0) * M_PI * pow(sphereRadius, 3);
 
-    printf("%.2lf\n", sphereVolume);
+  printf("%.2lf\n", sphereVolume);
 
-    return 0;
+  return 0;
 }

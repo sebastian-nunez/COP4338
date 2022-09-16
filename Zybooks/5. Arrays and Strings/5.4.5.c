@@ -7,25 +7,25 @@
 #include <stdio.h>
 
 int main(void) {
-    const int NUM_VALS = 4;
-    int hourlyTemp[NUM_VALS];
-    int i;
+  const int NUM_VALS = 4;
+  int hourlyTemp[NUM_VALS];
+  int i;
 
-    for (i = 0; i < NUM_VALS; ++i) {
-        scanf("%d", &(hourlyTemp[i]));
+  for (i = 0; i < NUM_VALS; ++i) {
+    scanf("%d", &(hourlyTemp[i]));
+  }
+
+  /* Your solution goes here  */
+  for (int i = 0; i < NUM_VALS; i++) {
+    if (i == NUM_VALS - 1) {
+      printf("%d", hourlyTemp[i]);
+      break;
     }
 
-    /* Your solution goes here  */
-    for (int i = 0; i < NUM_VALS; i++) {
-        if (i == NUM_VALS - 1) {
-            printf("%d", hourlyTemp[i]);
-            break;
-        }
+    printf("%d, ", hourlyTemp[i]);
+  }
 
-        printf("%d, ", hourlyTemp[i]);
-    }
+  printf("\n");
 
-    printf("\n");
-
-    return 0;
+  return 0;
 }

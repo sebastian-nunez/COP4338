@@ -7,17 +7,18 @@
 #include <stdio.h>
 
 int main(void) {
-    double targetValue;
-    double sensorReading;
+  double targetValue;
+  double sensorReading;
 
-    scanf("%lf", &targetValue);
-    scanf("%lf", &sensorReading);
+  scanf("%lf", &targetValue);
+  scanf("%lf", &sensorReading);
 
-    if (/* Your solution goes here  */ fabs(sensorReading - targetValue) < 0.0001) {
-        printf("Equal\n");
-    } else {
-        printf("Not equal\n");
-    }
+  if (/* Your solution goes here  */ fabs(sensorReading - targetValue) <
+      0.0001) {
+    printf("Equal\n");
+  } else {
+    printf("Not equal\n");
+  }
 
-    return 0;
+  return 0;
 }

@@ -10,13 +10,13 @@
 #include "stdio.h"
 
 int main(int argc, char* argv[]) {
-    int i;
+  int i;
 
-    // Prints argc and argv values
-    printf("argc: %d\n", argc);
-    for (i = 0; i < argc; ++i) {
-        printf("argv[%d]: %s\n", i, argv[i]);
-    }
+  // Prints argc and argv values
+  printf("argc: %d\n", argc);
+  for (i = 0; i < argc; ++i) {
+    printf("argv[%d]: %s\n", i, argv[i]);
+  }
 
-    return 0;
+  return 0;
 }

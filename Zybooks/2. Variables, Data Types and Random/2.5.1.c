@@ -3,17 +3,17 @@
 #include <stdio.h>
 
 int main(void) {
-    int num1;
-    int num2;
-    int finalResult;
+  int num1;
+  int num2;
+  int finalResult;
 
-    scanf("%d", &num1);
-    scanf("%d", &num2);
+  scanf("%d", &num1);
+  scanf("%d", &num2);
 
-    /* Your solution goes here  */
-    finalResult = (num1 + num2) / 3;
+  /* Your solution goes here  */
+  finalResult = (num1 + num2) / 3;
 
-    printf("Final result: %d\n", finalResult);
+  printf("Final result: %d\n", finalResult);
 
-    return 0;
+  return 0;
 }

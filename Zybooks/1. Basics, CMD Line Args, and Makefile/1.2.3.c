@@ -12,12 +12,12 @@
 #include <stdio.h>
 
 int main(void) {
-    int birthMonth;
-    int birthYear;
+  int birthMonth;
+  int birthYear;
 
-    /* Your solution goes here  */
-    scanf("%d %d", &birthMonth, &birthYear);
-    printf("%d/%d\n", birthMonth, birthYear);
+  /* Your solution goes here  */
+  scanf("%d %d", &birthMonth, &birthYear);
+  printf("%d/%d\n", birthMonth, birthYear);
 
-    return 0;
+  return 0;
 }

@@ -1,4 +1,8 @@
 BasedOnStyle: Google
+# IndentWidth: 4
 AccessModifierOffset: -2
-AllowShortLoopsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Empty
+# ColumnLimit: 120
+AllowShortLoopsOnASingleLine: false
+DerivePointerAlignment: false
+PointerAlignment: Left

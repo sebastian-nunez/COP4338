@@ -5,15 +5,15 @@
 #include <string.h>
 
 int main(void) {
-    char userInput[50];
-    int stringSize;
+  char userInput[50];
+  int stringSize;
 
-    scanf("%s", userInput);
+  scanf("%s", userInput);
 
-    /* Your solution goes here  */
-    stringSize = strlen(userInput);
+  /* Your solution goes here  */
+  stringSize = strlen(userInput);
 
-    printf("Size of userInput: %d\n", stringSize);
+  printf("Size of userInput: %d\n", stringSize);
 
-    return 0;
+  return 0;
 }

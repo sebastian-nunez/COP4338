@@ -4,15 +4,17 @@
 #include <pthread.h>
 
 struct ringbuf_t {
-    pthread_mutex_t mutex;     /* lock to protect from simutaneous access to the buffer */
-    pthread_cond_t cond_full;  /* producer needs to wait when the buffer is full */
-    pthread_cond_t cond_empty; /* consumer needs to wait when the buffer is empty */
-    int bufsiz;                /* size of the buffer; you may use an empty slot to
-                                  differentiate the situation the buffer is full or empty */
-    int front;                 /* index of the first element */
-    int back;                  /* index next to the last element (or index to the first empty
-                                  slot) */
-    char* buf;                 /* buffer itself */
+  pthread_mutex_t
+      mutex; /* lock to protect from simutaneous access to the buffer */
+  pthread_cond_t cond_full; /* producer needs to wait when the buffer is full */
+  pthread_cond_t
+      cond_empty; /* consumer needs to wait when the buffer is empty */
+  int bufsiz;     /* size of the buffer; you may use an empty slot to
+                     differentiate the situation the buffer is full or empty */
+  int front;      /* index of the first element */
+  int back;       /* index next to the last element (or index to the first empty
+                     slot) */
+  char* buf;      /* buffer itself */
 };
 
 /* return the pointer to the newl created and initialized ring buffer of the

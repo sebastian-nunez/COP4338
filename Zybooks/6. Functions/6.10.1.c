@@ -7,21 +7,21 @@
 
 /* Your solution goes here  */
 void CoordTransform(int xValOld, int yValOld, int* xValNew, int* yValNew) {
-    *xValNew = (xValOld + 1) * 2;
-    *yValNew = (yValOld + 1) * 2;
+  *xValNew = (xValOld + 1) * 2;
+  *yValNew = (yValOld + 1) * 2;
 }
 
 int main(void) {
-    int xValNew;
-    int yValNew;
-    int xValUser;
-    int yValUser;
+  int xValNew;
+  int yValNew;
+  int xValUser;
+  int yValUser;
 
-    scanf("%d", &xValUser);
-    scanf("%d", &yValUser);
+  scanf("%d", &xValUser);
+  scanf("%d", &yValUser);
 
-    CoordTransform(xValUser, yValUser, &xValNew, &yValNew);
-    printf("(%d, %d) becomes (%d, %d)\n", xValUser, yValUser, xValNew, yValNew);
+  CoordTransform(xValUser, yValUser, &xValNew, &yValNew);
+  printf("(%d, %d) becomes (%d, %d)\n", xValUser, yValUser, xValNew, yValNew);
 
-    return 0;
+  return 0;
 }

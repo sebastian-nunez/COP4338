@@ -26,4 +26,3 @@ swapint: swapint.c
 
 clean:
 		rm -f countvowels printascii printchar printfloat printfloats printstrings sumfifty swapint
-

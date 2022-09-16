@@ -6,27 +6,27 @@
 
 /* Your solution goes here  */
 void SwapArrayEnds(int arr[], int size) {
-    int temp = arr[0];
-    arr[0] = arr[size - 1];
-    arr[size - 1] = temp;
+  int temp = arr[0];
+  arr[0] = arr[size - 1];
+  arr[size - 1] = temp;
 }
 
 int main(void) {
-    const int SORT_ARR_SIZE = 4;
-    int sortArray[SORT_ARR_SIZE];
-    int i;
-    int userNum;
+  const int SORT_ARR_SIZE = 4;
+  int sortArray[SORT_ARR_SIZE];
+  int i;
+  int userNum;
 
-    for (i = 0; i < SORT_ARR_SIZE; ++i) {
-        scanf("%d", &sortArray[i]);
-    }
+  for (i = 0; i < SORT_ARR_SIZE; ++i) {
+    scanf("%d", &sortArray[i]);
+  }
 
-    SwapArrayEnds(sortArray, SORT_ARR_SIZE);
+  SwapArrayEnds(sortArray, SORT_ARR_SIZE);
 
-    for (i = 0; i < SORT_ARR_SIZE; ++i) {
-        printf("%d ", sortArray[i]);
-    }
-    printf("\n");
+  for (i = 0; i < SORT_ARR_SIZE; ++i) {
+    printf("%d ", sortArray[i]);
+  }
+  printf("\n");
 
-    return 0;
+  return 0;
 }

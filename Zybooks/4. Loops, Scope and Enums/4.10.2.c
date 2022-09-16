@@ -9,25 +9,25 @@
 #include <string.h>
 
 int main(void) {
-    char simonPattern[50];
-    char userPattern[50];
-    int userScore;
-    int i;
+  char simonPattern[50];
+  char userPattern[50];
+  int userScore;
+  int i;
 
-    userScore = 0;
+  userScore = 0;
 
-    scanf("%s", simonPattern);
-    scanf("%s", userPattern);
+  scanf("%s", simonPattern);
+  scanf("%s", userPattern);
 
-    /* Your solution goes here  */
-    for (i = 0; i < strlen(simonPattern); i++) {
-        if (simonPattern[i] == userPattern[i])
-            userScore++;
-        else
-            break;
-    }
+  /* Your solution goes here  */
+  for (i = 0; i < strlen(simonPattern); i++) {
+    if (simonPattern[i] == userPattern[i])
+      userScore++;
+    else
+      break;
+  }
 
-    printf("userScore: %d\n", userScore);
+  printf("userScore: %d\n", userScore);
 
-    return 0;
+  return 0;
 }

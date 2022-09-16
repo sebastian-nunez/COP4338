@@ -8,16 +8,16 @@
 #include <stdio.h>
 
 int main(void) {
-    double G = 6.673e-11;
-    double M = 5.98e24;
-    double accelGravity;
-    double distCenter;
-    scanf("%lf", &distCenter);
+  double G = 6.673e-11;
+  double M = 5.98e24;
+  double accelGravity;
+  double distCenter;
+  scanf("%lf", &distCenter);
 
-    /* Your solution goes here  */
-    accelGravity = (G * M) / pow(distCenter, 2);
+  /* Your solution goes here  */
+  accelGravity = (G * M) / pow(distCenter, 2);
 
-    printf("%lf\n", accelGravity);
+  printf("%lf\n", accelGravity);
 
-    return 0;
+  return 0;
 }

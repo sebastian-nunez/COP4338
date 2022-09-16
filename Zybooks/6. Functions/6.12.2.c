@@ -6,19 +6,19 @@
 #include <string.h>
 
 void MakeSentenceExcited(char* sentenceText) {
-    /* Your solution goes here  */
-    for (int i = 0; i < strlen(sentenceText); i++) {
-        if (sentenceText[i] == '.') sentenceText[i] = '!';
-    }
+  /* Your solution goes here  */
+  for (int i = 0; i < strlen(sentenceText); i++) {
+    if (sentenceText[i] == '.') sentenceText[i] = '!';
+  }
 }
 
 int main(void) {
-    const int TEST_STR_SIZE = 50;
-    char testStr[TEST_STR_SIZE];
+  const int TEST_STR_SIZE = 50;
+  char testStr[TEST_STR_SIZE];
 
-    fgets(testStr, TEST_STR_SIZE, stdin);
-    MakeSentenceExcited(testStr);
-    printf("%s", testStr);
+  fgets(testStr, TEST_STR_SIZE, stdin);
+  MakeSentenceExcited(testStr);
+  printf("%s", testStr);
 
-    return 0;
+  return 0;
 }

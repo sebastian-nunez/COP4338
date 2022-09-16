@@ -7,18 +7,18 @@
 
 /* Your solution goes here  */
 void PrintFeetInchShort(int iNumFeet, int iNumInches) {
-    printf("%d\' %d\"\n", iNumFeet, iNumInches);
+  printf("%d\' %d\"\n", iNumFeet, iNumInches);
 }
 
 int main(void) {
-    int userFeet;
-    int userInches;
+  int userFeet;
+  int userInches;
 
-    scanf("%d", &userFeet);
-    scanf("%d", &userInches);
+  scanf("%d", &userFeet);
+  scanf("%d", &userInches);
 
-    PrintFeetInchShort(userFeet,
-                       userInches);  // Will be run with (5, 8), then (4, 11)
+  PrintFeetInchShort(userFeet,
+                     userInches);  // Will be run with (5, 8), then (4, 11)
 
-    return 0;
+  return 0;
 }

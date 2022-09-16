@@ -14,32 +14,32 @@
 
 /* Your code goes here */
 bool AdjustState(int airTemp, char* thermoState) {
-    if (airTemp < 60) {
-        *thermoState = 'L';
-    } else if (airTemp > 60) {
-        *thermoState = 'H';
-    } else {
-        return false;
-    }
+  if (airTemp < 60) {
+    *thermoState = 'L';
+  } else if (airTemp > 60) {
+    *thermoState = 'H';
+  } else {
+    return false;
+  }
 
-    return true;
+  return true;
 }
 
 int main(void) {
-    int airTemperature;
-    char thermostatState;
-    bool isChanged;
+  int airTemperature;
+  char thermostatState;
+  bool isChanged;
 
-    thermostatState = 'S';
-    scanf("%d", &airTemperature);
+  thermostatState = 'S';
+  scanf("%d", &airTemperature);
 
-    isChanged = AdjustState(airTemperature, &thermostatState);
+  isChanged = AdjustState(airTemperature, &thermostatState);
 
-    if (isChanged) {
-        printf("Thermostat state is changed to %c.\n", thermostatState);
-    } else {
-        printf("Thermostat state %c is not changed.\n", thermostatState);
-    }
+  if (isChanged) {
+    printf("Thermostat state is changed to %c.\n", thermostatState);
+  } else {
+    printf("Thermostat state %c is not changed.\n", thermostatState);
+  }
 
-    return 0;
+  return 0;
 }

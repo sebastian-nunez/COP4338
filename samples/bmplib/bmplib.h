@@ -2,32 +2,32 @@
 #define BMPLIB_H
 
 typedef struct {
-    unsigned short padding;
-    unsigned short bfType;
-    unsigned int bfSize;
-    unsigned short bfReserved1;
-    unsigned short bfReserved2;
-    unsigned int bfOffBits;
+  unsigned short padding;
+  unsigned short bfType;
+  unsigned int bfSize;
+  unsigned short bfReserved1;
+  unsigned short bfReserved2;
+  unsigned int bfOffBits;
 } BITMAPFILEHEADER;
 
 typedef struct {
-    unsigned int biSize;
-    int biWidth;
-    int biHeight;
-    unsigned short biPlanes;
-    unsigned short biBitCount;
-    unsigned int biCompression;
-    unsigned int biSizeImage;
-    unsigned int biXPelsPerMeter;
-    unsigned int biYPelsPerMeter;
-    unsigned int biClrUsed;
-    unsigned int biClrImportant;
+  unsigned int biSize;
+  int biWidth;
+  int biHeight;
+  unsigned short biPlanes;
+  unsigned short biBitCount;
+  unsigned int biCompression;
+  unsigned int biSizeImage;
+  unsigned int biXPelsPerMeter;
+  unsigned int biYPelsPerMeter;
+  unsigned int biClrUsed;
+  unsigned int biClrImportant;
 } BITMAPINFOHEADER;
 
 typedef struct {
-    unsigned char r;
-    unsigned char g;
-    unsigned char b;
+  unsigned char r;
+  unsigned char g;
+  unsigned char b;
 } PIXEL;
 
 #define DEFAULT_BITMAP_OFFSET 1078

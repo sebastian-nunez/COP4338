@@ -5,20 +5,20 @@
 #include <string.h>
 
 void GetUserInfo(int* userAge, char userName[]) {
-    printf("Enter your age: \n");
-    scanf("%d", userAge);
-    printf("Enter your name: \n");
-    scanf("%s", userName);
+  printf("Enter your age: \n");
+  scanf("%d", userAge);
+  printf("Enter your name: \n");
+  scanf("%s", userName);
 }
 
 int main(void) {
-    int userAge;
-    char userName[30];
+  int userAge;
+  char userName[30];
 
-    /* Your solution goes here  */
-    GetUserInfo(&userAge, userName);
+  /* Your solution goes here  */
+  GetUserInfo(&userAge, userName);
 
-    printf("%s is %d years old.\n", userName, userAge);
+  printf("%s is %d years old.\n", userName, userAge);
 
-    return 0;
+  return 0;
 }

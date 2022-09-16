@@ -4,15 +4,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int userAge;
+  int userAge;
 
-    scanf("%d", &userAge);
+  scanf("%d", &userAge);
 
-    if (/* Your solution goes here  */ userAge >= 18 && userAge <= 25) {
-        printf("Eligible\n");
-    } else {
-        printf("Ineligible\n");
-    }
+  if (/* Your solution goes here  */ userAge >= 18 && userAge <= 25) {
+    printf("Eligible\n");
+  } else {
+    printf("Ineligible\n");
+  }
 
-    return 0;
+  return 0;
 }

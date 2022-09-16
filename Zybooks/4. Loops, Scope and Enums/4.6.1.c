@@ -5,18 +5,18 @@
 #include <stdio.h>
 
 int main(void) {
-    int countLimit;
-    int printVal;
+  int countLimit;
+  int printVal;
 
-    // Get user input
-    scanf("%d", &countLimit);
+  // Get user input
+  scanf("%d", &countLimit);
 
-    printVal = 0;
-    do {
-        printf("%d ", printVal);
-        printVal = printVal + 1;
-    } while (/* Your solution goes here  */ printVal <= countLimit);
-    printf("\n");
+  printVal = 0;
+  do {
+    printf("%d ", printVal);
+    printVal = printVal + 1;
+  } while (/* Your solution goes here  */ printVal <= countLimit);
+  printf("\n");
 
-    return 0;
+  return 0;
 }

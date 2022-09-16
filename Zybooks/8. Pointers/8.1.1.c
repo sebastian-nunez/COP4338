@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-void SplitIntoTensOnes(int *tensDigit, int *onesDigit, int DecVal) {
+void SplitIntoTensOnes(int* tensDigit, int* onesDigit, int DecVal) {
   *tensDigit = (DecVal / 10) % 10;
   *onesDigit = DecVal % 10;
 }

@@ -4,14 +4,14 @@
 #include <stdio.h>
 
 int main(void) {
-    int numPeople;
+  int numPeople;
 
-    scanf("%d", &numPeople);
+  scanf("%d", &numPeople);
 
-    /* Your solution goes here  */
-    numPeople = numPeople + 5;
+  /* Your solution goes here  */
+  numPeople = numPeople + 5;
 
-    printf("There are %d people.\n", numPeople);
+  printf("There are %d people.\n", numPeople);
 
-    return 0;
+  return 0;
 }

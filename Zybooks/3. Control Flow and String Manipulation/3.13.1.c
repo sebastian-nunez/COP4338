@@ -5,17 +5,17 @@
 #include <string.h>
 
 int main(void) {
-    char userString[50];
+  char userString[50];
 
-    scanf("%s", userString);
+  scanf("%s", userString);
 
-    /* Your solution goes here  */
-    if (strcmp(userString, "Quit") == 0) {
-        printf("Goodbye\n");
+  /* Your solution goes here  */
+  if (strcmp(userString, "Quit") == 0) {
+    printf("Goodbye\n");
 
-    } else {
-        printf("Hello\n");
-    }
+  } else {
+    printf("Hello\n");
+  }
 
-    return 0;
+  return 0;
 }

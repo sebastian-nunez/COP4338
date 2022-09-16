@@ -6,18 +6,18 @@
 #include <stdio.h>
 
 int main(void) {
-    enum GroceryItem { GR_APPLES, GR_BANANAS, GR_JUICE, GR_WATER };
-    enum GroceryItem userItem;
+  enum GroceryItem { GR_APPLES, GR_BANANAS, GR_JUICE, GR_WATER };
+  enum GroceryItem userItem;
 
-    userItem = GR_APPLES;
+  userItem = GR_APPLES;
 
-    /* Your solution goes here  */
-    if (userItem == GR_APPLES || userItem == GR_BANANAS)
-        printf("Fruit\n");
-    else if (userItem == GR_JUICE || userItem == GR_WATER)
-        printf("Drink\n");
-    else
-        printf("Unknown\n");
+  /* Your solution goes here  */
+  if (userItem == GR_APPLES || userItem == GR_BANANAS)
+    printf("Fruit\n");
+  else if (userItem == GR_JUICE || userItem == GR_WATER)
+    printf("Drink\n");
+  else
+    printf("Unknown\n");
 
-    return 0;
+  return 0;
 }

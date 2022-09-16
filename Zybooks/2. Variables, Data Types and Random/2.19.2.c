@@ -8,14 +8,14 @@
 #include <stdlib.h>  // Enables use of rand()
 
 int main(void) {
-    int seedVal;
+  int seedVal;
 
-    scanf("%d", &seedVal);
+  scanf("%d", &seedVal);
 
-    /* Your solution goes here  */
-    srand(seedVal);
-    printf("%d\n", rand() % 10);
-    printf("%d\n", rand() % 10);
+  /* Your solution goes here  */
+  srand(seedVal);
+  printf("%d\n", rand() % 10);
+  printf("%d\n", rand() % 10);
 
-    return 0;
+  return 0;
 }

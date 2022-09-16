@@ -4,9 +4,9 @@
 #include <stdio.h>
 
 int main(void) {
-    /* Your solution goes here  */
-    int numHouses = 25;
-    printf("%d\n", numHouses);
+  /* Your solution goes here  */
+  int numHouses = 25;
+  printf("%d\n", numHouses);
 
-    return 0;
+  return 0;
 }

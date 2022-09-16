@@ -10,21 +10,21 @@
 
 /* Your code goes here */
 void SwapRank(char* rank1, char* rank2) {
-    char temp = *rank1;
-    *rank1 = *rank2;
-    *rank2 = temp;
+  char temp = *rank1;
+  *rank1 = *rank2;
+  *rank2 = temp;
 }
 
 int main(void) {
-    char rank1;
-    char rank2;
+  char rank1;
+  char rank2;
 
-    scanf(" %c", &rank1);
-    scanf(" %c", &rank2);
+  scanf(" %c", &rank1);
+  scanf(" %c", &rank2);
 
-    SwapRank(&rank1, &rank2);
+  SwapRank(&rank1, &rank2);
 
-    printf("%c %c\n", rank1, rank2);
+  printf("%c %c\n", rank1, rank2);
 
-    return 0;
+  return 0;
 }

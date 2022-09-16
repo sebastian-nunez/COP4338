@@ -8,22 +8,24 @@
 #include <stdio.h>
 
 int main(void) {
-    const int NUM_VALS = 4;
-    int courseGrades[NUM_VALS];
-    int i;
+  const int NUM_VALS = 4;
+  int courseGrades[NUM_VALS];
+  int i;
 
-    for (i = 0; i < NUM_VALS; ++i) {
-        scanf("%d", &(courseGrades[i]));
-    }
+  for (i = 0; i < NUM_VALS; ++i) {
+    scanf("%d", &(courseGrades[i]));
+  }
 
-    /* Your solution goes here  */
-    for (int i = 0; i < 4; i++) printf("%d ", courseGrades[i]);
+  /* Your solution goes here  */
+  for (int i = 0; i < 4; i++)
+    printf("%d ", courseGrades[i]);
 
-    printf("\n");
+  printf("\n");
 
-    for (int i = 3; i >= 0; i--) printf("%d ", courseGrades[i]);
+  for (int i = 3; i >= 0; i--)
+    printf("%d ", courseGrades[i]);
 
-    printf("\n");
+  printf("\n");
 
-    return 0;
+  return 0;
 }
