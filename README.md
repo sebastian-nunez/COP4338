@@ -127,12 +127,38 @@
   - [Separate Files](#separate-files)
 
 - [**Chapter 7: Structs**](#chapter-7-structs)
+
   - [Defining Structs and Typedef](#defining-structs-and-typedef)
   - [Returning Structs from Functions](#returning-structs-from-functions)
   - [Structs and Arrays](#structs-and-arrays)
   - [Structs, Arrays, and Functions (Example)](#structs-arrays-and-functions-example)
   - [Derefencing a Pointer to a Struct (->)](#derefencing-a-pointer-to-a-struct--)
   - [Seperate Files for Structs](#seperate-files-for-structs)
+
+- [**Chapter 8: Pointers**](#chapter-8-pointers)
+  - [Why Pointers](#why-pointers)
+  - [Pointer Basics](#pointer-basics)
+  - [Dereferencing a Pointer](#dereferencing-a-pointer)
+  - [Null Pointer](#null-pointer)
+  - [Common Pointer Mistakes](#common-pointer-mistakes)
+  - [**Malloc Function**](#malloc-function)
+  - [**Free Function**](#free-function)
+  - [Pointers with Structs](#pointers-with-structs)
+  - [String Functions with Pointers](#string-functions-with-pointers)
+  - [String Searching Methods (Table)](#string-searching-methods-table)
+  - [Malloc for Arrays and Strings](#malloc-for-arrays-and-strings)
+  - [Dynamic Copy of a String](#dynamic-copy-of-a-string)
+  - [**Realloc Function**](#realloc-function)
+    - [Dynamically Reallocating Size of an Array (Code)](#dynamically-reallocating-size-of-an-array-code)
+  - [**Vector ADT**](#vector-adt)
+    - [vector.h](#vectorh)
+    - [Vector Implementation](#vector-implementation)
+    - [**Vector Functions (Table)**](#vector-functions-table)
+    - [Segmentation Fault](#segmentation-fault)
+  - [LinkedList vs. Vector](#linkedlist-vs-vector)
+    - [LinkedList (Code)](#linkedlist-code)
+  - [**Memory Regions - Heap and Stack (Table)**](#memory-regions---heap-and-stack-table)
+  - [Memory Leaks](#memory-leaks)
 
 ## Chapter 0: UNIX Basics
 
@@ -268,6 +294,7 @@ set smooth
 ### Single Step Compilation
 
 ![Single Step Compilation](./images/1.16%20Single%20Step%20Compilation.png)
+[Back to top](#table-of-contents)
 
 ### Modular Compilation
 
@@ -300,6 +327,7 @@ set smooth
 ### Keywords Table
 
 ![Keywords Table](./images/2.3%20Keywords.png)
+[Back to top](#table-of-contents)
 
 ### Arithmetic Expressions
 
@@ -324,6 +352,7 @@ set smooth
 ### Floating Point Division by Zero (-inf, +inf)
 
 ![Floating Point Division by Zero (-inf, +inf)](./images/2.7%20Floating%20Point%20Division%20by%20Zero.png)
+[Back to top](#table-of-contents)
 
 ### Scientific Notation
 
@@ -363,6 +392,8 @@ set smooth
 
 ### Type Casting
 
+[Back to top](#table-of-contents)
+
 ![Type Casting](./images/2.12%20Type%20Casting.png)
 
 ### Binary
@@ -393,6 +424,7 @@ set smooth
 
 ![Integer Overflow](./images/2.16%20Integer%20Overflow.png)
 ![Integer Overflow](./images/2.16%20Overflow%20Error.png)
+[Back to top](#table-of-contents)
 
 ### Numeric Data Types
 
@@ -416,6 +448,8 @@ set smooth
 
 ### Input using Scanf (I/O)
 
+[Back to top](#table-of-contents)
+
 ![Input using Scanf (I/O)](./images/2.20%20scanf.png)
 
 [Back to top](#table-of-contents)
@@ -436,6 +470,8 @@ set smooth
 
 ### Relational Operators (<, >, <=,>=)
 
+[Back to top](#table-of-contents)
+
 ![Relational Operators (<, >, <=,>=)](./images/3.4%20Relational%20Operators.png)
 
 ### Logical Operators (&&, ||, !)
@@ -450,6 +486,7 @@ set smooth
 ### Order of Evaluation
 
 ![Order of Evaluation](./images/3.10%20Order%20of%20Evaluation.png)
+[Back to top](#table-of-contents)
 
 ### Switch Case Statement
 
@@ -472,6 +509,7 @@ set smooth
 ### String Methods <string.h>
 
 ![String Methods <string.h>](./images/3.14%20String%20Methods%20%3Cstring.h%3E.png)
+[Back to top](#table-of-contents)
 
 ### Character Operations <ctype.h>
 
@@ -484,6 +522,7 @@ set smooth
 ## Floating Point Comparison (delta)
 
 ![Floating Point Comparison (delta)](<./images/3.17%20Float%20Comparison%20(delta).png>)
+[Back to top](#table-of-contents)
 
 ### Short Circuit Evaluation
 
@@ -501,6 +540,7 @@ set smooth
 
 ![For Loops](./images/4.4%20For%20Loops.png)
 ![For Loops](./images/4.4%20For%20Loop%20Styling.png)
+[Back to top](#table-of-contents)
 
 ### Pre vs Post Operators
 
@@ -517,6 +557,7 @@ set smooth
 ### Nested Loops
 
 ![Nested Loops](./images/4.8%20Nested%20Loops.png)
+[Back to top](#table-of-contents)
 
 ### Break Statement
 
@@ -529,6 +570,7 @@ set smooth
 ### Loop Indexing
 
 ![Loop Indexing](./images/4.11%20Loop%20Index.png)
+[Back to top](#table-of-contents)
 
 ### Variable Scope
 
@@ -619,6 +661,7 @@ int main(void) {
 ### Multiple Arrays
 
 ![Multiple Arrays](./images/5.5%20Multiple%20Arrays.png)
+[Back to top](#table-of-contents)
 
 ### Swapping Values
 
@@ -641,6 +684,7 @@ int main(void) {
 ### I/O: scanf vs fgets <stdio.h>
 
 ![I/O: scanf vs fgets](<./images/5.11%20User%20Input%20(scanf%20and%20fgets).png>)
+[Back to top](#table-of-contents)
 
 ### Type Checking and Conversion <ctype.h>
 
@@ -750,6 +794,7 @@ int main(void) {
 ### Modular Math Expressions
 
 ![Modular Math Expressions](./images/6.4%20Modular%20Math%20Expressions.png)
+[Back to top](#table-of-contents)
 
 ### Unit Testing
 
@@ -770,6 +815,7 @@ int main(void) {
 ### Pass by Pointer/Reference
 
 ![Pass by Pointer/Reference](./images/6.10%20Pass%20by%20pointer.png)
+[Back to top](#table-of-contents)
 
 ### Functions with Array Parameters
 
@@ -784,6 +830,8 @@ int main(void) {
 ![Strings as Parameters](./images/6.12%20Strings%20as%20Parameters.png)
 
 ### Function Protope/Declaration
+
+[Back to top](#table-of-contents)
 
 ![Function Prototype/Declaration](./images/6.14%20Variable%20Scope.png)
 
@@ -935,5 +983,391 @@ int main(void) {
 ### Seperate Files for Structs
 
 ![Seperate Files for Structs](./images/7.5%20Separate%20Files%20for%20Structs.png)
+
+## Chapter 8: Pointers
+
+### Why Pointers
+
+![Why pointers](./images/8.1%20Pointers.png)
+
+### Pointer Basics
+
+![Pointer Basics](./images/8.2%20Pointer%20Basics.png)
+
+[Back to top](#table-of-contents)
+
+### Dereferencing a Pointer
+
+![Dereferencing a Pointer](./images/8.2%20Derefencing%20a%20Pointer.png)
+
+### Null Pointer
+
+![Null Pointer](./images/8.2%20Null%20Pointer.png)
+
+### Common Pointer Mistakes
+
+![Common Pointer Mistakes](./images/8.2%20Common%20Pointer%20Mistakes.png)
+
+### **Malloc Function**
+
+![Mallot and Free Functions](./images/8.3%20Mallot%20and%20Free.png)
+
+### **Free Function**
+
+![Free Function](./images/8.3%20Free%20Function.png)
+
+### Pointers with Structs
+
+![Pointers with Structs](./images/8.4%20Pointers%20with%20Structs.png)
+
+[Back to top](#table-of-contents)
+
+### String Functions with Pointers
+
+![String Functions with Pointers](./images/8.5%20String%20functions%20with%20Pointers.png)
+
+### String Searching Methods (Table)
+
+![String Searching Methods](<./images/8.5%20String%20Searching%20(Table).png>)
+
+### Malloc for Arrays and Strings
+
+![Malloc for Arrays and Strings](./images/8.6%20Malloc%20for%20Arrays%20and%20Strings.png)
+
+### Dynamic Copy of a String
+
+![Dynamic Copy of a String](./images/8.6%20Dynamic%20Copy%20of%20a%20String.png)
+
+- Make sure to account of the NULL character terminator in the String Length
+
+[Back to top](#table-of-contents)
+
+### Realloc Function
+
+![Realloc Function](./images/8.7%20Realloc%20Function.png)
+
+#### Dynamically Reallocating Size of an Array (Code)
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+   int* userVals = NULL; // No array yet
+   int numVals;
+   int i;
+   char userInput;
+   int userValsSum;
+   double userValsAvg;
+
+   userInput = 'c';
+
+   while (userInput == 'c') {
+
+      printf("Enter number of integer values: ");
+      scanf(" %d", &numVals);
+
+      if (userVals == NULL) {
+         userVals = (int*)malloc(numVals * sizeof(int));
+      }
+      else {
+         userVals = (int*)realloc(userVals, numVals * sizeof(int));
+      }
+
+      printf("Enter %d integer values...\n", numVals);
+      for (i = 0; i < numVals; ++i) {
+         printf("Value: ");
+         scanf("%d", &(userVals[i]));
+      }
+
+      // Calculate average
+      userValsSum = 0;
+      for (i = 0; i < numVals; ++i) {
+         userValsSum = userValsSum + userVals[i];
+      }
+      userValsAvg = (double)userValsSum / (double)numVals;
+
+      printf("Average = %lf\n", userValsAvg);
+
+      printf("\nEnter 'c' to compute another average (any other key to quit): ");
+      scanf(" %c", &userInput);
+   }
+
+   free(userVals);
+
+   return 0;
+}
+```
+
+[Back to top](#table-of-contents)
+
+### **Vector ADT**
+
+![Vector ADT](./images/8.8%20Vector%20ADT.png)
+
+#### vector.h
+
+```c
+#ifndef VECTOR_H
+#define VECTOR_H
+
+// struct and typedef declaration for Vector ADT
+typedef struct vector_struct {
+  int* data;
+  unsigned int size;
+} vector;
+
+// interface for accessing Vector ADT
+
+// Initialize vector
+void vector_create(vector* v, unsigned int vectorSize);
+
+// Destroy vector
+void vector_destroy(vector* v);
+
+// Resize the size of the vector
+void vector_resize(vector* v, unsigned int vectorSize);
+
+// Return pointer to element at specified index
+int* vector_get(vector* v, unsigned int index);
+
+// Insert new value at specified index
+void vector_insert(vector* v, unsigned int index, int value);
+
+// Insert new value at end of vector
+void vector_push_back(vector* v, int value);
+
+// Erase (remove) value at specified index
+void vector_remove(vector* v, unsigned int index);
+
+// Return number of elements within vector
+int vector_size(vector* v);
+
+#endif
+
+```
+
+[Back to top](#table-of-contents)
+
+#### Vector Implementation
+
+```c
+#include "vector.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  vector v;
+  vector_create(&v, 4);
+
+  *vector_get(&v, 0) = 27;
+  *vector_get(&v, 1) = 44;
+  *vector_get(&v, 2) = 9;
+  *vector_get(&v, 3) = 17;
+
+  vector_remove(&v, 1);
+  vector_remove(&v, 0);
+  vector_insert(&v, 0, 88);
+
+  vector_pop(&v);
+
+  printf("Contents:\n");
+  for (int i = 0; i < vector_size(&v); ++i) {
+    printf("%d\n", *vector_get(&v, i));
+  }
+
+  vector_destroy(&v);
+
+  return 0;
+}
+
+// Initialize vector with specified size
+void vector_create(vector* v, unsigned int vectorSize) {
+  if (v == NULL)
+    return;
+
+  v->data = (int*)malloc(vectorSize * sizeof(int));
+  v->size = vectorSize;
+
+  for (int i = 0; i < v->size; ++i) {
+    v->data[i] = 0;
+  }
+}
+
+// Destroy vector
+void vector_destroy(vector* v) {
+  if (v == NULL)
+    return;
+
+  free(v->data);
+  v->data = NULL;
+  v->size = 0;
+}
+
+// Resize the size of the vector
+void vector_resize(vector* v, unsigned int vectorSize) {
+  if (v == NULL)
+    return;
+
+  int oldSize = v->size;
+  v->data = (int*)realloc(v->data, vectorSize * sizeof(int));
+  v->size = vectorSize;
+
+  for (int i = oldSize; i < v->size; ++i) {
+    v->data[i] = 0;
+  }
+}
+
+// Return pointer to element at specified index
+int* vector_get(vector* v, unsigned int index) {
+  if (v == NULL || index >= v->size)
+    return NULL;
+
+  return &(v->data[index]);
+}
+
+// Insert new value at specified index
+void vector_insert(vector* v, unsigned int index, int value) {
+  if (v == NULL || index > v->size)
+    return;
+
+  vector_resize(v, v->size + 1);
+  for (int i = v->size - 1; i > index; --i) {
+    v->data[i] = v->data[i - 1];
+  }
+
+  v->data[index] = value;
+}
+
+// Insert new value at end of vector
+void vector_push_back(vector* v, int value) {
+  vector_insert(v, v->size, value);
+}
+// Remove value at specified index
+void vector_remove(vector* v, unsigned int index) {
+  if (v == NULL || index >= v->size)
+    return;
+
+  for (int i = index; i < v->size - 1; ++i) {
+    v->data[i] = v->data[i + 1];
+  }
+
+  vector_resize(v, v->size - 1);
+}
+
+// Remove value at the last element
+void vector_pop(vector* v) {
+  if (v == NULL)
+    return;
+
+  vector_remove(v, v->size - 1);
+}
+
+// Return number of elements within vector
+int vector_size(vector* v) {
+  if (v == NULL)
+    return -1;
+
+  return v->size;
+}
+```
+
+#### **Vector Functions (Table)**
+
+![Vector Functions (Table)](<./images/8.8%20Vector%20Functions%20(Table).png>)
+
+#### Segmentation Fault
+
+![Segmentation Fault](./images/8.8%20Segmentation%20Fault.png)
+
+### LinkedList vs. Vector
+
+![LinkedList vs. Vector](./images/8.9%20LinkedList%20vs.%20Vector.png)
+
+[Back to top](#table-of-contents)
+
+#### LinkedList (Code)
+
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct IntNode_struct {
+  int dataVal;
+  struct IntNode_struct* nextNodePtr;
+} IntNode;
+
+// Constructor
+void IntNode_Create(IntNode* thisNode, int dataInit, IntNode* nextLoc) {
+  thisNode->dataVal = dataInit;
+  thisNode->nextNodePtr = nextLoc;
+}
+
+/* Insert newNode after node.
+ Before: thisNode -- next
+ After:  thisNode -- newNode -- next
+ */
+void IntNode_InsertAfter(IntNode* thisNode, IntNode* newNode) {
+  IntNode* tmpNext = NULL;
+
+  tmpNext = thisNode->nextNodePtr;  // Remember next
+  thisNode->nextNodePtr = newNode;  // this -- new -- ?
+  newNode->nextNodePtr = tmpNext;   // this -- new -- next
+}
+
+// Print dataVal
+void IntNode_PrintNodeData(IntNode* thisNode) {
+  printf("%d\n", thisNode->dataVal);
+}
+
+// Grab location pointed by nextNodePtr
+IntNode* IntNode_GetNext(IntNode* thisNode) {
+  return thisNode->nextNodePtr;
+}
+
+int main(void) {
+  IntNode* headObj = NULL;  // Create IntNode objects
+  IntNode* nodeObj1 = NULL;
+  IntNode* nodeObj2 = NULL;
+  IntNode* nodeObj3 = NULL;
+  IntNode* currObj = NULL;
+
+  // Front of nodes list
+  headObj = (IntNode*)malloc(sizeof(IntNode));
+  IntNode_Create(headObj, -1, NULL);
+
+  // Insert nodes
+  nodeObj1 = (IntNode*)malloc(sizeof(IntNode));
+  IntNode_Create(nodeObj1, 555, NULL);
+  IntNode_InsertAfter(headObj, nodeObj1);
+
+  nodeObj2 = (IntNode*)malloc(sizeof(IntNode));
+  IntNode_Create(nodeObj2, 999, NULL);
+  IntNode_InsertAfter(nodeObj1, nodeObj2);
+
+  nodeObj3 = (IntNode*)malloc(sizeof(IntNode));
+  IntNode_Create(nodeObj3, 777, NULL);
+  IntNode_InsertAfter(nodeObj1, nodeObj3);
+
+  // Print linked list
+  currObj = headObj;
+  while (currObj != NULL) {
+    IntNode_PrintNodeData(currObj);
+    currObj = IntNode_GetNext(currObj);
+  }
+
+  return 0;
+}
+```
+
+### **Memory Regions - Heap and Stack (Table)**
+
+![Memory Regions - Heap and Stack (Table)](<./images/8.10%20Memory%20Regions%20-%20Heap%20and%20Stack%20(Table).png>)
+
+### Memory Leaks
+
+![Memory Leaks](./images/8.12%20Memory%20Leaks.png)
 
 [Back to top](#table-of-contents)

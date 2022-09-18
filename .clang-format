@@ -6,3 +6,4 @@ AllowShortFunctionsOnASingleLine: Empty
 AllowShortLoopsOnASingleLine: false
 DerivePointerAlignment: false
 PointerAlignment: Left
+AllowShortIfStatementsOnASingleLine: false

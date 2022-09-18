@@ -10,12 +10,12 @@ typedef struct Point {
   void (*print)(const struct Point*);
 } Point;
 
-void add(struct Point* point, int x, int y) {
+void add(Point* point, int x, int y) {
   point->x += x;
   point->y += y;
 }
 
-void sub(struct Point* point, int x, int y) {
+void sub(Point* point, int x, int y) {
   point->x -= x;
   point->y -= y;
 }
