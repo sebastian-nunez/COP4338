@@ -1,10 +1,10 @@
-all: morgage
+all: mortgagepmt
 
-morgage: morgage.o
-	cc morgage.o -o morgage
+mortgagepmt: mortgagepmt.o
+	cc mortgagepmt.o -o mortgagepmt
 
-morgage.o: morgage.c
-	cc -Wall -c morgage.c -o morgage.o
+mortgagepmt.o: mortgagepmt.c
+	cc -Wall -c mortgagepmt.c -o mortgagepmt.o
 
 clean:
-	rm -f *.o morgage
+	rm -f *.o mortgagepmt
