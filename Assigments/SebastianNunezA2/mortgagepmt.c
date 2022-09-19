@@ -119,14 +119,15 @@ int main(int argc, char* argv[]) {
   double monthlyPayment = -1;                                   // initial monthly payment (-1 indicates error)
 
   // printf("loan term: %hd\n", loanTerm);
-  // printf("rate: %f\n", rate);
+  // printf("rate: %lf\n", rate);
   // printf("downpayment: %f\n", downpayment);
-  // printf("price: %f\n", price);
-  // printf("pmi: %f\n", pmi);
+  // printf("price: %lf\n", price);
+  // printf("pmi: %lf\n", pmi);
 
   // validate rate
   if (!isValidRate(rate)) {
-    printf("Interest rate should be between %.3f%% and %.3f%%\n", MIN_INTEREST_RATE * 100.0, MAX_INTEREST_RATE * 100.0);
+    printf("Interest rate should be between %.3lf%% and %.3lf%%\n", MIN_INTEREST_RATE * 100.0,
+           MAX_INTEREST_RATE * 100.0);
     exit(1);
   }
 
@@ -141,7 +142,7 @@ int main(int argc, char* argv[]) {
 
   // final output
   char* outputFormat =
-      "The payment on a loan of $%.2f with an interest rate of %.3f%% for a term of %hd years will be $%.2f";
+      "The payment on a loan of $%.2lf with an interest rate of %.3lf%% for a term of %hd years will be $%.2lf";
   printf(outputFormat, price, rate * 100, loanTerm, monthlyPayment);
 
   exit(0);
@@ -155,7 +156,7 @@ int main(int argc, char* argv[]) {
  */
 double calculatePMI(double price, double downpayment) {
   double minDownpayment = price * MIN_DOWNPAYMENT_RATE;  // minimum downpayment based on MIN_DOWNPAYMENT_RATE
-  // printf("min downpayment: %f\n", minDownpayment);
+  // printf("min downpayment: %lf\n", minDownpayment);
 
   if (downpayment < minDownpayment) {
     return (price / 12.0) * PMI_RATE;
