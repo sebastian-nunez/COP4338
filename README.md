@@ -161,6 +161,7 @@
   - [**Memory Regions - Heap and Stack (Table)**](#memory-regions---heap-and-stack-table)
   - [Memory Leaks](#memory-leaks)
 
+- [**Chapter 9: Input and Output**](#chapter-9-input-and-output)
   - [File Pointer: stdout (fprintf)](#file-pointer-stdout-fprintf)
   - [File Pointer: stdin (fscanf)](#file-pointer-stdin-fscanf)
   - [Formatted Output (Table)](#formatted-output-table)
