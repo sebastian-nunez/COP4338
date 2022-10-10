@@ -13,10 +13,9 @@ int main(int argc, char* argv[]) {
   extern int optind;
   int c, err = 0;
 
-  int fflag = 0; // set up the -f flag
-  char *filename = ""; // variable to store filename
-  static char usage[] =
-      "usage: %s [-f filename]\n";
+  int fflag = 0;        // set up the -f flag
+  char* filename = "";  // variable to store filename
+  static char usage[] = "usage: %s [-f filename]\n";
 
   //"f" are the allowed flags. : -> previous flag takes an argument
   while ((c = getopt(argc, argv, "f:")) != -1) {
@@ -31,7 +30,7 @@ int main(int argc, char* argv[]) {
     }
   }
 
-  if ((optind) != argc) { 
+  if ((optind) != argc) {
     // need zero arguments
     printf("optind = %d, argc=%d\n", optind, argc);
     fprintf(stderr, "%s: there are no extra arguments allowed!\n", argv[0]);
