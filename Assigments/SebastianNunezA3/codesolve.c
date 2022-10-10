@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
 }
 
 void solve(char inputFileName[], char outFileName[]) {
-  bool printToFile = strlen(outFileName) > 0;
+  bool shouldPrintToFile = (strlen(outFileName) > 0);
 
   FILE* inFile = fopen(inputFileName, "r");
   if (inFile == NULL) {
@@ -69,13 +69,19 @@ void solve(char inputFileName[], char outFileName[]) {
     exit(100);
   }
 
-  FILE* outFile = stdout;
-  if (printToFile) {
-    inFile = fopen(outFileName, "w");
-  }
-
-  if (inFile == NULL) {
-    printf("Unable to open file named: %s", inputFileName);
+  FILE* outFile = shouldPrintToFile ? fopen(outFileName, "w") : stdout;
+  if (outFile == NULL) {
+    printf("Unable to open file named: %s", outFileName);
     exit(100);
   }
+
+  char inputChar;
+  while (!feof(inFile)) {
+    fscanf(inFile, " %c", &inputChar);
+
+    fprintf(outFile, "%c\n", inputChar);
+  }
+
+  fclose(inFile);
+  fclose(outFile);
 }
