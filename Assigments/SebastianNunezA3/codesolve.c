@@ -100,25 +100,43 @@ void solve(char inputFileName[], char outFileName[]) {
   LinkedList* list = createLinkedList();
 
   char inputChar;
-  while (!feof(inFile)) {
+  while (!feof(inFile)) {  // read through the entire file and add the letters to the list
     fscanf(inFile, " %c", &inputChar);
-    inputChar = toupper(inputChar);
-    insertLinkedList(list, inputChar);
+
+    if (!isalpha(inputChar)) {
+      printf("Invalid character '%c'!", inputChar);
+      exit(1);
+    }
+
+    insertLinkedList(list, toupper(inputChar));
+    // printLinkedList(list);
   }
 
+  // print the list
   Node* current = list->head->next;
-  for (int i = 0; i < list->size; ++i) {
+  for (int i = 0; i < list->size; i++) {
     fprintf(outFile, "%c", current->letter);
+    fflush(outFile);
     current = current->next;
   }
+  fprintf(outFile, "\n");
+  fflush(outFile);
 
+  // clean up
   destroyLinkedList(list);
   fclose(inFile);
   fclose(outFile);
+
+  exit(0);
 }
 
 Node* createNode() {
   Node* newNode = (Node*)malloc(sizeof(Node));
+  if (newNode == NULL) {
+    printf("Unable to create Node!\n");
+    exit(1);
+  }
+
   newNode->letter = -1;
   newNode->next = NULL;
   newNode->prev = NULL;
@@ -128,6 +146,10 @@ Node* createNode() {
 
 LinkedList* createLinkedList() {
   LinkedList* list = (LinkedList*)malloc(sizeof(LinkedList));  // create list
+  if (list == NULL) {
+    printf("Unable to create the LinkedList!\n");
+    exit(1);
+  }
 
   // create head and tail 'dummy' nodes
   Node* head = createNode();
@@ -148,7 +170,7 @@ LinkedList* createLinkedList() {
   list->tail->next = NULL;
   list->tail->prev = head;
 
-  printf("LinkedList created!\n");
+  // printf("LinkedList created!\n");
   return list;
 }
 
@@ -162,39 +184,15 @@ void destroyLinkedList(LinkedList* list) {
   Node* next;
   while (current) {
     next = current->next;
-    printf("Node %c destroyed!\n", current->letter);
+    // printf("Node %c destroyed!\n", current->letter);
     free(current);
     current = next;
   }
 
-  printf("LinkedList destroyed!\n");
+  // printf("LinkedList destroyed!\n");
   free(list);
   list = NULL;
 }
-
-// void insertLinkedList(LinkedList* list, char letter) {
-//   if (list == NULL) {
-//     printf("List does not exist! Unable to insert!\n");
-//     return;
-//   }
-
-//   // create newNode and give it the data
-//   Node* newNode = createNode();
-//   newNode->letter = letter;
-
-//   Node* chain = list->head->next;  // save the chain of nodes
-
-//   // fix newNode pointers
-//   newNode->next = chain;
-//   newNode->prev = list->head;
-
-//   // fix head pointers
-//   list->head->next = newNode;
-//   chain->prev = newNode;
-
-//   list->size++;
-//   printf("Added %c to the list!\n", letter);
-// }
 
 void insertLinkedList(LinkedList* list, char letter) {
   if (list == NULL) {
@@ -214,20 +212,22 @@ void insertLinkedList(LinkedList* list, char letter) {
     list->head->next = newNode;
     list->tail->prev = newNode;
     list->size++;
+
+    // printf("Head: %c\n", letter);
     return;
   }
 
   Node* current = list->head->next;  // save the chain of nodes
-  Node* prev = current->prev;        // store the previous node
+  Node* prev = list->head;           // store the previous node
 
-  for (int i = 0; i < list->size; ++i) {
+  for (int i = 0; i < list->size; i++) {
     if (letter == current->letter) {  // duplicate value. ignore!
       return;
     }
 
     // position found, insert
     if (letter < current->letter) {
-      Node* chain = current->next;  // save the chain
+      Node* chain = current;  // save the chain
       newNode->next = chain;
       newNode->prev = prev;
 
@@ -235,13 +235,26 @@ void insertLinkedList(LinkedList* list, char letter) {
       chain->prev = newNode;
 
       list->size++;
-      printf("Added %c to the list!\n", letter);
+
+      // printf("%c < %c\n", letter, current->letter);
       return;
     }
 
     prev = current;
     current = current->next;
   }
+
+  // if the letter doesn't go before any of the letters in the list, then it must go in the end
+  Node* chain = list->tail->prev;  // save the chain
+  newNode->next = list->tail;
+  newNode->prev = chain;
+
+  chain->next = newNode;
+  list->tail->prev = newNode;
+
+  list->size++;
+
+  // printf("Tail: %c\n", letter);
 }
 
 void printLinkedList(LinkedList* list) {
