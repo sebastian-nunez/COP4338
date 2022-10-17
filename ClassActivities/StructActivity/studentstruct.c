@@ -1,24 +1,3 @@
-// First name                    stringof length 30
-// Last name                     string of length 30
-// Student ID                    string of length 10
-// Student standing, (Freshman (1), Sophmore (2), Junior (3), Senior (4))  integer
-// Current GPA                 float
-// Declare one element of the structure.
-// Fill the entire structure with some data.
-// Print the values in the student record using direct selection in a nicely formatted manner.
-// Print the values in the student record using indirect selection in a nicely formatted manner.
-// For example:
-
-// Name: Jim Johns
-// Student ID: 1234567
-// Standing: Sophmore
-// GPA: 3.74
-
-// Name: Jim Johns
-// Student ID: 1234567
-// Standing: Sophmore
-// GPA: 3.74
-
 #include <stdio.h>
 #include <string.h>
 
