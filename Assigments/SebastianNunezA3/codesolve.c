@@ -152,8 +152,6 @@ void solve(char inputFileName[], char outFileName[]) {
   destroyLinkedList(list);
   fclose(inFile);
   fclose(outFile);
-
-  exit(0);
 }
 
 /**
