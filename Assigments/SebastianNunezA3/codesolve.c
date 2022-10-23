@@ -131,8 +131,7 @@ void solve(char inputFileName[], char outFileName[]) {
     fscanf(inFile, " %c", &inputChar);
 
     if (!isalpha(inputChar)) {  // only alphabetic characters are allowed!
-      printf("Invalid character '%c'!", inputChar);
-      exit(1);
+      continue;
     }
 
     insertLinkedList(list, toupper(inputChar));  // adds the character to the linkedlist (alphabetically)
