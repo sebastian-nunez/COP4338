@@ -130,11 +130,10 @@ void solve(char inputFileName[], char outFileName[]) {
   while (!feof(inFile)) {  // read through the entire file and add the letters to the list
     fscanf(inFile, " %c", &inputChar);
 
-    if (!isalpha(inputChar)) {  // only alphabetic characters are allowed!
-      continue;
+    if (isalpha(inputChar)) {                      // only alphabetic characters are allowed!
+      insertLinkedList(list, toupper(inputChar));  // adds the character to the linkedlist (alphabetically)
     }
 
-    insertLinkedList(list, toupper(inputChar));  // adds the character to the linkedlist (alphabetically)
     // printLinkedList(list);
   }
 
