@@ -1,16 +1,16 @@
-#include <stdbool.h>
 #include <stdio.h>
+#include <stdint.h>
 
 int main(void) {
-  unsigned long long num;
-  short shiftDirection;
+  uint32_t num;
+  int shiftDirection;
   int bits;
 
   printf("Enter an unsigned number :: ");
-  scanf(" %lld", &num);
+  scanf(" %d", &num);
 
   printf("Enter [0] to shift left and [1] to shift right :: ");
-  scanf(" %hd", &shiftDirection);
+  scanf(" %d", &shiftDirection);
 
   printf("Enter the number of bits to shift :: ");
   scanf(" %d", &bits);
@@ -21,6 +21,6 @@ int main(void) {
     num = num >> bits;
   }
 
-  printf("Result: %lld\n", num);
+  printf("Result: %d\n", num);
   return 0;
 }
