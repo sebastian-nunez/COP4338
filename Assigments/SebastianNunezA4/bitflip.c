@@ -146,16 +146,11 @@ void print_binary(FILE* outFile, uint32_t val) {
  * 1. create a mask to isolate a single bit
  * 2. use the mask to obtain the actual bit in 'val'
  * 3. perform flip operation on the selected bit (even or odd)
- * 4. Align the selected bit with the final location in 'result'
- * 5. copy the 'flipped' bit to in the 'result'
+ * 4. copy the 'flipped' bit to in the 'result'
  *
 
  */
 uint32_t flipBits(uint32_t val, bool even, bool odd) {
-  uint32_t result = 0b0;  // result is 0000...0000 (32 bit)
-  uint32_t mask;          // mask used to select a single bit
-  uint32_t bit;
-
   // flipping none of the bits -> return the same value
   if (!even && !odd) {
     return val;
@@ -166,27 +161,20 @@ uint32_t flipBits(uint32_t val, bool even, bool odd) {
     return ~val;
   }
 
+  uint32_t result = 0b0;  // result is 0000...0000 (32 bit)
   for (uint32_t shift = 0; shift < 32; shift++) {
+    // mask used to select the bit a "shift" location
+    uint32_t mask = 0b1 << shift;
+
+    // get the actual value at the location selected in 'val'
+    uint32_t bit = val & mask;
+
+    // flip the bits as needed
     if ((even && shift % 2 == 0) || (odd && shift % 2 != 0)) {
-      mask = 1 << shift;  // select bit at "shift" location
-      bit = val & mask;   // get the actual value at the location selected in 'val'
-
-      bit = bit >> shift;  // place the selected bit at location 0
-      bit = ~bit;          // find the complement of the bit
-      bit = bit & 0b1;     // select only the first bit (location 0)
-
-      bit = bit << shift;     // place the bit at the correct spot
-      result = result | bit;  // copy the bit to the result
-    } else {
-      mask = 1 << shift;  // select bit at "shift" location
-      bit = val & mask;   // get the actual bit value at the location selected in 'val'
-
-      bit = bit >> shift;  // place the selected bit at location 0
-      bit = bit & 0b1;     // select only the first bit (location 0)
-
-      bit = bit << shift;     // place the bit at the correct spot
-      result = result | bit;  // copy the bit to the result
+      bit = ~bit & mask;  // find the complement of the bit
     }
+
+    result = result | bit;  // copy the "masked" bit to the result
   }
 
   return result;
@@ -203,15 +191,15 @@ uint32_t flipBits(uint32_t val, bool even, bool odd) {
  */
 uint32_t switchBits(uint32_t val) {
   uint32_t result = 0b0;
-  uint32_t mask;
-  uint32_t bit;
 
   for (uint32_t shift = 0, endLoc = 31; shift < 32 && endLoc >= 0; shift++, endLoc--) {
-    mask = 1 << shift;  // select bit at "shift" location
-    bit = val & mask;   // get the actual value at the location selected in 'val'
+    // select bit at "shift" location
+    uint32_t mask = 0b1 << shift;
+
+    // get the actual value at the location selected in 'val'
+    uint32_t bit = val & mask;
 
     bit = bit >> shift;  // place the selected bit at location 0
-    bit = bit & 0b1;     // select only the first bit (location 0)
 
     bit = bit << endLoc;    // place the bit at the 'end location'
     result = result | bit;  // copy the bit to the result
