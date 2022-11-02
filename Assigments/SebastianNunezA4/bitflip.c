@@ -84,29 +84,29 @@ int main(int argc, char* argv[]) {
   uint32_t result = val;
 
   fprintf(outFile, "Original number: %d\n", val);
-  // print_binary(outFile, val);
+  print_binary(outFile, val);
 
   if (eflag) {
     result = flipBits(val, true, false);  // flip even bits
-    // print_binary(outFile, result);
+    print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Even' bits: %d\n", result);
   }
 
   if (fflag) {
     result = flipBits(val, false, true);  // flip odd bits
-    // print_binary(outFile, result);
+    print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Odd' bits: %d\n", result);
   }
 
   if (aflag) {
     result = flipBits(val, true, true);  // flip even and odd bits
-    // print_binary(outFile, result);
+    print_binary(outFile, result);
     fprintf(outFile, "Flipped 'All' bits: %d\n", result);
   }
 
   if (sflag) {
     result = switchBits(val);
-    // print_binary(outFile, result);
+    print_binary(outFile, result);
     fprintf(outFile, "Switched the bits: %d\n", result);
   }
 
@@ -122,7 +122,10 @@ int main(int argc, char* argv[]) {
  *
  */
 void print_binary(FILE* outFile, uint32_t val) {
-  for (uint32_t mask = 0b1 << 31; mask >= 0b1; mask /= 2) {
+  for (int shift = 31; shift >= 0; shift--) {
+    // mask used to select the bit a "shift" location
+    uint32_t mask = 0b1 << shift;
+
     if (val & mask)
       fprintf(outFile, "1");
     else
@@ -162,7 +165,8 @@ uint32_t flipBits(uint32_t val, bool even, bool odd) {
   }
 
   uint32_t result = 0b0;  // result is 0000...0000 (32 bit)
-  for (uint32_t shift = 0; shift < 32; shift++) {
+
+  for (int shift = 0; shift < 32; shift++) {
     // mask used to select the bit a "shift" location
     uint32_t mask = 0b1 << shift;
 
@@ -192,7 +196,7 @@ uint32_t flipBits(uint32_t val, bool even, bool odd) {
 uint32_t switchBits(uint32_t val) {
   uint32_t result = 0b0;
 
-  for (uint32_t shift = 0, endLoc = 31; shift < 32 && endLoc >= 0; shift++, endLoc--) {
+  for (int shift = 0, endLoc = 31; shift < 32 && endLoc >= 0; shift++, endLoc--) {
     // select bit at "shift" location
     uint32_t mask = 0b1 << shift;
 
