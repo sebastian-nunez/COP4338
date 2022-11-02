@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
   // flags
   int eflag = 0, fflag = 0, aflag = 0, sflag = 0, oflag = 0;
   char* outputFilename = "";
-  uint32_t intVal;
+  char* intVal = "";
   static char usage[] = "usage: %s [-e] [-f] [-a] [-s] [-o outputfilename] intval\n";
 
   while ((c = getopt(argc, argv, "efaso:?")) != -1) {
@@ -70,40 +70,42 @@ int main(int argc, char* argv[]) {
     fprintf(stderr, usage, argv[0]);
     exit(1);
   }
+  // get the intVal from command line
+  intVal = argv[optind++];
 
-  intVal = (uint32_t)strtol(argv[optind++], NULL, 10);
-
-  // if there was an output flag provided, write to the filename given (otherwise to stdout)
+  // set up output stream
   FILE* outFile = oflag ? fopen(outputFilename, "w") : stdout;
   if (outFile == NULL) {
     printf("Unable to open file named: \"%s\"\n", outputFilename);
     exit(100);
   }
 
-  fprintf(outFile, "Original number: %d\n", intVal);
-  uint32_t result = intVal;
-  // print_binary(outFile, result);
+  uint32_t val = (uint32_t)strtol(intVal, NULL, 10);  // convert intVal (string) to a uint32_t
+  uint32_t result = val;
+
+  fprintf(outFile, "Original number: %d\n", val);
+  // print_binary(outFile, val);
 
   if (eflag) {
-    result = flipBits(intVal, true, false);
+    result = flipBits(val, true, false);
     // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Even' bits: %d\n", result);
   }
 
   if (fflag) {
-    result = flipBits(intVal, false, true);
+    result = flipBits(val, false, true);
     // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Odd' bits: %d\n", result);
   }
 
   if (aflag) {
-    result = flipBits(intVal, true, true);
+    result = flipBits(val, true, true);
     // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'All' bits: %d\n", result);
   }
 
   if (sflag) {
-    result = switchBits(intVal);
+    result = switchBits(val);
     // print_binary(outFile, result);
     fprintf(outFile, "Switched the bits: %d\n", result);
   }
