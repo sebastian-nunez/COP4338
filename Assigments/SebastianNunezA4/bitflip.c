@@ -87,19 +87,19 @@ int main(int argc, char* argv[]) {
   // print_binary(outFile, val);
 
   if (eflag) {
-    result = flipBits(val, true, false);
+    result = flipBits(val, true, false);  // flip even bits
     // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Even' bits: %d\n", result);
   }
 
   if (fflag) {
-    result = flipBits(val, false, true);
+    result = flipBits(val, false, true);  // flip odd bits
     // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Odd' bits: %d\n", result);
   }
 
   if (aflag) {
-    result = flipBits(val, true, true);
+    result = flipBits(val, true, true);  // flip even and odd bits
     // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'All' bits: %d\n", result);
   }
