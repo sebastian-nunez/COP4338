@@ -84,29 +84,29 @@ int main(int argc, char* argv[]) {
   uint32_t result = val;
 
   fprintf(outFile, "Original number: %d\n", val);
-  print_binary(outFile, val);
+  // print_binary(outFile, val);
 
   if (eflag) {
     result = flipBits(val, true, false);  // flip even bits
-    print_binary(outFile, result);
+    // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Even' bits: %d\n", result);
   }
 
   if (fflag) {
     result = flipBits(val, false, true);  // flip odd bits
-    print_binary(outFile, result);
+    // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'Odd' bits: %d\n", result);
   }
 
   if (aflag) {
     result = flipBits(val, true, true);  // flip even and odd bits
-    print_binary(outFile, result);
+    // print_binary(outFile, result);
     fprintf(outFile, "Flipped 'All' bits: %d\n", result);
   }
 
   if (sflag) {
     result = switchBits(val);
-    print_binary(outFile, result);
+    // print_binary(outFile, result);
     fprintf(outFile, "Switched the bits: %d\n", result);
   }
 
