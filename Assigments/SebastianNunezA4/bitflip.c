@@ -21,10 +21,10 @@
 #include <string.h>
 #include <unistd.h>
 
-uint32_t flipBits(uint32_t val, bool even, bool odd);
-uint32_t switchBits(uint32_t val);
+uint16_t flipBits(uint16_t val, bool even, bool odd);
+uint16_t switchBits(uint16_t val);
 
-void print_binary(FILE* outfile, uint32_t n);
+void print_binary(FILE* outfile, uint16_t n);
 
 int main(int argc, char* argv[]) {
   extern char* optarg;
@@ -80,8 +80,8 @@ int main(int argc, char* argv[]) {
     exit(100);
   }
 
-  uint32_t val = (uint32_t)strtol(intVal, NULL, 10);  // convert intVal (string) to a uint32_t
-  uint32_t result = val;
+  uint16_t val = (uint16_t)strtol(intVal, NULL, 10);  // convert intVal (string) to a uint16_t
+  uint16_t result = val;
 
   fprintf(outFile, "Original number: %d\n", val);
   // print_binary(outFile, val);
@@ -121,10 +121,10 @@ int main(int argc, char* argv[]) {
  * 3. Print "1" or "0" depending on the value at the mask location
  *
  */
-void print_binary(FILE* outFile, uint32_t val) {
-  for (int shift = 31; shift >= 0; shift--) {
+void print_binary(FILE* outFile, uint16_t val) {
+  for (int shift = 15; shift >= 0; shift--) {
     // mask used to select the bit a "shift" location
-    uint32_t mask = 0b1 << shift;
+    uint16_t mask = 0b1 << shift;
 
     if (val & mask)
       fprintf(outFile, "1");
@@ -153,7 +153,7 @@ void print_binary(FILE* outFile, uint32_t val) {
  *
 
  */
-uint32_t flipBits(uint32_t val, bool even, bool odd) {
+uint16_t flipBits(uint16_t val, bool even, bool odd) {
   // flipping none of the bits -> return the same value
   if (!even && !odd) {
     return val;
@@ -164,14 +164,14 @@ uint32_t flipBits(uint32_t val, bool even, bool odd) {
     return ~val;
   }
 
-  uint32_t result = 0b0;  // result is 0000...0000 (32 bit)
+  uint16_t result = 0b0;  // result is 0000...0000 (32 bit)
 
-  for (int shift = 0; shift < 32; shift++) {
+  for (int shift = 0; shift <= 15; shift++) {
     // mask used to select the bit a "shift" location
-    uint32_t mask = 0b1 << shift;
+    uint16_t mask = 0b1 << shift;
 
     // get the actual value at the location selected in 'val'
-    uint32_t bit = val & mask;
+    uint16_t bit = val & mask;
 
     // flip the bits as needed
     if ((even && shift % 2 == 0) || (odd && shift % 2 != 0)) {
@@ -193,15 +193,15 @@ uint32_t flipBits(uint32_t val, bool even, bool odd) {
  * 2. use the mask to obtain the actual bit in 'val'
  * 4. copy the selected 'bit' to the result (starting with the leftmost bit)
  */
-uint32_t switchBits(uint32_t val) {
-  uint32_t result = 0b0;
+uint16_t switchBits(uint16_t val) {
+  uint16_t result = 0b0;
 
-  for (int shift = 0, endLoc = 31; shift < 32 && endLoc >= 0; shift++, endLoc--) {
+  for (int shift = 0, endLoc = 15; shift <= 15 && endLoc >= 0; shift++, endLoc--) {
     // select bit at "shift" location
-    uint32_t mask = 0b1 << shift;
+    uint16_t mask = 0b1 << shift;
 
     // get the actual value at the location selected in 'val'
-    uint32_t bit = val & mask;
+    uint16_t bit = val & mask;
 
     bit = bit >> shift;  // place the selected bit at location 0
 
