@@ -4,13 +4,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-typedef struct Thread {
-  pthread_t tid; /* thread id */
-  int idx;       /* thread index (0 .. p-1) */
-} Thread;
-
 pthread_mutex_t mutex;
 long sum = 0;
+
+typedef struct Thread {
+  pthread_t tid; /* thread id */
+} Thread;
 
 void* work(void* arg) {
   Thread* thread = (Thread*)arg;
@@ -19,28 +18,24 @@ void* work(void* arg) {
   sum += (long)thread->tid;
   pthread_mutex_unlock(&mutex);
 
-  printf("Thread ID: %p\n", thread->tid);
+  printf("Thread ID: %p (%ld)\n", thread->tid, (long)thread->tid);
   return 0;
 }
 
 int main(int argc, char* argv[]) {
-  Thread* thread;
-
   pthread_mutex_init(&mutex, NULL);
 
-  thread = (Thread*)malloc(sizeof(Thread));
-  for (int i = 0; i < 5; i++) {
-    thread[i].idx = i;
-    pthread_create(&thread[i].tid, NULL, work, &thread[i]);
-  }
+  Thread* threads = (Thread*)malloc(5 * sizeof(Thread));
 
   for (int i = 0; i < 5; i++) {
-    pthread_join(thread[i].tid, NULL);
+    pthread_create(&threads[i].tid, NULL, work, &threads[i]);
+    pthread_join(threads[i].tid, NULL);
   }
 
-  printf("%ld\n", sum);
+  printf("\nSum of ALL Thread IDs: %ld\n", sum);
 
   pthread_mutex_destroy(&mutex);
-  free(thread);
+  free(threads);
+
   return 0;
 }
