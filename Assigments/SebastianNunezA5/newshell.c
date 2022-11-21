@@ -9,7 +9,9 @@
  * sources from the internet.
  *
  * PROGRAM DESCRIPTION:
- * This program prints the letters 'a' - 'z' to the std output stream
+ * This program uses a menu to call several programs within C. Importantly,
+ * using fork, pipe, wait, dup2, and exec commands we are able to extend UNIX
+ * functionality within C.
  */
 
 #include <fcntl.h>

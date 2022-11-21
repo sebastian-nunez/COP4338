@@ -10,7 +10,7 @@
  *
  * PROGRAM DESCRIPTION:
  * This programs reads 1024 alphabetic characters from the std input stream and
- * turns
+ * turns into the capitalized versions.
  */
 
 #include <ctype.h>
