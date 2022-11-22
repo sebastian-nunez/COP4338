@@ -214,9 +214,9 @@ int main(int argc, char* argv[]) {
     printf("3 firstname\n");
     printf("4 userinput\n");
     printf("5 letters > filename\n");
-    printf("6 letters | userinput   (letters piped to userinput)\n");
-    printf("7 firstname | userinput   (names piped to userinput)\n");
-    printf("8 exit  (your program should end by leaving the infinite loop.)\n");
+    printf("6 letters | userinput\n");
+    printf("7 firstname | userinput\n");
+    printf("8 exit\n");
 
     scanf("%d", &cmd);
 
