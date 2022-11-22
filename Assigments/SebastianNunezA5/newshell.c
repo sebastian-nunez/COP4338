@@ -22,7 +22,7 @@
 #include <unistd.h>
 
 #define MAX_ARGS 20
-#define BUFSIZ 1024
+#define BUFFER_SIZE 1024
 
 void execute(char* cmd, char* args[]) {
   int pid;
@@ -103,8 +103,8 @@ void execute(char* cmd, char* args[]) {
 
       int outfile = open(args[0], O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR);  // create outfile for writing
 
-      char buffer[BUFSIZ];
-      int length = read(fd[0], buffer, sizeof(char) * BUFSIZ);
+      char buffer[BUFFER_SIZE];
+      int length = read(fd[0], buffer, sizeof(char) * BUFFER_SIZE);
 
       if (length > 0) {
         write(outfile, buffer, length);  // write to outfile
@@ -229,7 +229,7 @@ int main(int argc, char* argv[]) {
         break;
       case 3:
         printf("Enter your firstname :: ");
-        char name[BUFSIZ];
+        char name[BUFFER_SIZE];
         scanf("%s", name);
 
         char* args[] = {name};
@@ -240,7 +240,7 @@ int main(int argc, char* argv[]) {
         break;
       case 5:
         printf("Enter the filename :: ");
-        char filename[BUFSIZ];
+        char filename[BUFFER_SIZE];
         scanf("%s", filename);
 
         char* args1[] = {filename};
@@ -251,7 +251,7 @@ int main(int argc, char* argv[]) {
         break;
       case 7:
         printf("Enter your firstname :: ");
-        char name1[BUFSIZ];
+        char name1[BUFFER_SIZE];
         scanf("%s", name1);
 
         char* args2[] = {name1};
